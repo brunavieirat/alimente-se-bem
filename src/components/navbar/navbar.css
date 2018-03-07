@@ -26,9 +26,9 @@
 
 .navbar-menu-hamburguer{
 
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: #72398E;
-    padding: 0 calc(75% + 1rem);
+    padding: 0 0 0 125px;
     
 }
 .navbar-menu-input:checked ~ .navbar-menu-label::before {
@@ -91,6 +91,7 @@
         width: initial;
         padding: 0;
         background: initial;
+        /* margin-left: 30%; */
     }
 
     .navbar-pages__link {
@@ -107,6 +108,7 @@
 }
 
 @media (min-width: 1024px) { 
-
-  
+    .navbar-pages {
+        margin-left: 30%;
+    }
 }
