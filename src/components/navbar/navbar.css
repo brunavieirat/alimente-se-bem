@@ -28,7 +28,7 @@
 
     font-size: 1.5em;
     color: #72398E;
-    padding: 0 0 0 150px;
+    padding: 0 calc(75% + 1rem);
     
 }
 .navbar-menu-input:checked ~ .navbar-menu-label::before {
@@ -82,13 +82,14 @@
         float: right;
     }
 
+
     .navbar-pages {
         position: initial;
         display: flex;
         align-items: center;
         height: initial;
         width: initial;
-        padding: 0 0 0 50px;
+        padding: 0;
         background: initial;
     }
 
@@ -107,8 +108,5 @@
 
 @media (min-width: 1024px) { 
 
-    .navbar-pages {
-        padding: 0 0 0 200px;
-
-    }
+  
 }
