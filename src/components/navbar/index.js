@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 import './navbar.css'
 import logo from './logo-sesi.png'
 
-export default props => (
+const Navbar = (props) => (
 
     <nav className="navbar">
-        <Link className="navbar-logo" to="/"> <img src={logo}/></Link>
+        <Link className="navbar-logo" to="/"> <img src={logo} alt="logo"/></Link>
 
 
         <input id="menu-hamburguer" className="navbar-menu-input" type="checkbox" hidden />
@@ -48,13 +48,7 @@ export default props => (
     </nav>
 
     
-
-
-
-
-
-//     </ul>
-
-// </nav>
 )
+
+export default Navbar
 
