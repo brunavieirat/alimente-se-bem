@@ -8,11 +8,11 @@ import logo from './logo-sesi.png'
 const Navbar = (props) => (
 
     <nav className="navbar">
-        <Link className="navbar-logo" to="/"> <img src={logo} alt="logo"/></Link>
+        <Link className="navbar-logo" to="/"> <img src={logo} alt="logo" class="logo"/></Link>
 
 
         <input id="menu-hamburguer" className="navbar-menu-input" type="checkbox" hidden />
-        <label className="navbar-menu-label" htmlFor="menu-hamburguer"><FaBars /></label>
+        <label className="navbar-menu-label" htmlFor="menu-hamburguer"><FaBars class="navbar-menu-hamburguer" /></label>
         <ul className="navbar-pages">
             <li>
                 <Link className="navbar-pages__link" to="/"> Home </Link>

@@ -17,8 +17,20 @@
     margin: 0;
 }
 
+.logo{
+
+    width: 100px;
+    height: 50px;
+}
 
 
+.navbar-menu-hamburguer{
+
+    font-size: 1.5em;
+    color: #72398E;
+    padding: 0 0 0 150px;
+    
+}
 .navbar-menu-input:checked ~ .navbar-menu-label::before {
     content: '';
     position: fixed;
@@ -26,6 +38,7 @@
     left: 0;
     height: 100vh;
     width: 100vh;
+
     background: rgba(0, 0, 0, 0.7);
 }
 
@@ -43,7 +56,7 @@
     width: 70%;
     padding: 2rem;
     margin: 0;
-    background: #743AD0;
+    background: #72398E;
 }
 
 .navbar-pages__link {
@@ -75,18 +88,27 @@
         align-items: center;
         height: initial;
         width: initial;
-        padding: 0 0 0 200px;
+        padding: 0 0 0 50px;
         background: initial;
     }
 
     .navbar-pages__link {
-        color: #743AD0;
+        color: #72398E;
         font-size: 1rem;
         padding: 0 1rem;
         margin: 0;
+        font-weight: bold;
     }
 }
 
 .navbar__logout {
     cursor: pointer;
+}
+
+@media (min-width: 1024px) { 
+
+    .navbar-pages {
+        padding: 0 0 0 200px;
+
+    }
 }
