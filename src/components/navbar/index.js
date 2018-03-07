@@ -4,9 +4,10 @@ import FaUser from 'react-icons/lib/fa/user'
 import { Link } from 'react-router-dom'
 import './navbar.css'
 import logo from './logo-sesi.png'
+import Categoria from '../categoria/categoria'
 
 const Navbar = (props) => (
-
+    
     <nav className="navbar">
         <Link className="navbar-logo" to="/"> <img src={logo} alt="logo" class="logo"/></Link>
 
@@ -47,8 +48,9 @@ const Navbar = (props) => (
              </div>
     </nav>
 
-    
+   
 )
+
 
 export default Navbar
 

@@ -9,9 +9,11 @@ import Navbar from './components/navbar/index'
 class App extends Component {
   render() {
     return (
+      
       <BrowserRouter>
         {/* <App /> */}
         <Navbar/>
+        
         {/* <Switch>
             <Route exact path="/"  />
             <Route path="/"  />
@@ -20,7 +22,7 @@ class App extends Component {
         </Switch> */}
 
       </BrowserRouter>
-      
+     
     );
   }
 }
