@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
+import SimpleAppBar from './components/navbar/index'
+// import Button from './components/button-search/buttonSearch'
+// import Categoria from './components/categoria/categoria'
 
 
 // import './App.css';
-import Navbar from './components/navbar/index'
+// import Navbar from './components/navbar/index'
 
 class App extends Component {
   render() {
@@ -12,7 +15,8 @@ class App extends Component {
       
       <BrowserRouter>
         {/* <App /> */}
-        <Navbar/>
+        {/*<SimpleAppBar/>*/}
+       
         
         {/* <Switch>
             <Route exact path="/"  />

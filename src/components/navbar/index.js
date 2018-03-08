@@ -1,56 +1,34 @@
-import React from 'react'
-import FaBars from 'react-icons/lib/fa/bars'
-import FaUser from 'react-icons/lib/fa/user'
-import { Link } from 'react-router-dom'
-import './navbar.css'
-import logo from './logo-sesi.png'
-import Categoria from '../categoria/categoria'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 
-const Navbar = (props) => (
-    
-    <nav className="navbar">
-        <Link className="navbar-logo" to="/"> <img src={logo} alt="logo" class="logo"/></Link>
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+};
 
+function SimpleAppBar(props) {
+  const { classes } = props;
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" color="default">
+        <Toolbar>
+          <Typography variant="title" color="inherit">
+            Title
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+  
+}
 
-        <input id="menu-hamburguer" className="navbar-menu-input" type="checkbox" hidden />
-        <label className="navbar-menu-label" htmlFor="menu-hamburguer"><FaBars class="navbar-menu-hamburguer" /></label>
-        <ul className="navbar-pages">
-            <li>
-                <Link className="navbar-pages__link" to="/"> Home </Link>
-            </li>
-           
-            <li>
-                
-                <Link className="navbar-pages__link" to="/cursos"> Cursos </Link>
-            </li>
+SimpleAppBar.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
-             <li>
-                
-                <Link className="navbar-pages__link" to="/noticias"> Notícias </Link>
-            </li>
-
-             <li>
-                
-                <Link className="navbar-pages__link" to="/agenda"> Agenda </Link>
-            </li>
-
-             <li>
-                
-                <Link className="navbar-pages__link" to="/forum"> Fórum </Link>
-            </li>  
-           
-        </ul>
-
-        <div className="navbar-pages__link">| </div> 
-             
-             <div className="navbar-pages__link">
-             <FaUser/>
-             </div>
-    </nav>
-
-   
-)
-
-
-export default Navbar
-
+export default withStyles(styles)(SimpleAppBar);
