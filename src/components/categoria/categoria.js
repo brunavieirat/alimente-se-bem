@@ -2,16 +2,16 @@ import React from 'react'
 import './categoria.css'
 
 
-const Categoria = ({ children, ...props }) => (
-    // <div {...props} className={"divCategoria"}>
-    //     {children}
-    // </div>
+const Categoria = () => (
+	// <div {...props} className={"divCategoria"}>
+	//     {children}
+	// </div>
 
-    // render(){
+	// render(){
 
-        <div className="divCategoria">
+	<div className="divCategoria">
         teste
-    </div>
+	</div>
 )
 
 export default Categoria
