@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import FacebookLogin from 'react-facebook-login'
 import GoogleLogin from 'react-google-login'
-import {PostData} from '../../services/PostData'
+// import {PostData} from '../../services/PostData'
 import {Redirect} from 'react-router-dom'
 // import './Welcome.css'
 
@@ -40,13 +40,13 @@ class Login extends Component {
 		}
 
 		if (postData) {
-			PostData('signup', postData).then((result) => {
-				let responseJson = result
-				sessionStorage.setItem('userData', JSON.stringify(responseJson))
-				this.setState({redirect: true})
-			})
+			// PostData('signup', postData).then((result) => {
+			// 	let responseJson = result
+			// 	sessionStorage.setItem('userData', JSON.stringify(responseJson))
+			// 	this.setState({redirect: true})
+			// })
 		} else {
-			alert( ' Donno about this else' )
+			alert( ' Quando não entra no postData precisa tratar o erro.' )
 		}
 	}
 
@@ -76,14 +76,14 @@ class Login extends Component {
 						<h2 id="welcomeText"></h2>
 
 						<FacebookLogin
-							appId="Your FacebookAPP ID"
+							appId="377964399342322"
 							autoLoad={false}
 							fields="name,email,picture"
 							callback={responseFacebook}/>
 						<br/><br/>
 
 						<GoogleLogin
-							clientId="Your Google ID"
+							clientId="505937548041-u6m5rdom3kcrfuo1m1ob3fh3gfbqjo2a.apps.googleusercontent.com"
 							buttonText="Login with Google"
 							onSuccess={responseGoogle}
 							onFailure={responseGoogle}/>

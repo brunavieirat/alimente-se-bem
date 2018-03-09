@@ -1,6 +1,6 @@
- const PostData = (type, userData) => {
-	let BaseURL = 'https://apipaypal.9lessons.info/apipaypal/'
-	//let BaseURL = 'http://localhost/socialapi/';
+export function PostData(type, userData) {
+	// let BaseURL = 'https://apipaypal.9lessons.info/apipaypal/'
+	let BaseURL = 'http://localhost:3000/'
     
 	return new Promise((resolve, reject) =>{
 		fetch(BaseURL+type, {
@@ -17,5 +17,3 @@
     
 	})
 }
-
-export default PostData
