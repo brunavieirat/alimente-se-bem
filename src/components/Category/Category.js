@@ -1,8 +1,8 @@
 import React from 'react'
-import './categoria.css'
+import './category.css'
 
 
-const Categoria = () => (
+const Category = () => (
 	// <div {...props} className={"divCategoria"}>
 	//     {children}
 	// </div>
@@ -10,8 +10,8 @@ const Categoria = () => (
 	// render(){
 
 	<div className="divCategoria">
-        teste
+	teste
 	</div>
 )
 
-export default Categoria
+export default Category
