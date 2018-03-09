@@ -1,8 +1,13 @@
 .divCategoria {
-    width: 700px;
+    width: 98%;
     height: 18px;
+    font-weight: bold;
+    font-size: 0.8em;
     background-color: #72398E;
     color: white;
     border-radius: 3px;
-    text-align: center;
+    text-align: left;
+    padding: 0.5em;
+    text-transform: uppercase;
+ 
 }
