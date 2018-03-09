@@ -1,7 +1,7 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex: 0 60px;
     min-height: 60px;
     /* max-width: 50%; */
@@ -10,11 +10,37 @@
     background: #fff;
     border-bottom: 1px solid #d4dadf;
     box-shadow: 0 1px 1px 0 #f0f1f4;
-    z-index: 20;
+    z-index: 20; 
+}
+
+.navbar > ul{
+    /* padding: 0; */
+}
+.navbar > ul > li > a {
+    padding: 15px;
+    margin:0;
+    font-size: "Gotham";
+    font-weight: bold
+}
+
+
+.navbar ul > li.active > a,
+.navbar ul > li > a:hover,
+.navbar ul > li > a:focus,
+.navbar ul > li.open > a,
+.navbar ul > li.open > a:hover,
+.navbar ul > li.open > a:focus {
+	background: white;
+	color: #72388D;
+	text-decoration: none;
+}
+.navbar ul > li.active > a {
+	border-bottom: 2px solid #e64f00;
 }
 
 .navbar-logo {
-    margin: 0;
+    margin-left: -100px;
+    float: left;
 }
 
 .logo{
@@ -64,7 +90,7 @@
     color: #FFF;
     font-size: 1.2rem;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     margin-bottom: 1rem;
 }
 
@@ -82,7 +108,25 @@
         float: right;
     }
 
+    .navbar > ul > li > a {
+        color: #72398E;
+        float:left;
+        display: block;	
+        padding: 45px 12px 30px;
+        font-size: "Gotham";
+        font-weight: bold;
+    }
 
+.navbar ul > li.active > a,
+.navbar ul > li > a:hover,
+.navbar ul > li > a:focus,
+.navbar ul > li.open > a,
+.navbar ul > li.open > a:hover,
+.navbar ul > li.open > a:focus {
+	color: white;
+	background: #72388D;
+	text-decoration: none;
+}
     .navbar-pages {
         position: initial;
         display: flex;
@@ -97,6 +141,7 @@
     .navbar-pages__link {
         color: #72398E;
         font-size: 1rem;
+        display: inline;
         padding: 0 1rem;
         margin: 0;
         font-weight: bold;
@@ -109,6 +154,6 @@
 
 @media (min-width: 1024px) { 
     .navbar-pages {
-        margin-left: 30%;
+        float: right;
     }
 }
