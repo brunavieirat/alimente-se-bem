@@ -1,14 +1,12 @@
 import React, { Component, Fragment } from 'react'
-// import FacebookButton from './components/Login/Login'
-import {Route } from 'react-router-dom'
-// import Home from '../screens/Home'
+import { Route, Switch } from 'react-router-dom'
+import Navbar from './components/Navbar/Navbar'
 import Videos from './containers/Videos'
+import Login from './containers/Login/Login'
+// import NotFound from './containers/NotFound'
+// import Home from '../screens/Home'
 // import News from '../screens/News'
 // import Agenda from '../screens/Agenda'
-
-
-// import './App.css';
-import Navbar from './components/Navbar/Navbar'
 
 class App extends Component {
 	render() {
@@ -16,10 +14,13 @@ class App extends Component {
 			<Fragment>
 				<Navbar />
 				{/* <FacebookButton />git */}
-				{/* <Route exact path="/"  component={Home}/> */}
-				<Route path="/videos" component={Videos}  />
-				{/* <Route path="/noticias" component={News} />
+				<Switch>
+					<Route exact path="/"  component={Login}/>
+					<Route path="/videos" component={Videos}  />
+					{/* <Route path="/noticias" component={News} />
 				<Route path="/agenda" component={Agenda} /> */}
+					{/* <Route path="*" component={NotFound}/> */}
+				</Switch>
 			</Fragment>
 		)
 	}
