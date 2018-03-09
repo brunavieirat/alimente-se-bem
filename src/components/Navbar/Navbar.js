@@ -3,7 +3,7 @@ import FaBars from 'react-icons/lib/fa/bars'
 import FaUser from 'react-icons/lib/fa/user'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-import logo from './logo-sesi.png'
+import logo from '../../assets/logo-sesi.png'
 
 const Menu = ({menuItem}) => {
 	const menu = menuItem.map(item => (
