@@ -31,6 +31,8 @@ module.exports = {
             "error",
             "never"
         ],
-        "linebreak-style": [0]
+        "linebreak-style": 0,
+        "no-console": 0,
+        "react/prop-types": 0,
     }
 };
