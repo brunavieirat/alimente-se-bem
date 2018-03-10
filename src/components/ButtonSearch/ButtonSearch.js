@@ -1,8 +1,8 @@
 import React from 'react'
-import './buttonSearch.css'
+import './ButtonSearch.css'
 
 
-const ButtonSearch = (props) => (
+const ButtonSearch = () => (
       
 
     <div className="div-button-search">

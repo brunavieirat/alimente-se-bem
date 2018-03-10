@@ -7,14 +7,17 @@
 
 
 .div-button-search{
-    width: 180px;
+    /*width: 180px;*/
+    display: inline-block;
+    float: right;
+    /*margin: 10px;*/
 }
 
 .input-search{
     float:left;
     border: 1px solid #BEBEBE;
     margin:0;
-    width: 70%;
+    width: 150px;
     padding: 3px;
     background-color: #EDEFF0;
    
@@ -33,7 +36,7 @@ input::placeholder {
     background-color: #72398E;
     color: white;
     margin:0;
-    width: 30%;
+    width: 100px;
     padding: 3px;
     font-weight: bold;
     
@@ -42,7 +45,7 @@ input::placeholder {
 @media (min-width: 768px) {
 
     .div-button-search{
-    width: 250px;
+    /*width: 250px;*/
 }
 
 
@@ -62,7 +65,7 @@ input::placeholder {
 
 @media (min-width: 1024px) {
   .div-button-search{
-    width: 350px;
+    /*width: 350px;*/
 }
 
 

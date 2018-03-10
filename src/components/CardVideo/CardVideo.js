@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
+import './CardVideo.css'
 
 
-export default class CardVideo extends Component{
+const CardVideo = (props) =>(
 
-	render (){
-		return(
+	// render (props){
+	// 	return(
 			<div className="div-CardCurso">
 				<div className="cardCurso-img">
-					<img src=""/>
+					<img src={props.name} alt={props.alt}/>
 				</div>
 				<div className="cardCuso-title">
-                Título
+                {props.nomeCurso}
 				</div>
 			</div>
-		)
-	}
-}
+		
+)
+
+export default CardVideo
