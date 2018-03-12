@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Videos from './containers/Videos'
 import Login from './containers/Login/Login'
+import Forum from './containers/Forum/Forum'
 // import NotFound from './containers/NotFound'
 // import Home from '../screens/Home'
 // import News from '../screens/News'
@@ -13,10 +14,10 @@ class App extends Component {
 		return (
 			<Fragment>
 				<Navbar />
-				{/* <FacebookButton />git */}
 				<Switch>
 					<Route exact path="/"  component={Login}/>
 					<Route path="/videos" component={Videos}  />
+					<Route path="/forum" component={Forum}  />
 					{/* <Route path="/noticias" component={News} />
 				<Route path="/agenda" component={Agenda} /> */}
 					{/* <Route path="*" component={NotFound}/> */}
