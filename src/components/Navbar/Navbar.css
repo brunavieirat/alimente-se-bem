@@ -37,14 +37,15 @@
 }
 
 .navbar-logo {
-    margin-left: -100px;
+    /* margin-left: -10% !important; */
     float: left;
 }
 
 .logo{
 
-    width: 100px;
-    height: 50px;
+    width: 75px;
+    height: 40px;
+    margin-left: -20% !important;
 }
 
 
@@ -55,6 +56,10 @@
     padding: 0 0 0 125px;
     
 }
+.navbar-menu-label{
+    color: #72398E;
+}
+
 .navbar-menu-input:checked ~ .navbar-menu-label::before {
     content: '';
     position: fixed;
@@ -62,6 +67,7 @@
     left: 0;
     height: 100vh;
     width: 100vh;
+    color: #72398E;
 
     background: rgba(0, 0, 0, 0.7);
 }
@@ -78,7 +84,7 @@
     right: -100vh;
     height: 100vh;
     width: 70%;
-    padding: 2rem;
+    padding: 1.2em;
     margin: 0;
     background: #72398E;
 }
@@ -86,7 +92,7 @@
 .navbar-pages__link {
     cursor: pointer;
     color: #FFF;
-    font-size: 1.2rem;
+    font-size: 1.2em !important;
     text-decoration: none;
     display: block;
     margin-bottom: 1rem;
@@ -105,12 +111,17 @@
         display: none;
         float: right;
     }
+    .logo{
+        width: 100px;
+        height: 50px;
+        margin-left: -30% !important;
+    }
 
     .navbar > ul > li > a {
         color: #72398E;
         float:left;
         display: block;	
-        padding: 45px 12px 30px;
+        padding: 45px 7px 30px;
         font-size: "Gotham";
         font-weight: bold;
     }
@@ -154,4 +165,11 @@
     .navbar-pages {
         float: right;
     }
+
+    .logo{
+        width: 115px;
+        height: 60px;
+        margin-left: -350% !important;
+    }
+    
 }
