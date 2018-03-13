@@ -3,7 +3,7 @@ import './SectionVideos.css'
 import ButtonSearch from '../ButtonSearch/ButtonSearch'
 import Category from '../Category/Category'
 import CardVideo from '../CardVideo/CardVideo'
-import imagemTeste from '../../assets/logo-sesi.png'
+import imagemTeste from '../../assets/images/logo-sesi.png'
 
 
 export default class SectionVideos extends Component {
