@@ -16,7 +16,6 @@ export default class News extends Component {
 		return(
 			<Fragment>
 				<PageTitle style={this.state.pageTitleColor} title="Notícias" />
-				<CardButton />
 			</Fragment>
 		)
 	}

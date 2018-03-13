@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../../components/PageTitle/PageTitle'
 import CardButton from '../../components/CardButton/CardButton'
+import './Forum.css'
 
 export default class Forum extends Component {
 
@@ -16,8 +17,10 @@ export default class Forum extends Component {
 		
 		return(
 			<Fragment>
-				<PageTitle style={this.state.pageTitleColor} title="Forum" />
-				<CardButton />
+				<section >
+					<PageTitle style={this.state.pageTitleColor} title="Forum" />
+					<CardButton />
+				</section>
 			</Fragment>
 		)
 	}
