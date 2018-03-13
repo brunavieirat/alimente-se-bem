@@ -17,7 +17,7 @@ export default class Forum extends Component {
 		
 		return(
 			<Fragment>
-				<section >
+				<section className="forum-section">
 					<PageTitle style={this.state.pageTitleColor} title="Forum" />
 					<CardButton />
 				</section>

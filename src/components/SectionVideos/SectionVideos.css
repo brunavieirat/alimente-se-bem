@@ -1,0 +1,10 @@
+.section-cursos{
+    margin: 0 auto;
+    width: 70%;
+    /*display: flex;
+    justify-content: flex-start;*/
+    height: 500px;
+    background-color: #F2F2F2;
+    padding: 2%;
+   
+}
