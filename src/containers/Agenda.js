@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../components/PageTitle/PageTitle'
-import CardButton from '../components/CardButton/CardButton'
 
 export default class Agenda extends Component {
 	constructor(props){
@@ -16,7 +15,6 @@ export default class Agenda extends Component {
 		return(
 			<Fragment>
 				<PageTitle style={this.state.pageTitleColor} title="Agenda" />
-				<CardButton />
 			</Fragment>
 		)
 	}
