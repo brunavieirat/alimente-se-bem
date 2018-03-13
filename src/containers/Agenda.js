@@ -1,6 +1,9 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../components/PageTitle/PageTitle'
 
+// import AgendaCalendar from '../components/Agenda/Calendar/Calendar'
+import Teste from '../components/Agenda/Calendar/teste'
+
 export default class Agenda extends Component {
 	constructor(props){
 		super(props)
@@ -14,7 +17,9 @@ export default class Agenda extends Component {
 	render(){
 		return(
 			<Fragment>
-				<PageTitle style={this.state.pageTitleColor} title="Agenda" />
+				<PageTitle style={this.state.pageTitleColor} title="Agenda" />,
+				<Teste/>,
+				
 			</Fragment>
 		)
 	}
