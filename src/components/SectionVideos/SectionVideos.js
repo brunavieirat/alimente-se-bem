@@ -10,7 +10,7 @@ const sectionVideos = () => (
 	<section className="section-cursos">
 		<ButtonSearch/>
 		<Category name = "Natyyyyy"/>
-		<CardVideo image={imagemTeste} alt="tst" nomeCurso="Alimentação Saudável" />
+		<CardVideo name={imagemTeste} alt="tst" nomeCurso="Alimentação Saudável" />
 	</section>
 )
     
