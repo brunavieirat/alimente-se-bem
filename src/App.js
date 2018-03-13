@@ -4,22 +4,24 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from '../src/components/Footer/Footer'
 import Videos from './containers/Videos'
 import Login from './containers/Login/Login'
+import Forum from './containers/Forum/Forum'
+import News from './containers/News'
+import Agenda from './containers/Agenda'
 // import NotFound from './containers/NotFound'
 // import Home from '../screens/Home'
-// import News from '../screens/News'
-// import Agenda from '../screens/Agenda'
+
 
 class App extends Component {
 	render() {
 		return (
 			<Fragment>
 				<Navbar />
-				{/* <FacebookButton />git */}
 				<Switch>
 					<Route exact path="/"  component={Login}/>
 					<Route path="/videos" component={Videos}  />
-					{/* <Route path="/noticias" component={News} />
-				<Route path="/agenda" component={Agenda} /> */}
+					<Route path="/forum" component={Forum}  />
+					<Route path="/noticias" component={News} />
+					<Route path="/agenda" component={Agenda} />
 					{/* <Route path="*" component={NotFound}/> */}
 				</Switch>
 				<Footer/>

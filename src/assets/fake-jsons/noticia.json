@@ -1,0 +1,50 @@
+[
+    {
+        "titulo": "Paola",
+        "descricao": "Paola é a chef mais seguida nas redes sociais.",
+        "data_Criacao": "0001-01-01T00:00:00",
+        "imagem": "paola.png",
+        "categoria_Noticias": null,
+        "id": 1
+    },
+    {
+        "titulo": "Paola",
+        "descricao": "Paola é a chef mais seguida nas redes sociais no Brasil.",
+        "data_Criacao": "0001-01-01T00:00:00",
+        "imagem": "paola.png",
+        "categoria_Noticias": null,
+        "id": 7
+    },
+    {
+        "titulo": "Paola",
+        "descricao": "Paola é a chef mais seguida nas redes sociais.",
+        "data_Criacao": "2018-03-08T21:41:40.7863869",
+        "imagem": "paola.png",
+        "categoria_Noticias": null,
+        "id": 8
+    },
+    {
+        "titulo": "Fogazza",
+        "descricao": "Fogazza veganas.",
+        "data_Criacao": "2018-03-08T21:53:12.1212226",
+        "imagem": "fogazza.png",
+        "categoria_Noticias": null,
+        "id": 10
+    },
+    {
+        "titulo": "Fogazza",
+        "descricao": "Fogazza veganas feitas com massa de tapioca.",
+        "data_Criacao": "0001-01-01T00:00:00",
+        "imagem": "fogazza.png",
+        "categoria_Noticias": null,
+        "id": 11
+    },
+    {
+        "titulo": "Fogazza",
+        "descricao": "Fogazza veganas feitas com massa de tapioca.",
+        "data_Criacao": "0001-01-01T00:00:00",
+        "imagem": "fogazza.png",
+        "categoria_Noticias": null,
+        "id": 12
+    }
+]

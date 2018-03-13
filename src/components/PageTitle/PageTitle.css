@@ -1,0 +1,11 @@
+.PageTitle { 
+    font-family: 'Gotham', sans-serif;
+    font-size: 1.35em;
+    letter-spacing: -1px; 
+    color: white; 
+    /* background: #ADC837; */
+    text-transform: uppercase; 
+    padding: 0.7em 0.7em 0.7em; 
+    margin-bottom: 2em;
+    
+}

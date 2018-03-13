@@ -1,17 +1,23 @@
 import React, {Component} from 'react'
-import Category from '../components/Category/Category'
-import CardVideo from '../components/CardVideo/CardVideo'
 import SectionVideos from '../components/SectionVideos/SectionVideos'
+import PageTitle from '../components/PageTitle/PageTitle'
+
+
 
 export default class Videos extends Component {
-
+	constructor(props){
+		super(props)
+		this.state = {
+			pageTitleColor: {
+				background: '#1CABA0',
+			}
+		}
+	}	
 	render(){
 		return(
 			<section>
-				{/*<Category />
-				<CardVideo />*/}
+				<PageTitle style={this.state.pageTitleColor} title="Videos"/>
 				<SectionVideos/>
-				
 			</section>
 
 		)
