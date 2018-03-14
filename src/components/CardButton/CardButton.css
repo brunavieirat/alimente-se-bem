@@ -1,0 +1,13 @@
+.card-container{
+	height: '300px';
+	width: '300px';
+	margin: '20px';	
+	display: 'flex';
+	
+}
+
+.card-button{
+	display: 'flex';
+	flex-direction: 'row';
+	justify-content: 'space-beteween',
+}
