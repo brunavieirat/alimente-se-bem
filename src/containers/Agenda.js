@@ -2,7 +2,9 @@ import React, { Fragment, Component } from 'react'
 import PageTitle from '../components/PageTitle/PageTitle'
 
 // import AgendaCalendar from '../components/Agenda/Calendar/Calendar'
-import Teste from '../components/Agenda/Calendar/teste'
+import Teste from '../components/Agenda/Calendar/Teste'
+import Evento from '../components/Agenda/CardEvent/CardEvent'
+
 
 export default class Agenda extends Component {
 	constructor(props){
@@ -19,6 +21,7 @@ export default class Agenda extends Component {
 			<Fragment>
 				<PageTitle style={this.state.pageTitleColor} title="Agenda" />,
 				<Teste/>,
+				<Evento/>
 				
 			</Fragment>
 		)
