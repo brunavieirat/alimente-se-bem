@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 import { Calendar, Badge } from 'antd'
 import 'antd/lib/calendar/style/css'
 // import 'antd/lib/Badge/style/css'
-import './Teste.css'
+import './teste.css'
 
 
-function getListData(value) {
+function getListData() {
 	let listData
 	// switch (value.date()) {
 	//   case 8:
