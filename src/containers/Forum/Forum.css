@@ -1,8 +1,8 @@
 .forum-section{
-    /* background-position: 'center';
-    background-repeat: 'no-repeat',
-    backgroundSize: 'cover', */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-image: url('./image-05.jpeg');
-    height: '800px';
+    height: 800px;
 }
 

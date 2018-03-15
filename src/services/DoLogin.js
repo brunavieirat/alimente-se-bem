@@ -94,4 +94,5 @@ class DoLogin extends Component {
 		)
 	}
 }
+
 export default DoLogin

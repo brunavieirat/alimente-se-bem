@@ -1,9 +1,8 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../../components/PageTitle/PageTitle'
 import CardButton from '../../components/CardButton/CardButton'
-import bgImage from './image-05.jpeg'
 import './Forum.css'
-// import axios from 'axios'
+// import axios from 'axios'git 
 
 class Forum extends Component {
 	constructor(props){
@@ -11,13 +10,6 @@ class Forum extends Component {
 		this.state = {
 			pageTitleColor: {
 				background: '#ADC837',
-			},
-			sectionStyle: {
-				backgroundPosition: 'center',
-				backgroundRepeat: 'no-repeat',
-				backgroundSize: 'cover',
-				backgroundImage: `url(${bgImage})`,
-				height: '800px',
 			},
 			data: []
 			
