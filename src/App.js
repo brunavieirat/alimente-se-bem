@@ -8,7 +8,7 @@ import Forum from './containers/Forum/Forum'
 import News from './containers/News'
 import Agenda from './containers/Agenda'
 // import NotFound from './containers/NotFound'
-// import Home from '../screens/Home'
+
 
 
 class App extends Component {
