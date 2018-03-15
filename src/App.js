@@ -1,30 +1,15 @@
 import React, { Component, Fragment } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import Navbar from './components/Navbar/Navbar'
-import Footer from '../src/components/Footer/Footer'
-import Videos from './containers/Videos'
+import Route from './services/Router'
+
+
 import Login from './containers/Login/Login'
-import Forum from './containers/Forum/Forum'
-import News from './containers/News'
-import Agenda from './containers/Agenda'
-// import NotFound from './containers/NotFound'
-
-
 
 class App extends Component {
 	render() {
 		return (
 			<Fragment>
-				<Navbar />
-				<Switch>
-					<Route exact path="/"  component={Login}/>
-					<Route path="/videos" component={Videos}  />
-					<Route path="/forum" component={Forum}  />
-					<Route path="/noticias" component={News} />
-					<Route path="/agenda" component={Agenda} />
-					{/* <Route path="*" component={NotFound}/> */}
-				</Switch>
-				<Footer/>
+				<Route path="/login"  component={Login}/>
+				
 			</Fragment>
 		)
 	}

@@ -3,7 +3,7 @@ import './SectionVideos.css'
 import ButtonSearch from '../ButtonSearch/ButtonSearch'
 import Category from '../Category/Category'
 import CardVideo from '../CardVideo/CardVideo'
-import imagemTeste from '../../assets/images/logo-sesi.png'
+// import imagemTeste from '../../assets/images/logo-sesi.png'
 import TitlePage from '../TitlePage/TitlePage'
 
 
@@ -14,7 +14,7 @@ const sectionVideos = () => (
 		<ButtonSearch/>
 		<TitlePage titlePage="Vídeos"/>
 		<Category name = "Natyyyyy"/>
-		<CardVideo name={imagemTeste} alt="tst" nomeCurso="Alimentação Saudável" />
+		<CardVideo alt="tst" nomeCurso="Alimentação Saudável" />
 	</section>
 
 )

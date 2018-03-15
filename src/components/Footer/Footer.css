@@ -5,7 +5,7 @@
 }
 
 .footer{
-    background-image: url(../../assets/images/footer-img.png);
+    background-image: url('/assets/images/footer-img.png');
     background-size: 100%;
     width:300px;
     height:240px;
