@@ -4,7 +4,10 @@ body {
   font-family: sans-serif;
 }
 
-/* @font-face {
+fotter{
+  clear: both;
+}
+@font-face {
   font-family: 'Gotham';
   src: url('/assets/fonts/Gotham_Condensed_Bold.otf');
- } */
+ }

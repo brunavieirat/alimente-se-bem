@@ -3,7 +3,7 @@ import FaBars from 'react-icons/lib/fa/bars'
 import FaUser from 'react-icons/lib/fa/user'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-import logo from '../../assets/images/Sesi-logo.png'
+import logo from './sesi-logo.png'
 import Menu , { menuItem } from '../Menu/Menu'
 import MdMoreVert from 'react-icons/lib/md/more-vert'
 

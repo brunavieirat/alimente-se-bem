@@ -4,6 +4,7 @@ import SectionVideos from '../components/SectionVideos/SectionVideos'
 
 
 
+
 export default class Videos extends Component {
 	// constructor(props){
 	// 	super(props)
@@ -19,6 +20,7 @@ export default class Videos extends Component {
 				{/* <PageTitle style={this.state.pageTitleColor} title="Videos"/> */}
 				{/* <TitlePage /> */}
 				<SectionVideos/>
+			
 			</section>
 
 		)

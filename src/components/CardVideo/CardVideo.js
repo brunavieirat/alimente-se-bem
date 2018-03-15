@@ -15,8 +15,8 @@ const CardVideo = (props) =>(
 	R$ 0,00
 	
 	</div>
-
 	</div>
+	
 	<div className="cardVideo-Video">
 	<iframe className="cardVideo-video" src="https://www.youtube.com/embed/XXf5JQs4c7g?modestbranding=1" frameborder="0" allow="autoplay"></iframe>
 	</div>

@@ -11,6 +11,7 @@ import Agenda from './containers/Agenda'
 
 
 
+
 class App extends Component {
 	render() {
 		return (
@@ -24,7 +25,7 @@ class App extends Component {
 					<Route path="/agenda" component={Agenda} />
 					{/* <Route path="*" component={NotFound}/> */}
 				</Switch>
-				<Footer/>
+				
 			</Fragment>
 		)
 	}

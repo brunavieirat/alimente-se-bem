@@ -1,10 +1,10 @@
 import React from 'react'
 import '../Footer/Footer.css'
 import Menu, { menuItem } from '../Menu/Menu'
-import FaFacebook from 'react-icons/lib/fa/facebook-official'
+// import FaFacebook from 'react-icons/lib/fa/facebook-official'
 
 
-const Footer = (props) => (
+const Footer = () => (
 
 	<div className="footer">
 		<div className="menu-footer">
