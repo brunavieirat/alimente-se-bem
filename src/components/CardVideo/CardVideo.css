@@ -6,6 +6,7 @@ font-weight: bold;
 margin: 5px;
 padding: 8px;
 
+
 }
 
 .cardVideo-title{
@@ -27,7 +28,24 @@ padding: 8px;
 
 .cardVideo-video{
     width: 100%;
-    height: 250px;
+    height: 300px;
+    
+}
+
+.cadVideo-content{
+    
+    /* float:left; */
+    font-family: "Gotham Condensad Bold";
+    display: inline-block;
+    width: 100%;
+        
+}
+
+.CardVideo-description{
+padding: 10px;
+text-align: justify;
+font-weight: normal;
+
 }
 
 

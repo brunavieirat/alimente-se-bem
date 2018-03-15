@@ -20,6 +20,7 @@ const sectionVideos = () => (
 		<TitlePage titlePage="Vídeos"/>
 		<Category name = "Natyyyyy"/> */}
 		{/* <CardVideo name={imagemTeste} alt="tst" nomeCurso="Alimentação Saudável" /> */}
+		
 		<CardVideo />
 		<CardVideo />
 		<CardVideo />
