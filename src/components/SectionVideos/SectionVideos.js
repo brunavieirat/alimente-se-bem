@@ -23,6 +23,7 @@ const sectionVideos = () => (
 		<CardVideo />
 		<CardVideo />
 		<CardVideo />
+		<CardVideo />
 		<Footer />
 	</section>	
 
