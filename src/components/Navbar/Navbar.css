@@ -4,13 +4,16 @@
     justify-content: flex-end;
     flex: 0 60px;
     min-height: 60px;
+    width: 100%;
     /* max-width: 50%; */
     padding: 0 calc(10% + 1rem);
-    position: relative;
+    position: fixed;
     background: #fff;
     /* border-bottom: 1px solid #d4dadf; */
-    box-shadow: 0 1px 1px 0 #f0f1f4;
+    box-shadow: 0 3px 15px 0 #C6C3C3;
     z-index: 20; 
+    border-top: 10px solid black #72388D;
+    
 }
 
 
@@ -37,15 +40,16 @@
 }
 
 .navbar-logo {
-    /* margin-left: -10% !important; */
+    margin-left: -30% !important;
     float: left;
+    position: fixed;
 }
 
 .logo{
 
-    width: 75px;
-    height: 40px;
-    margin-left: -20% !important;
+    width: 125px;
+    /* height: 40px; */
+      
 }
 
 
@@ -53,8 +57,8 @@
 
     font-size: 1.8em;
     color: #72398E;
-    padding: 0 0 0 125px;
-    
+    padding: 0 ;
+        
 }
 .navbar-menu-label{
     color: #72398E;
@@ -89,18 +93,20 @@
     background: #72398E;
 }
 
+.navbar-pages__login {
+    display: none;
+}
+
 .navbar-pages__link {
+    margin-top: 8px;
     cursor: pointer;
     color: #FFF;
     font-size: 1.2em !important;
     text-decoration: none;
     display: block;
-    margin-bottom: 1rem;
+   
 }
 
-.navbar-pages__link--sair {
-    display: flex;
-}
 
 .navbar-pages-link-icon {
     margin-right: 0.5rem;
@@ -111,17 +117,28 @@
         display: none;
         float: right;
     }
+    
+    
+    .navbar-pages__login-style{
+        font-size: 35px;
+        margin-top: 5px;
+    }
+
+    .navbar-logo {
+        margin-left: -65% !important;
+    }
+
     .logo{
-        width: 100px;
-        height: 50px;
-        margin-left: -30% !important;
+        width: 150px;
+        /* height: 50px; */
+       
     }
 
     .navbar > ul > li > a {
         color: #72398E;
         float:left;
         display: block;	
-        padding: 45px 7px 30px;
+        padding: 45px 10px 30px;
         font-size: "Gotham";
         font-weight: bold;
     }
@@ -142,17 +159,28 @@
         align-items: center;
         height: initial;
         width: initial;
-        padding: 0;
+        padding: 0 !important;
+        margin-left: 55px !important;
+
         background: initial;
         /* margin-left: 30%; */
     }
 
     .navbar-pages__link {
-        color: #72398E;
+        
         font-size: 1rem;
         display: inline;
-        padding: 0 1rem;
+        /* padding:  7rem; */
         margin: 0;
+        font-weight: bold;
+    }
+
+    .navbar-pages__login {
+        color: #72388D;
+        font-size: 1rem;
+        display: inline;
+        padding: 0 0.2rem;
+        margin-top: 12px;
         font-weight: bold;
     }
 }
@@ -167,9 +195,17 @@
     }
 
     .logo{
-        width: 115px;
-        height: 60px;
-        margin-left: -350% !important;
-    }
+        width: 155px;
+        /* height: 60px; */
+      }
     
+      .navbar-logo {
+        margin-left: -65% !important;
+    }
+      
+    .navbar > ul > li > a {
+       
+        padding: 45px 20px 30px;
+        
+    }
 }

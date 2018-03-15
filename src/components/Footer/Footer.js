@@ -4,7 +4,7 @@ import Menu, { menuItem } from '../Menu/Menu'
 import FaFacebook from 'react-icons/lib/fa/facebook-official'
 
 
-const Footer = () => (
+const Footer = (props) => (
 
 	<div className="footer">
 		<div className="menu-footer">
@@ -12,15 +12,13 @@ const Footer = () => (
 				<Menu menuItem={menuItem} />
 			</ul>
 		</div>
-		<div className="sesi-footer">
-			<div>
-                    SESI@2018 
-			</div>
 
-			<div>
-                    -Todos os direitos reservados - 
-			</div>
-			<div> <FaFacebook/> </div>
+		<div className="sesi-footer">	
+                   
+			
+                    -  Todos os direitos reservados - 
+			
+			{/* <div> <FaFacebook/> </div> */}
 		</div>
 
 	</div>
