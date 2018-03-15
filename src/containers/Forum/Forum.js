@@ -3,9 +3,9 @@ import PageTitle from '../../components/PageTitle/PageTitle'
 import CardButton from '../../components/CardButton/CardButton'
 import bgImage from '../../assets/images/image-05.jpeg'
 import './Forum.css'
+import axios from 'axios'
 
-
-export default class Forum extends Component {
+class Forum extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
@@ -18,19 +18,50 @@ export default class Forum extends Component {
 				backgroundSize: 'cover',
 				backgroundImage: `url(${bgImage})`,
 				height: '800px',
-			}
+			},
+			data: []
 			
 		}
 	}
 	render(){
+
+		// const ax = axios.create({
+		// 	baseURL: 'http://localhost:3000'
+		//   })
+
+		// fetch('http://localhost:3000/assets/fakejsons/eventos.json').then(function(response) { 
+		// 	// Convert to JSON
+		// 	return response.json()
+		// }).then(function(j) {
+		// 	// Yay, `j` is a JavaScript object
+		// 	console.log(j)
+		// })
+
+
+
+		// fetch('http://localhost:3000/assets/fakejsons/forum.json')
+		// .then( response => response.json() 
+		// .then(json => {
+		// 	console.log(json)
+		// }))
 		
+		// ax.get('/assets/fakejsons/forum.json')
+		// .then(
+		// 	response => (data) = response
+		// ).catch(
+		// 	e => console.log('Esse eh o erro ' +  e)
+		// )
+		// console.log(data)
+
 		return(
 			<Fragment>
-				<section style={this.state.sectionStyle} className="forum-section">
+				<section className="forum-section">
 					<PageTitle style={this.state.pageTitleColor} title="Forum" />
-					<CardButton />
+					<CardButton title="Categoria X" />
 				</section>
 			</Fragment>
 		)
 	}
 }
+
+export default Forum
