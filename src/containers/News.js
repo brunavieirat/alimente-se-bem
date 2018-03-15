@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react'
-import PageTitle from '../components/PageTitle/PageTitle'
+
 
 export default class News extends Component {
 	constructor(props){
@@ -14,7 +14,7 @@ export default class News extends Component {
 	render(){
 		return(
 			<Fragment>
-				<PageTitle style={this.state.pageTitleColor} title="Notícias" />
+				{/* <PageTitle style={this.state.pageTitleColor} title="Notícias" /> */}
 			</Fragment>
 		)
 	}

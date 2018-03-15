@@ -7,15 +7,19 @@ import imagemTeste from '../../assets/images/logo-sesi.png'
 import TitlePage from '../TitlePage/TitlePage'
 
 
+
 const sectionVideos = () => (
-	<section className="section-cursos">
-	<div className="sectionVideos-background">
-	</div>
-		<ButtonSearch/>
+	<section className="sectionVideos">
+	{/* <TitlePage titlePage="Vídeos" /> */}
+
+	{/* <div className="sectionVideos-background">
+	</div> */}
+		{/* <ButtonSearch/>
 		<TitlePage titlePage="Vídeos"/>
-		<Category name = "Natyyyyy"/>
-		<CardVideo name={imagemTeste} alt="tst" nomeCurso="Alimentação Saudável" />
-	</section>
+		<Category name = "Natyyyyy"/> */}
+		{/* <CardVideo name={imagemTeste} alt="tst" nomeCurso="Alimentação Saudável" /> */}
+		<CardVideo />
+	</section>	
 
 )
     

@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.3.0",
-    "material-ui": "^1.0.0-beta.36",
+    "material-ui": "^1.0.0-beta.37",
     "react": "^16.2.0",
     "react-calendar": "^2.13.2",
     "react-dom": "^16.2.0",

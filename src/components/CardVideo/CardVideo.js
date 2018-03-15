@@ -3,13 +3,23 @@ import './CardVideo.css'
 
 
 const CardVideo = (props) =>(
-	<div className="div-CardCurso">
-		<div className="cardCurso-img">
-			<img src={props.name} alt={props.alt}/>
-		</div>
-		<div className="cardCuso-title">
-			{props.nomeCurso}
-		</div>
+	<div className="cardVideo">
+	<div className="cadVideo-content">
+	<div className="cardVideo-title">
+	RECEITA SANDUICHE 
+	</div>
+	<div className="cardVideo-inf">
+	<a href="#"></a> 
+	</div>
+	<div className="cardVideo-price">
+	R$ 0,00
+	
+	</div>
+
+	</div>
+	<div className="cardVideo-Video">
+	<iframe className="cardVideo-video" src="https://www.youtube.com/embed/XXf5JQs4c7g?modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+	</div>
 	</div>
 		
 )

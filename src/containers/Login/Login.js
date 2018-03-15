@@ -70,17 +70,17 @@ class Login extends Component {
 
 		return (
 
-			<div className="row body">
-				<div className="medium-12 columns">
-					<div className="medium-12 columns">
-						<h2 id="welcomeText"></h2>
+			// <div className="row body">
+			// 	<div className="medium-12 columns">
+			// 		<div className="medium-12 columns">
+			// 			<h2 id="welcomeText"></h2>
 
-						<FacebookLogin
+						{/* <FacebookLogin
 							appId="377964399342322"
 							autoLoad={false}
 							fields="name,email,picture"
 							callback={responseFacebook}/>
-						<br/><br/>
+						<br/><br/> 
 
 						{/* <GoogleLogin
 							clientId="505937548041-u6m5rdom3kcrfuo1m1ob3fh3gfbqjo2a.apps.googleusercontent.com"
@@ -88,9 +88,9 @@ class Login extends Component {
 							onSuccess={responseGoogle}
 							onFailure={responseGoogle}/> */}
 
-					</div>
-				</div>
-			</div>
+			// 		</div>
+			// 	</div>
+			// </div>
 		)
 	}
 }

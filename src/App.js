@@ -17,7 +17,7 @@ class App extends Component {
 			<Fragment>
 				<Navbar />
 				<Switch>
-					<Route exact path="/"  component={Login}/>
+					{/* <Route exact path="/"  component={}/> */}
 					<Route path="/videos" component={Videos}  />
 					<Route path="/forum" component={Forum}  />
 					<Route path="/noticias" component={News} />
