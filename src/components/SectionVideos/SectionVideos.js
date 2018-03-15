@@ -9,8 +9,8 @@ import TitlePage from '../TitlePage/TitlePage'
 
 const sectionVideos = () => (
 	<section className="section-cursos">
-	<div className="sectionVideos-background">
-	</div>
+		<div className="sectionVideos-background">
+		</div>
 		<ButtonSearch/>
 		<TitlePage titlePage="Vídeos"/>
 		<Category name = "Natyyyyy"/>

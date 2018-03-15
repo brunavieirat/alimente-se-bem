@@ -3,7 +3,7 @@ import PageTitle from '../../components/PageTitle/PageTitle'
 import CardButton from '../../components/CardButton/CardButton'
 import bgImage from './image-05.jpeg'
 import './Forum.css'
-import axios from 'axios'
+// import axios from 'axios'
 
 class Forum extends Component {
 	constructor(props){
