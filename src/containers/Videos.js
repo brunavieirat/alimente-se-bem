@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import SectionVideos from '../components/SectionVideos/SectionVideos'
-import PageTitle from '../components/PageTitle/PageTitle'
 
 
 
@@ -16,7 +15,7 @@ export default class Videos extends Component {
 	render(){
 		return(
 			<section>
-				<PageTitle style={this.state.pageTitleColor} title="Videos"/>
+				{/* <PageTitle style={this.state.pageTitleColor} title="Videos"/> */}
 				<SectionVideos/>
 			</section>
 

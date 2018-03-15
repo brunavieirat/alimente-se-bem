@@ -3,8 +3,9 @@ import FaBars from 'react-icons/lib/fa/bars'
 import FaUser from 'react-icons/lib/fa/user'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-import logo from '../../assets/images/logo-sesi.png'
+import logo from '../../assets/images/Sesi-logo.png'
 import Menu , { menuItem } from '../Menu/Menu'
+import MdMoreVert from 'react-icons/lib/md/more-vert'
 
 
 const navbar = () => (
@@ -16,9 +17,10 @@ const navbar = () => (
 		<ul className="navbar-pages">
 			<Menu className="navbar-pages__link" menuItem={menuItem} />
 		</ul>
-		<div className="navbar-pages__link">| </div> 
+		<div className="navbar-pages__login"> <MdMoreVert className="navbar-pages__login-style"/></div> 
              
-		<div className="navbar-pages__link">
+		<div className="navbar-pages__login">
+		
 			<FaUser/>
 		</div>
 	</nav>
