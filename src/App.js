@@ -1,14 +1,10 @@
 import React, { Component, Fragment } from 'react'
 
-// import { Route }  from 'react-router-dom'
-// import Login from './containers/Login/Login'
-// import Routes from './services/Routes'
-
 import { Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Footer from '../src/components/Footer/Footer'
 import Videos from './containers/Videos'
-import Login from './containers/Login/Login'
+// import Login from './containers/Login/Login'
 import Forum from './containers/Forum/Forum'
 import News from './containers/News'
 import Agenda from './containers/Agenda'
