@@ -1,53 +1,72 @@
+.cardVideo{  
+    background-color: #72398E;
+    color: white;
+width: 97%;
+font-weight: bold;
+margin: 5px;
+padding: 8px;
 
-.div-CardCurso{
-    width: 43.5%;
-    height: 130px;
+
+}
+
+.cardVideo-title{
     float: left;
+    font-size: 1.4em;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin: 5px;
+    font-size: 1em;
+    
+
+}
+.cardVideo-price{
+    float: right;
+    margin: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cardVideo-video{
+    width: 100%;
+    height: 300px;
+    
+}
+
+.cadVideo-content{
+    
+    /* float:left; */
+    font-family: "Gotham Condensad Bold";
+    display: inline-block;
+    width: 100%;
         
 }
 
+.CardVideo-description{
+padding: 10px;
+text-align: justify;
+font-weight: normal;
 
-.cardCurso-img{
-    border: 1px solid transparent;
-    border-radius: 5%;
-    height: 110px;
-    background-color: #BEBEBE;
+}
+
+
+@media (min-width: 768px){
+.cardVideo{    
     
+    width: 400px;
+    height: 170px;
+    /* border: 2px solid gray; */
+    margin: 3px;    
 }
 
-.cardCuso-title{
-    background-color: #ADCA1E;
-    /*height: 20px;*/
-    text-align: center;
-    text-transform: uppercase;
-    color:white;
-    font-family: Gotham;
-    border: 1px solid transparent;
-    border-radius: 8%;
-    margin-top:-10px;
-    padding: 2px;
-    
+.cardVideo-video{
+    float: right;
 }
 
-
-@media (min-width: 768px) {
-
-    .div-CardCurso{
-    width: 24.7%;
-    /*height: 10%;*/
-    float: left;
-    margin: 1px;    
+.cadVideo-content{
+    width: 142px;
+    float:left;
+    font-family: "Gotham Condensad Bold";
+        
 }
 
-}
-
-
-@media (min-width: 1024px) {
-
-    
-.div-CardCurso{
-    width: 19.76%;
-    float: left;
-    margin: 1px;    
-}
 }

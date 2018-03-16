@@ -7,12 +7,12 @@
 .footer{
     background-image: url('/assets/images/footer-img.png');
     background-size: 100%;
-    width:300px;
-    height:240px;
-    position:absolute;
-    opacity: 0.9;
-    bottom:0;
     width: 100%;
+    height:240px;
+    position:relative;
+    
+    bottom:0;
+    
     box-shadow: 0 3px 15px 3px #4d4d4d;
 
 }
@@ -21,7 +21,7 @@
 .sesi-footer{
     padding:0;
     width: 90%;
-    margin: 0 auto;
+    margin: -30px auto;
     text-align: center;
     display: flex;
     color: white;
@@ -55,10 +55,11 @@ ul{
 
 .footer{
        background-image: none;
-        background-color: #C6C3C3;
+        background-color: #808080;
         color: white !important;
         position:absolute;
         bottom:0;
+        opacity: 1;
         width: 100%;
         height: 100px;
         box-shadow: 0 3px 15px 3px #4d4d4d;
@@ -78,4 +79,8 @@ ul{
 
 }
 
+
+.sesi-footer{
+    margin: -25px auto;
+}
 }
