@@ -7,6 +7,8 @@ const CardVideo = (props) =>(
 		<div className="cardCurso-img">
 			<img src={props.name} alt={props.alt}/>
 		</div>
+
+		
 		<div className="cardCuso-title">
 			{props.nomeCurso}
 		</div>
