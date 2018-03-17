@@ -2,10 +2,10 @@
     background-color: #72398E;
     color: white;
 width: 97%;
-height: auto + 12em;
+
 font-weight: bold;
 margin: 5px;
-padding: 8px;
+padding: 8px 8px 35px 8px;
 
 
 }
@@ -46,7 +46,11 @@ padding: 8px;
 padding: 5px 10px;
 text-align: justify;
 font-weight: normal;
+/* white-space: pre-line;  */
 
+height: 70px;    
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 .cardVideo-info{
@@ -54,7 +58,6 @@ font-weight: normal;
     float: right;
     padding: 0 5px;
     border-radius: 5px;
-    margin-top: -15px;
     margin-bottom: 10px;
 }
 
@@ -67,10 +70,12 @@ font-weight: normal;
 
 @media (min-width: 768px){
 .cardVideo{    
-    width: 45%;
+    width: 49.3%;
     margin: 3px;
+    float: left;
     background-color: white;
     color: black;
+    padding: 8px;
 }
 
 .cardVideo-video{
@@ -78,10 +83,17 @@ font-weight: normal;
 }
 
 .cadVideo-content{
-    width: 142px;
-    float:left;
+    /* width: 142px;s */
+    /*float:left;*/
+    
     font-family: "Gotham Condensad Bold";
       }
+
+.cardVideo-info{
+    margin: 20px 0;
+    padding: 5px;
+    font-size: 1.2em;
+}
 
 
 
@@ -91,14 +103,14 @@ font-weight: normal;
 
     .cardVideo{    
             
-            width: 30%;
-            height: 35%; 
+            width: 32.89%;
+            height: 30%; 
             background-color: white;
             color: black;
              /* border: 2px solid gray; */
             margin: 3px;
             padding: 0;    
-            box-shadow: 0 3px 10px 0 black;
+            box-shadow: 0 3px 5px 0 black;
         }
         
        
@@ -117,7 +129,8 @@ font-weight: normal;
     .cardVideo-description{
         float: left;
         width: 40%;
-        font-size: 0.6em;
+        font-size: 0.7em;
+        height: 90px;
         
     }
 
@@ -129,4 +142,9 @@ font-weight: normal;
         /* font-family: "Gotham Condensad Bold"; */
           }
 
+          .cardVideo-info{
+            margin: 10px;
+            padding: 3px;
+            font-size: 0.8em;
+        }
 }

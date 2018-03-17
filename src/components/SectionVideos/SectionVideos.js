@@ -22,9 +22,9 @@ const sectionVideos = () => (
 		{/* <CardVideo name={imagemTeste} alt="tst" nomeCurso="Alimentação Saudável" /> */}
 		
 		<CardVideo />
-		{/* <CardVideo />
+		 <CardVideo />
 		<CardVideo />
-		<CardVideo /> */}
+		<CardVideo /> 
 		
 		{/* <Footer /> */}
 	</section>	
