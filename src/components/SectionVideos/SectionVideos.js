@@ -6,25 +6,18 @@ import CardVideo from '../CardVideo/CardVideo'
 // import imagemTeste from '../../assets/images/logo-sesi.png'
 import TitlePage from '../TitlePage/TitlePage'
 import Footer from '../Footer/Footer'
-
+import CardVideoOpen from '../CardVideo/CardVideoOpen'
 
 
 const sectionVideos = () => (
 
 	<section className="sectionVideos">
-	{/* <TitlePage titlePage="Vídeos" /> */}
-
-	{/* <div className="sectionVideos-background">
-	</div> */}
-		{/* <ButtonSearch/>
-		<TitlePage titlePage="Vídeos"/>
-		<Category name = "Natyyyyy"/> */}
-		{/* <CardVideo name={imagemTeste} alt="tst" nomeCurso="Alimentação Saudável" /> */}
-		
+	
+		<CardVideoOpen/>	
+		<CardVideo onClick = "teste()"/>
+		 {/* <CardVideo />
 		<CardVideo />
-		 <CardVideo />
-		<CardVideo />
-		<CardVideo /> 
+		<CardVideo />  */}
 		
 		{/* <Footer /> */}
 	</section>	
