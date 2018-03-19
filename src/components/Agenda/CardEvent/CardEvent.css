@@ -53,10 +53,13 @@
     color: white;
 }
 
-.cardVideo-info{
-    border: 1x solid white !important;
-    margin-top: -5px;
+.cardVideo-info-secundary{
+    background-color: #B0CF52;
+    border: 1px solid white;
+    float: right;
+    padding: 0 5px;
+    border-radius: 5px;
+    margin: 0;
     padding: 3px;
-    font-size: 0.8em;
-    
+    font-size: 0.6em;
 }

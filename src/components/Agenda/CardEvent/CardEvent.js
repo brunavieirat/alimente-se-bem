@@ -23,7 +23,7 @@ const CardEvent = (props) =>(
 	<p> SESI Santos </p>
 	</div>
 
-	<div className="cardVideo-info">
+	<div className="cardVideo-info-secundary">
 	<a href="#"> Mais Informações </a>
 	</div>
 
