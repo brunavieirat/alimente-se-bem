@@ -1,14 +1,12 @@
 import React, { Component, Fragment } from 'react'
-import DoLogin from '../../services/DoLogin'
-import Routes from '../../services/Routes'
+// import DoLogin from '../../services/DoLogin'
+// import Routes from '../../services/Routes'
+// import {history} from 'react-router-dom'
 
 
-function DoTryLogin(props){
-	if(props.isLogged){
-		return <DoLogin />
-	}
-	return <Routes /> 
-}
+
+
+
 
 class Login extends Component{
 	// componentWillMount(){
@@ -24,7 +22,7 @@ class Login extends Component{
 	render(){
 		return(
 			<Fragment>
-				<DoTryLogin isLogged={localStorage.getItem('isLogged')} />
+				{/* <DoTryLogin isLogged={false} /> */}
 			</Fragment>
 		)
 	}
