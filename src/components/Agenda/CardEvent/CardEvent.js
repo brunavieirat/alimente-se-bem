@@ -1,19 +1,34 @@
 import React from 'react'
 import './CardEvent.css'
 
+import { Card } from 'antd'
+import 'antd/lib/card/style/css'
+import sucos from './sucos.jpg'
 
+
+  
 const CardEvent = (props) =>(
-	<div className="cardEvent">
-		<div className="cardEvent-image">
-			<img src={props.name} alt={props.alt}/>
-		</div>
-		<div >
-			{props.event}
-            {props.date}
-            {props.place}
+	<Card
+	className="cardEvent"
+    cover={<img alt="example" src={sucos} />}
+    >
 
-		</div>
+	<div className="cardEvent-date">
+	<p> 24 <br />MAR </p>
 	</div>
+	<div className="cardEvent-title">
+	<p> SUCOS DETOX </p>
+	</div>
+	<div className="cardEvent-place">
+	<p> SESI Santos </p>
+	</div>
+
+	<div className="cardVideo-info">
+	<a href="#"> Mais Informações </a>
+	</div>
+
+    
+  </Card>
 		
 )
 
