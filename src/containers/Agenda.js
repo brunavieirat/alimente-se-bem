@@ -23,6 +23,7 @@ export default class Agenda extends Component {
 				<PageTitle style={this.state.pageTitleColor} title="Agenda" />,
 				<Teste />
 				<Evento />
+				<Evento />
 				<CardEventOpen />
 			</Fragment>
 		)

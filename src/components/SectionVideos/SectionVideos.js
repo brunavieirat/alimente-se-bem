@@ -15,11 +15,11 @@ const sectionVideos = () => (
 	
 		<CardVideoOpen/>	
 		<CardVideo onClick = "teste()"/>
-		 {/* <CardVideo />
+		  <CardVideo />
 		<CardVideo />
-		<CardVideo />  */}
+		<CardVideo />  
 		
-		{/* <Footer /> */}
+		 <Footer /> 
 	</section>	
 
 
