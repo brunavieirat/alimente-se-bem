@@ -24,7 +24,9 @@ export default class Agenda extends Component {
 				<Teste />
 				<Evento />
 				<Evento />
-				<CardEventOpen />
+				<CardEventOpen
+					title="dgtrhtrhrt"
+				/>
 			</Fragment>
 		)
 	}

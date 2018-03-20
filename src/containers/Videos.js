@@ -1,9 +1,15 @@
 import React, {Component} from 'react'
+import { Route } from 'react-router-dom'
 import SectionVideos from '../components/SectionVideos/SectionVideos'
+import CardVideoOpen from '../components/CardVideo/CardVideoOpen'
+
 // import TitlePage from '../components/TitlePage/TitlePage'
 
 
 
+const VideoPlayer = () => (
+	<h1>Teste</h1>
+);
 
 export default class Videos extends Component {
 	// constructor(props){
@@ -19,6 +25,7 @@ export default class Videos extends Component {
 			<section>
 				{/* <PageTitle style={this.state.pageTitleColor} title="Videos"/> */}
 				{/* <TitlePage /> */}
+				<Route path="/videos/:id" component={CardVideoOpen}  />
 				<SectionVideos/>
 			
 			</section>
