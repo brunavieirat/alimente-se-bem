@@ -7,8 +7,8 @@
 .cardEvent{
     margin: 20px !important;    
     float: left;
-    width: 18%;
-    height: 240px;
+    width: 16%;
+    height: 250px;
     
    
 }
@@ -41,15 +41,17 @@
 
 .cardEvent-title{
     margin-left: 55px;
-    font-size: 1.2em;
+    font-size: 0.9em;
+    text-align: justify;
     font-weight: bold;
     color: white;
 }
 
 .cardEvent-place{
     float: left;
-    margin-top:-20px;
+    margin-top:-10px;
     margin-left: 5px;
+    font-size: 0.7em;
     color: white;
 }
 
@@ -62,4 +64,28 @@
     margin: 0;
     padding: 3px;
     font-size: 0.6em;
+    
 }
+
+.modal-img{
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.modal{
+
+    /* margin: 0;
+    background-color: red; */
+}
+
+.ant-modal{
+    width: 750px !important;  
+    top: 40px !important;
+}
+
+.ant-modal-content{
+    width: 750px;    
+   
+}
+  

@@ -18,11 +18,16 @@ export default class Agenda extends Component {
 	}
     
 	render(){
+		let now = new Date
 		return(
+			
 			<Fragment>
-				<PageTitle style={this.state.pageTitleColor} title="Agenda" />,
+				<PageTitle style={this.state.pageTitleColor} title="Agenda" />
 				<Teste />
-				<Evento />
+				<Evento 
+				title="SUCOS COM CASCAS" 
+				date={now.getDate()}
+				place="SESI SANTOS"/>
 				<Evento />
 				<CardEventOpen
 					title="dgtrhtrhrt"

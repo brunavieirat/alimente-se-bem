@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 import { Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
-import Footer from '../src/components/Footer/Footer'
+// import Footer from '../src/components/Footer/Footer'
 import Videos from './containers/Videos'
 import Login from './containers/Login/Login'
 import Forum from './containers/Forum/Forum'
