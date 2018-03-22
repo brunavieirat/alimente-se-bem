@@ -41,8 +41,8 @@ class CardEvent extends React.Component {
 					cover={<img alt="example" src={sucos} />}
 				>
 					<div className="cardEvent-date">
-						<p> 24 <br />
-						    MAR </p>
+						<p> {this.props.dateday}24 <br />
+						    {this.props.datemonth}MAR </p>
 					</div>
 					<div className="cardEvent-title">
 						<p> {this.props.title} </p>
