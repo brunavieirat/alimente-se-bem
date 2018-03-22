@@ -88,4 +88,8 @@
     width: 750px;    
    
 }
+
+.cardEvent-date{
+    text-transform: uppercase;
+}
   

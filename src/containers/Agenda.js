@@ -4,6 +4,7 @@ import getFromAPI from '../services/APIServices';
 // import AgendaCalendar from '../components/Agenda/Calendar/Calendar'
 import Calendario from '../components/Agenda/Calendar/Calendar'
 import Evento from '../components/Agenda/CardEvent/CardEvent'
+import moment from 'moment'
 
 
 
@@ -34,8 +35,8 @@ export default class Agenda extends Component {
 				<Evento
 					key={event.id}
 					title={event.titulo}
-					dateday={event.data_Evento.format('DD')}
-					datemonth={event.data_Evento}
+					dateday={moment(event.data_Evento).format('DD')}
+					datemonth={moment(event.data_Evento).format('MMM')}
 					place={event.unidades_Sesi.nome}
 				/>
 			);
@@ -43,7 +44,7 @@ export default class Agenda extends Component {
 	}
 
 	render() {
-		let now = new Date()
+		
 		return (
 			<Fragment>
 				<PageTitle style={this.state.pageTitleColor} title="Agenda" />

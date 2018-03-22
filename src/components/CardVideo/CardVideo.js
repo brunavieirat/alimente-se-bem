@@ -15,26 +15,31 @@ const CardVideo = (props) =>(
 <div className="cardVideo">
 	<div className="cardVideo-content">
 	<div className="cardVideo-title">
-	RECEITA SANDUICHE 
+	{props.title}	
 
 	</div>
 	<div className="cardVideo-inf">
 	<a href="#"></a> 
 	</div>
 	<div className="cardVideo-price">
-	R$ 0,00
+	{props.price}
 	</div>
 	
 		
 	</div>
 	
 	<div className="cardVideo-videoG">
-	<iframe className="cardVideo-video" src="https://www.youtube.com/embed/XXf5JQs4c7g?modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+	<iframe 
+	className="cardVideo-video"
+	src={props.url} 
+	frameborder="0" 
+	allow="autoplay">
+	</iframe>
 	</div>
 
 	<div className="cardVideo-description">
 	<p>
-	Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet, consectetur adipiscing elit. Squirtle Lorem ipsum dolor sit amet, consectetu
+	{props.description}
 	</p>
 	</div>
 

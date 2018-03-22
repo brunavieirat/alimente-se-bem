@@ -25,6 +25,7 @@ export default class Videos extends Component {
 			<section>
 				{/* <PageTitle style={this.state.pageTitleColor} title="Videos"/> */}
 				{/* <TitlePage /> */}
+				
 				<Route path="/videos/:id" component={CardVideoOpen}  />
 				<SectionVideos/>
 			
