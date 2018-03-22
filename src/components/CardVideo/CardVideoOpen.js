@@ -4,16 +4,6 @@ import './CardVideoOpen.css'
 
 const CardVideoOpen = (props) => (
 
-	// <div className="div-CardCurso">
-	// 	<div className="cardCurso-img">
-	// 		<img src={props.name} alt={props.alt}/>
-	// 	</div>
-
-
-	// 	<div className="cardCuso-title">
-	// 		{props.nomeCurso}
-
-
 	<div className="cardVideo-open">
 		<div className="cardVideo-content-open">
 			<div className="cardVideo-title-open">
@@ -21,7 +11,7 @@ const CardVideoOpen = (props) => (
 
 			</div>
 			<div className="cardVideo-inf-open">
-				<a href="#"></a>
+				<a href={props.link}></a>
 			</div>
 			<div className="cardVideo-price-open">
 				{props.price}
@@ -31,7 +21,10 @@ const CardVideoOpen = (props) => (
 		</div>
 
 		<div className="cardVideo-videoG-open">
-			<iframe className="cardVideo-video-open" src="https://www.youtube.com/embed/XXf5JQs4c7g?modestbranding=1" frameborder="0" allow="autoplay"></iframe>
+			<iframe className="cardVideo-video-open"
+				src="https://www.youtube.com/embed/XXf5JQs4c7g?modestbranding=1"
+				frameborder="0"
+				allow="autoplay"></iframe>
 		</div>
 
 		<div className="cardVideo-description-open">
