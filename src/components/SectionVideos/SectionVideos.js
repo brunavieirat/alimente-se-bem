@@ -11,40 +11,59 @@ import getFromAPI from '../../services/APIServices'
 
 export default class SectionVideos extends Component {
 
-	// state = {
-	// 	// pageTitleColor: {
-	// 	// 	background: '#E74D57',
-	// 	// },
-	// 	events: []
+	state = {
+		// pageTitleColor: {
+		// 	background: '#E74D57',
+		// },
+		events: []
 
-	// }
+	}
 
-	// componentWillMount(){
-	// 	getFromAPI('/Videos').then(res => {
+	componentWillMount(){
+		getFromAPI('/Videos').then(res => {
+			this.setState({
+				events: res.data
+			})
+		})
+	}
 
-	// 	}
-	// }
-
-	render(){
+	renderEvents(){
 
 
-return (
-<section className="sectionVideos">
-	
+return this.state.events.map((event) => {
+
+return (	
 			
 		<CardVideo 
+		title={event.titulo}
+		price={event.valor}
+		description={event.descricao}
+		url={event.url}
+		/>
+	
+)
+
+		})
+
+		}
+	
+		render(){
+
+			return(
+
+				<section className="sectionVideos">
+		
+			{this.renderEvents()}
+		{/* <CardVideo 
 		title="Teste"
 		price="0.00"
 		description="fdgdgdfgdfg"
 		url="https://www.youtube.com/embed/XXf5JQs4c7g?modestbranding=1"
-		/>
+		/> */}
 		  
 {/*		
 		 <Footer /> */}
 	</section>	
-)
-
+			)
 		}
-
-		}
-    
+	}

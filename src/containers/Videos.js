@@ -7,9 +7,7 @@ import CardVideoOpen from '../components/CardVideo/CardVideoOpen'
 
 
 
-const VideoPlayer = () => (
-	<h1>Teste</h1>
-);
+
 
 export default class Videos extends Component {
 	// constructor(props){
@@ -25,7 +23,7 @@ export default class Videos extends Component {
 			<section>
 				{/* <PageTitle style={this.state.pageTitleColor} title="Videos"/> */}
 				{/* <TitlePage /> */}
-				
+
 				<Route path="/videos/:id" component={CardVideoOpen}  />
 				<SectionVideos/>
 			
