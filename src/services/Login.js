@@ -5,7 +5,7 @@ import {PostData} from './PostData'
 import {Redirect} from 'react-router-dom'
 // import './Welcome.css'
 
-class DoLogin extends Component {
+class Login extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -95,4 +95,4 @@ class DoLogin extends Component {
 	}
 }
 
-export default DoLogin
+export default Login

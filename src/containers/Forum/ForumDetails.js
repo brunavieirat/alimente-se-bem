@@ -16,18 +16,8 @@ class Forum extends Component {
 		}
 	}
 	render(){
-		return(
-			<Fragment>
-				<section className="forum-section">
-					<PageTitle style={this.state.pageTitleColor} title="Forum" />
-					<CardButton title="Categoria X" />
-				</section>
-			</Fragment>
-		)
-	}
-}
 
-// const ax = axios.create({
+		// const ax = axios.create({
 		// 	baseURL: 'http://localhost:3000'
 		//   })
 
@@ -54,5 +44,16 @@ class Forum extends Component {
 		// 	e => console.log('Esse eh o erro ' +  e)
 		// )
 		// console.log(data)
+
+		return(
+			<Fragment>
+				<section className="forum-section">
+					<PageTitle style={this.state.pageTitleColor} title="Forum" />
+					<CardButton title="Categoria X" />
+				</section>
+			</Fragment>
+		)
+	}
+}
 
 export default Forum

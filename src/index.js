@@ -4,7 +4,7 @@ import './index.css'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker'
-import DoLogin from './services/DoLogin'
+import Login from './services/Login'
 
 
 const isLogged = true
@@ -12,9 +12,7 @@ const isLogged = true
 
 ReactDOM.render(
 	<BrowserRouter>
-		{isLogged ? <App />  : <DoLogin/>}
-		
-		
+		{isLogged ? <App />  : <Login/>}
 	</BrowserRouter>,
 	document.getElementById('root'))
 registerServiceWorker()
