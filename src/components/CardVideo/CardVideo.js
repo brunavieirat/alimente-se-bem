@@ -18,9 +18,7 @@ const CardVideo = (props) => (
 				{props.title}
 
 			</div>
-			<div className="cardVideo-inf">
-				<a href="#"></a>
-			</div>
+			
 			<div className="cardVideo-price">
 				{props.price}
 			</div>
