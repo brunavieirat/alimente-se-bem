@@ -2,9 +2,9 @@ import React, { Component, Fragment } from 'react'
 
 import { Route, Switch } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
-import Footer from '../src/components/Footer/Footer'
+// import Footer from '../src/components/Footer/Footer'
 import Videos from './containers/Videos'
-import Login from './containers/Login/Login'
+// import Login from './containers/Login/Login'
 import Forum from './containers/Forum/Forum'
 import News from './containers/News'
 import Agenda from './containers/Agenda'
@@ -16,7 +16,7 @@ class App extends Component {
 		return (
 			<Fragment>
 
-				<Route path="/login"  component={Login}/>
+				{/*<Route path="/login"  component={Login}/>*/}
 				{/* <Routes /> */}
 
 				<Navbar />

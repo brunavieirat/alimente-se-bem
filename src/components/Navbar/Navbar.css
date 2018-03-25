@@ -7,7 +7,7 @@
     width: 100%;
     /* max-width: 50%; */
     padding: 0 calc(10% + 1rem);
-    position: fixed;
+    /* position: fixed; */
     background: #fff;
     /* border-bottom: 1px solid #d4dadf; */
     box-shadow: 0 3px 15px 0 #C6C3C3;
@@ -42,7 +42,7 @@
 .navbar-logo {
     margin-left: -30% !important;
     float: left;
-    position: fixed;
+    /* position: fixed; */
 }
 
 .logo{

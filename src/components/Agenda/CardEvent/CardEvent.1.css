@@ -1,0 +1,10 @@
+.cardEvent{
+
+    width: 35%;
+}
+
+.cardEvent-image{
+
+    height: 200px;
+    background-color: black;
+}
