@@ -9,25 +9,6 @@ import CardVideo from '../CardVideo/CardVideo'
 // import CardVideoOpen from '../CardVideo/CardVideoOpen'
 import getFromAPI from '../../services/APIServices'
 
-<<<<<<< HEAD
-function teste  () {
-alert('ooi')
-	// <CardVideoOpen />
-}
-
-const sectionVideos = (props) => (
-
-	<section className="sectionVideos">
-	
-		{/* <CardVideoOpen/>	 */}
-		<CardVideo onClick = "teste()"/>
-		 {/* <CardVideo />
-		<CardVideo />
-		<CardVideo />  */}
-		
-		{/* <Footer /> */}
-	</section>	
-=======
 export default class SectionVideos extends Component {
 
 	state = {
@@ -45,7 +26,6 @@ export default class SectionVideos extends Component {
 			})
 		})
 	}
->>>>>>> 7bde8b13103fcf0ea41fddd206e102d3e5b14a37
 
 	renderEvents(){
 
