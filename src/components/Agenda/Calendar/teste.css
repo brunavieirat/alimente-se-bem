@@ -4,4 +4,6 @@ width: 400px;
 border: 1px solid #d9d9d9 ;
 border-radius:  4px;
 display: inline-block;
+float: left;
+
 }

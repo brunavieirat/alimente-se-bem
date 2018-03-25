@@ -39,7 +39,7 @@ const CardVideo = (props) =>(
 	</div>
 
 <div className="cardVideo-info">
-	<a href="#"> Mais Informações </a>
+	<a href="#"  onClick={props.teste}> Mais Informações </a>
 	</div>
 
 	</div>

@@ -2,7 +2,7 @@ import React from 'react'
 import './CardVideoOpen.css'
 
 
-const CardVideoOpen = () =>(
+const CardVideoOpen = (props) =>(
 
 	// <div className="div-CardCurso">
 	// 	<div className="cardCurso-img">

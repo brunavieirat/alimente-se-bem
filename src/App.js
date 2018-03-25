@@ -8,6 +8,7 @@ import Login from './containers/Login/Login'
 import Forum from './containers/Forum/Forum'
 import News from './containers/News'
 import Agenda from './containers/Agenda'
+import Admin from './containers/Admin/Admin'
 // import NotFound from './containers/NotFound'
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
 					<Route path="/forum" component={Forum}  />
 					<Route path="/noticias" component={News} />
 					<Route path="/agenda" component={Agenda} />
+					<Route path="/admin" component={Admin} />
 					{/* <Route path="*" component={NotFound}/> */}
 				</Switch>
 				

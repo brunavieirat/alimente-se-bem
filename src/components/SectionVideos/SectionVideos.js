@@ -8,12 +8,16 @@ import TitlePage from '../TitlePage/TitlePage'
 import Footer from '../Footer/Footer'
 import CardVideoOpen from '../CardVideo/CardVideoOpen'
 
+function teste  () {
+alert('ooi')
+	// <CardVideoOpen />
+}
 
-const sectionVideos = () => (
+const sectionVideos = (props) => (
 
 	<section className="sectionVideos">
 	
-		<CardVideoOpen/>	
+		{/* <CardVideoOpen/>	 */}
 		<CardVideo onClick = "teste()"/>
 		 {/* <CardVideo />
 		<CardVideo />
