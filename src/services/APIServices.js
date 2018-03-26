@@ -5,8 +5,8 @@ import axios from 'axios'
 	axios.get('http://renatafelix-001-site1.gtempurl.com/api/'+url)
 )
 
-const postFromAPI = (url, {props}) => (
-	axios.post('http://renatafelix-001-site1.gtempurl.com/api/'+url, {props})
+const postFromAPI = (url, props) => (
+	axios.post('http://renatafelix-001-site1.gtempurl.com/api/'+url, props)
 )
-
+export {postFromAPI}
 export default getFromAPI
