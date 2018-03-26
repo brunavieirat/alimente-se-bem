@@ -7,8 +7,7 @@ const ListCategory =(props) =>{
         
         return categorias.map(categoria => (
         
-            <tr key={categoria.id}>
-            <td> {categoria.id} </td>
+            <tr>
             <td> {categoria.nome} </td>
         </tr>
         ))

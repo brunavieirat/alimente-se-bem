@@ -13,7 +13,7 @@ class Admin extends React.Component {
     return (
       <div className="Admin">
               <SideMenu />
-        <AdminCategory onClickCad={this.onClickCad} onChangeCat={this.onChangeCat} />
+        <AdminCategory  />
       </div>
     );
   }
