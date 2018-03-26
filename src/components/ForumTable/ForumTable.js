@@ -4,17 +4,6 @@ import { withStyles } from 'material-ui/styles'
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table'
 import Paper from 'material-ui/Paper'
 
-
-const CustomTableCell = withStyles(theme => ({
-	head: {
-		backgroundColor: theme.palette.common.black,
-		color: theme.palette.common.white,
-	},
-	body: {
-		fontSize: 14,
-	},
-}))(TableCell)
-
 const styles = theme => ({
 	root: {
 		width: '100%',
@@ -23,11 +12,6 @@ const styles = theme => ({
 	},
 	table: {
 		minWidth: 700,
-	},
-	row: {
-		'&:nth-of-type(odd)': {
-			backgroundColor: theme.palette.background.default,
-		},
 	},
 })
 
@@ -45,7 +29,7 @@ const data = [
 	createData('Gingerbread', 356, 16.0, 49, 3.9),
 ]
 
-function CustomizedTable(props) {
+function SimpleTable(props) {
 	const { classes } = props
 
 	return (
@@ -53,22 +37,22 @@ function CustomizedTable(props) {
 			<Table className={classes.table}>
 				<TableHead>
 					<TableRow>
-						<CustomTableCell>Dessert (100g serving)</CustomTableCell>
-						<CustomTableCell numeric>Calories</CustomTableCell>
-						<CustomTableCell numeric>Fat (g)</CustomTableCell>
-						<CustomTableCell numeric>Carbs (g)</CustomTableCell>
-						<CustomTableCell numeric>Protein (g)</CustomTableCell>
+						<TableCell>Dessert (100g serving)</TableCell>
+						<TableCell numeric>Calories</TableCell>
+						<TableCell numeric>Fat (g)</TableCell>
+						<TableCell numeric>Carbs (g)</TableCell>
+						<TableCell numeric>Protein (g)</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{data.map(n => {
 						return (
-							<TableRow className={classes.row} key={n.id}>
-								<CustomTableCell>{n.name}</CustomTableCell>
-								<CustomTableCell numeric>{n.calories}</CustomTableCell>
-								<CustomTableCell numeric>{n.fat}</CustomTableCell>
-								<CustomTableCell numeric>{n.carbs}</CustomTableCell>
-								<CustomTableCell numeric>{n.protein}</CustomTableCell>
+							<TableRow key={n.id}>
+								<TableCell>{n.name}</TableCell>
+								<TableCell numeric>{n.calories}</TableCell>
+								<TableCell numeric>{n.fat}</TableCell>
+								<TableCell numeric>{n.carbs}</TableCell>
+								<TableCell numeric>{n.protein}</TableCell>
 							</TableRow>
 						)
 					})}
@@ -78,7 +62,8 @@ function CustomizedTable(props) {
 	)
 }
 
-CustomizedTable.propTypes = {
+SimpleTable.propTypes = {
 	classes: PropTypes.object.isRequired,
 }
-export default withStyles(styles)(CustomizedTable)
+
+export default withStyles(styles)(SimpleTable)

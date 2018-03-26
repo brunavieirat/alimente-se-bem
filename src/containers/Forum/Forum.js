@@ -28,8 +28,9 @@ class Forum extends Component {
 	}
 	
 	treatForumData(){
-		const forumData = this.state.data.resp
-		return forumData
+		return (this.state.data.resp) ? 
+			<h1> {this.state.data.resp.map((obj) => (obj.DATA_CRIACAO))}  </h1>
+			: <h1>Opa </h1>
 	}
 
 	componentDidMount(){
@@ -42,9 +43,7 @@ class Forum extends Component {
 				
 				<section className="forum-section">
 					{/* {alert(this.state.data.resp)} */}
-					{(this.state.data.resp) ? <h1> {this.state.data.resp.map(
-						(obj) => (obj.DATA_CRIACAO))}  </h1>
-						: <h1>Opa </h1>}
+					{this.treatForumData()}
 					<PageTitle style={this.state.pageTitleColor} title/>
 					<CardButton title="Categoria X" />
 				</section>
