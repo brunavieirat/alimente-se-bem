@@ -3,13 +3,22 @@
     
   }
   
-  .Admin{
+  .admin{
     background: #EEE;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #282828;
+    margin-top: 2px;
+    
   }
+
+  .admin-body{
+    display: flex;
+    margin-top: 10px;
+  }
+
+  
   
   .card{
     background: white;

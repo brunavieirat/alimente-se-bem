@@ -1,16 +1,45 @@
 import React from 'react'
+import './AddCategory.css'
 
 
-const AddCategory = (props) =>{
+class AddCategory extends React.Component{
 
+state={
+    categoria: {
+
+        nome: ''
+    }
+
+}
+
+onSubmit = (e) => {
+    e.preventDefault()
+    this.props.onClickCad(this.state.categoria)
+}
+
+onChangeCat=(e)=>{
+    this.setState({
+        categoria:{
+        ...this.state.categoria,
+      nome: e.target.value
+        }
+    })
+   
+   }
+render(){
     return(
 
-        <div className="admin-category">
+        <div className="card row -justify-center -align-center StudentForm">
+        <form className="row" onSubmit={this.onSubmit}>
+        <div className="form-group">
         <label> Categorias </label>
-        <input onChange={props.onChangeCat}/>
-        <button onClick={props.onClickCad}> Cadastrar </button>
+        <input onChange={this.onChangeCat}/>
+        </div>
+        <button className="btn-add">Cadastrar </button>
+        
+        </form>
         </div>
     )
 }
-
+}
 export default AddCategory

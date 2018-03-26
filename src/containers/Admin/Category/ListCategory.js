@@ -1,7 +1,10 @@
 import React from 'react'
+import './ListCategory.css'
 
 
 const ListCategory =(props) =>{
+
+    
     const renderRows = () =>{
         const categorias = props.categorias || []
         
@@ -10,13 +13,16 @@ const ListCategory =(props) =>{
             <tr key={categoria.id}>
             <td> {categoria.id} </td>
             <td> {categoria.nome} </td>
+            <td>
+          <button className="btn-remove" onClick={this.onClick}>×</button>
+        </td>
         </tr>
         ))
         
             }
 
             return (
-
+                <div className="card StudentList">
                 <table>
                   <thead>
                     <tr>
@@ -29,6 +35,7 @@ const ListCategory =(props) =>{
                       {renderRows()}
                       </tbody>
                       </table>
+                      </div>
             )
     
 

@@ -11,9 +11,13 @@ class Admin extends React.Component {
   render() {
     
     return (
-      <div className="Admin">
+      <div className="admin">
+       <div className="admin-body"> 
               <SideMenu />
+              <div className="container">
         <AdminCategory  />
+        </div>
+        </div>
       </div>
     );
   }

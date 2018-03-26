@@ -1,0 +1,40 @@
+.form-group > *{
+  display: block;
+  text-align: left;
+}
+.form-group label{
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+
+}
+
+.form-group input{
+    width: 300px;
+}
+.form-group > input, .btn-add {
+  padding: 8px 3px;
+  color: #606060;
+  border-radius: 5px;
+  border: none; 
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+.btn-add {
+  background-color: #72398E;
+  color: #fff;
+  font-size: 14px;
+  height: 35px;
+  border-color: rgb(167, 202, 63);
+  text-align: center;
+}
+.StudentForm .form-group{
+  margin-right: 15px;
+}
+.StudentForm .form-group:last-child{
+  margin-right: 0px;
+}
