@@ -32,12 +32,12 @@ componentDidMount(){
 
 }
      
-removeItem= (cat) =>{
+// removeItem= (cat) =>{
  
-    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/Excluir/1')
-    .then(resp => this.refresh())
-    .catch(error => alert(error))
-}
+//     axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/Excluir/1')
+//     .then(resp => this.refresh())
+//     .catch(error => alert(error))
+// }
    
      onClickCad=(categoria)=>{
      postFromAPI('/Categorias_Videos/Cadastrar', categoria)
@@ -58,7 +58,7 @@ removeItem= (cat) =>{
       {/* <ListCategory categorias={this.state.categorias}/> */}
     <ListCategory categorias={categorias} />
 
-    <button onclick={this.removeItem()}> Excluir </button>
+    {/*<button onclick={this.removeItem()}> Excluir </button>*/}
         </div>
         </div>
     )

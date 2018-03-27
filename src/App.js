@@ -9,7 +9,7 @@ import Forum from './containers/Forum/Forum'
 import News from './containers/News'
 import Agenda from './containers/Agenda'
 import Admin from './containers/Admin/Admin'
-import SideMenu from './containers/Admin/SideMenu/SideMenu.1';
+import SideMenu from './containers/Admin/SideMenu/SideMenu';
 // import NotFound from './containers/NotFound'
 
 class App extends Component {

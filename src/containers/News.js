@@ -14,8 +14,8 @@ export default class News extends Component {
 	render(){
 		return(
 			<Fragment>
-				{/* <PageTitle style={this.state.pageTitleColor} title="Notícias" /> */}
-			</Fragment>
+				 <PageTitle style={this.state.pageTitleColor} title="Notícias" /> 
+				 	</Fragment>
 		)
 	}
 }
