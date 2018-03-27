@@ -34,7 +34,7 @@ componentDidMount(){
      
 // removeItem= (cat) =>{
  
-//     axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/Excluir/1')
+//     axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos//1')
 //     .then(resp => this.refresh())
 //     .catch(error => alert(error))
 // }
@@ -43,6 +43,7 @@ componentDidMount(){
      postFromAPI('/Categorias_Videos/Cadastrar', categoria)
      .then(res=> this.refresh())
      .catch(error=>alert(error))
+    
      }
 
    render(){

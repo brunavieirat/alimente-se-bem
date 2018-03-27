@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react'
+import PageTitle from '../components/PageTitle/PageTitle'
 
 
 export default class News extends Component {
