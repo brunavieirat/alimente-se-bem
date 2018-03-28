@@ -15,7 +15,9 @@ class Admin extends React.Component {
        <div className="admin-body"> 
               <SideMenu />
               <div className="container">
-        <AdminCategory  />
+        {/* <AdminCategory  /> */}
+
+        
         </div>
         </div>
       </div>
