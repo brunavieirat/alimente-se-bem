@@ -5,8 +5,9 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 import { faCalendarAlt } from '@fortawesome/fontawesome-free-solid'
 import { faFileVideo } from '@fortawesome/fontawesome-free-solid'
-import {faNewspaper} from '@fortawesome/fontawesome-free-solid'
-import {faFileExcel} from '@fortawesome/fontawesome-free-solid'
+import { faNewspaper } from '@fortawesome/fontawesome-free-solid'
+import { faFileExcel } from '@fortawesome/fontawesome-free-solid'
+import { faCommentAltSmile } from '@fortawesome/fontawesome-free-solid'
 
 import "./SideMenu.css"
 
@@ -27,6 +28,11 @@ class SideMenu extends React.Component {
         image: faNewspaper,
         name: 'Notícias',
         url: '/admin'
+      },
+      {
+        image: faFileExcel,
+        name: 'Relatórios',
+        url:'/admin'
       },
       {
         image: faFileExcel,

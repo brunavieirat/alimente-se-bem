@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import ListaTopicos from './ListaTopico'
+import AddTopico from './AddTopico'
 
 import './ForumTopico.css'
 
@@ -11,7 +12,10 @@ class ForumTopico extends Component {
 
         return (
 <Fragment>
+
+ {/* <AddTopico /> */}
             <ListaTopicos />
+           
 
             <section className="forum-topico">
 

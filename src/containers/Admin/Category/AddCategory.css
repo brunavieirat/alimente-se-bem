@@ -36,9 +36,9 @@
   float: right;
   font-weight: bold;
 }
-.StudentForm .form-group{
+.CategoryForm .form-group{
   margin-right: 15px;
 }
-.StudentForm .form-group:last-child{
+.CategoryForm .form-group:last-child{
   margin-right: 0px;
 }
