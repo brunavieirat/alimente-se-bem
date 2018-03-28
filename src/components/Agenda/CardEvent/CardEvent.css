@@ -8,7 +8,7 @@
     margin: 20px !important;    
     float: left;
     width: 16%;
-    height: 250px;
+    /* height: 250px; */
     
    
 }
@@ -40,7 +40,7 @@
 }
 
 .cardEvent-title{
-    margin-left: 55px;
+    margin: 0 0 10px 55px;
     font-size: 0.9em;
     text-align: justify;
     font-weight: bold;
@@ -89,3 +89,6 @@
     text-transform: uppercase;
 }
   
+.modal-description{
+    text-align: justify;
+}
