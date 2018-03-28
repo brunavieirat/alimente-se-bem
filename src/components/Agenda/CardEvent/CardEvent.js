@@ -41,14 +41,14 @@ class CardEvent extends React.Component {
 					cover={<img alt="example" src={sucos} />}
 				>
 					<div className="cardEvent-date">
-						<p> {this.props.dateday} <br />
-							{this.props.datemonth}</p>
+						<label> {this.props.dateday} <br />
+							{this.props.datemonth}</label>
 					</div>
 					<div className="cardEvent-title">
-						<p> {this.props.title} </p>
+						<label> {this.props.title} </label>
 					</div>
 					<div className="cardEvent-place">
-						<p> {this.props.place} </p>
+						<label> {this.props.place} </label>
 					</div>
 					<div className="cardVideo-info-secundary">
 						<a href="#"
@@ -68,7 +68,7 @@ class CardEvent extends React.Component {
 					<div className="modal-img">
 						<img className="modal-img" alt="example" src={sucos} />
 					</div>
-					<p className="modal-description">
+					<label className="modal-description">
 						Nessa próxima parte do código, vamos chamar o método document.write, que tem a função de escrever na tela. Dentro, nós colocaremos o código principal, responsável pela criação das datas. O que se encontra dentro de aspas, a partir de agora, será um texto; e o que estiver fora de aspas, será o tal código que deveremos estudar.
 	
 	O getDay() irá mostrar o dia da semana. É preciso saber que no JavaScript, na maioria das vezes, uma contagem começa com o número zero. Então, domingo vale zero, segunda vale um, terça vale dois, e assim por diante.
@@ -78,8 +78,8 @@ class CardEvent extends React.Component {
 	Já o getMonth() e o getFullYear(), equivalem, respectivamente, ao mês e ao ano, e o mês, como o dia da semana, começa em zero, logo, julho não é mês sete, mas mês seis.
 	
 	É lógico que em um site decente, o usuário não será obrigado a saber disso, por isso, nós criaremos arrays, que são conjuntos de informações compactas.
-</p>
-					<p> {this.props.place} </p>
+</label>
+					<label> {this.props.place} </label>
 
 				</Modal>
 			</Fragment>

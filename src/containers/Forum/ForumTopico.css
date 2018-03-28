@@ -29,10 +29,12 @@
     float: left;
     font-weight: bold;
     font-size: 1.2em;
+    margin-top: 10px;
 }
 
 .forum-data {
     float: right;
+    margin-top: 10px;
 }
 
 .forum-tags{
@@ -43,6 +45,7 @@
 
     display: inline-block;
     text-align: justify;
+    font-size: 1.1em;
 }
 
 .forum-qtdResp{
@@ -64,7 +67,7 @@
 }
 
 .forum-user{
-    margin-top: 10px;
+    margin: 10px 0;
     font-weight: bold;
     float: left;
 
@@ -83,4 +86,22 @@
 .forum-topico__resp{
     border-bottom: 3px double #72398E;
     margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.forum-user__post{
+    display: inline;
+    font-weight: bold;
+    
+}
+
+.forum-topico__respUserTextarea{
+    display: block;
+    margin: 10px 0;
+    width: 90%;
+
+}
+
+.forum-post{
+    display: flex;
 }

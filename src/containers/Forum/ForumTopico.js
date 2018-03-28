@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import ListaTopicos from './ListaTopico'
 
 import './ForumTopico.css'
 
@@ -9,6 +10,8 @@ class ForumTopico extends Component {
     render() {
 
         return (
+<Fragment>
+            <ListaTopicos />
 
             <section className="forum-topico">
 
@@ -16,20 +19,20 @@ class ForumTopico extends Component {
                     <h1> Título do Tópico </h1>
                 </div>
                 <div className="forum-tags">
-                    <p className="forum-tag"> frutas </p>
+                    <label className="forum-tag"> frutas </label>
 
-                    <p className="forum-tag"> nutrição </p>
+                    <label className="forum-tag"> nutrição </label>
 
-                    <p className="forum-tag"> tag </p>
+                    <label className="forum-tag"> tag </label>
                 </div>
 
                 <div className="forum-topico__post">
-                    <p className="forum-nut"> Meire Silva </p>
-                    <p className="forum-data"> 28/03/2018 11:59 </p>
+                    <label className="forum-nut"> Meire Silva </label>
+                    <label className="forum-data"> 28/03/2018 11:59 </label>
 
-                    <p className="forum-topico__desc">
+                    <label className="forum-topico__desc">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                </p>
+                </label>
                 </div>
 
 
@@ -37,33 +40,48 @@ class ForumTopico extends Component {
 
                     <div className="forum-qtdResp"> ?? Comentários </div>
                     <div>
-                        <p className="forum-user"> Nome usuário </p>
-                        <p className="forum-data__resp"> 28/03/2018 11:59 </p>
+                        <label className="forum-user"> Nome usuário </label>
+                        <label className="forum-data__resp"> 28/03/2018 11:59 </label>
                     </div>
 
                     <div>
-                        <p className="forum-topico__respUser">
+                        <label className="forum-topico__respUser">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                </p>
+                </label>
                     </div>
                 </div>
 
                 <div className="forum-topico__resp">
-
-
                     <div>
-                        <p className="forum-user"> Nome usuário </p>
-                        <p className="forum-data__resp"> 28/03/2018 11:59 </p>
+                        <label className="forum-user"> Nome usuário </label>
+                        <label className="forum-data__resp"> 28/03/2018 11:59 </label>
                     </div>
 
                     <div>
-                        <p className="forum-topico__respUser">
+                        <label className="forum-topico__respUser">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-</p>
+</label>
                     </div>
                 </div>
-            </section>
 
+                <form className="forum-topico__resp">
+
+
+                    <label className="forum-user__post"> Nome usuário </label>
+                    {/* <label className="forum-data__resp"> 28/03/2018 11:59 </label> */}
+
+                    <div className="forum-post">
+                        <textarea className="forum-topico__respUserTextarea">
+
+                        </textarea>
+
+                        <button className="btn-add"> Publicar </button>
+                    </div>
+                </form>
+
+
+            </section>
+</Fragment>
         )
     }
 }
