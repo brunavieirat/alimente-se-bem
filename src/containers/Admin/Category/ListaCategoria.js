@@ -24,10 +24,10 @@ class ListaCategoria extends Component {
                         
         
         
-        {categorias.map((categoria, index) => (
+        {categorias.map((categoria) => (
             
             <LinhaCategoria
-            index={index}
+            
             key={categoria.id}
             id={categoria.id}
             nome={categoria.nome}

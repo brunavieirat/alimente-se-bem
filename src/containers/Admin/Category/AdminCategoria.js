@@ -30,23 +30,15 @@ componentDidMount(){
 
 }
 
-deleteByIndex = index =>{
-
+deleteByIndex = id =>{
+     
     const { categorias } = this.state;
-    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/'+index)
+    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
 }
 
 
-     
-// removeItem= (cat) =>{
- 
-//     axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos//1')
-//     .then(resp => this.refresh())
-//     .catch(error => alert(error))
-// }
-   
      onClickCad=(categoria)=>{
      postFromAPI('/Categorias_Videos/Cadastrar', categoria)
      .then(res=> this.refresh())
