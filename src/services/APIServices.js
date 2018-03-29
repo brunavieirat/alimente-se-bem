@@ -8,5 +8,11 @@ import axios from 'axios'
 const postFromAPI = (url, props) => (
 	axios.post('http://renatafelix-001-site1.gtempurl.com/api/'+url, props)
 )
-export {postFromAPI}
+
+const deleteFromAPI = (url) => (
+	axios.post('http://renatafelix-001-site1.gtempurl.com/api/'+url)
+)
+
+export { deleteFromAPI}
+export { postFromAPI }
 export default getFromAPI

@@ -2,7 +2,7 @@ import React from 'react'
 import { Tabs, Icon } from 'antd'
 import 'antd/lib/tabs/style/css'
 
-import Categorias from '../Category/AdminCategory'
+import Categorias from '../Category/AdminCategoria'
 import Videos from './AdminVideos'
 
 const TabPane = Tabs.TabPane;

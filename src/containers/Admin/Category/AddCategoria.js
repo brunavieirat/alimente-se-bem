@@ -1,8 +1,8 @@
 import React from 'react'
-import './AddCategory.css'
+import './AddCategoria.css'
 
 
-class AddCategory extends React.Component{
+class AddCategoria extends React.Component{
 
 state={
     categoria: {
@@ -42,4 +42,4 @@ render(){
     )
 }
 }
-export default AddCategory
+export default AddCategoria

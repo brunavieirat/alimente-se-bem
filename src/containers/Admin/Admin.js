@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import SideMenu from './SideMenu/SideMenu'
 import './Admin.css'
-import AdminCategory from './Category/AdminCategory'
+import AdminCategoria from './Category/AdminCategoria'
 import Videos from './Videos/Videos'
 
 
@@ -15,7 +15,7 @@ class Admin extends React.Component {
        <div className="admin-body"> 
               <SideMenu />
               <div className="container">
-        {/* <AdminCategory  /> */}
+        {/* <AdminCategoria  /> */}
 
         <Videos />
 

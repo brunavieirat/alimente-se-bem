@@ -1,12 +1,12 @@
 import React from 'react'
-import AddCategory from './AddCategory'
-import ListCategory from './CategoryList'
-import getFromAPI, { postFromAPI } from '../../../services/APIServices'
-import './AdminCategory.css'
+import AddCategoria from './AddCategoria'
+import ListaCategoria from './ListaCategoria'
+import getFromAPI, { postFromAPI, deleteFromAPI } from '../../../services/APIServices'
+import './AdminCategoria.css'
 
 import axios from 'axios'
 
-class AdminCategory extends React.Component{
+class AdminCategoria extends React.Component{
     state={
         nome: '',
           categorias: []
@@ -25,12 +25,20 @@ class AdminCategory extends React.Component{
     })
 }
 
-
-
 componentDidMount(){
     this.refresh()
 
 }
+
+deleteByIndex = index =>{
+
+    const { categorias } = this.state;
+    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/'+index)
+    .then(resp => this.refresh())
+    .catch(error => alert(error))
+}
+
+
      
 // removeItem= (cat) =>{
  
@@ -55,9 +63,9 @@ componentDidMount(){
 
 <div className="container">
     
-        <AddCategory onClickCad={this.onClickCad}  />
+        <AddCategoria onClickCad={this.onClickCad}  />
       {/* <ListCategory categorias={this.state.categorias}/> */}
-    <ListCategory categorias={categorias} />
+    <ListaCategoria categorias={categorias} deleteByIndex={this.deleteByIndex} />
 
     {/*<button onclick={this.removeItem()}> Excluir </button>*/}
         </div>
@@ -66,4 +74,4 @@ componentDidMount(){
 }
 }
 
-export default AdminCategory
+export default AdminCategoria
