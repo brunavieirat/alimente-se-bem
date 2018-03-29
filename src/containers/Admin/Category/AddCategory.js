@@ -29,7 +29,7 @@ onChangeCat=(e)=>{
 render(){
     return(
 
-        <div className="card row -justify-center -align-center StudentForm">
+        <div className="card row -justify-center -align-center CategoryForm">
         <form className="row" onSubmit={this.onSubmit}>
         <div className="form-group">
         <label> Categorias </label>

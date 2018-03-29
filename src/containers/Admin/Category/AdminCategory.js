@@ -14,7 +14,7 @@ class AdminCategory extends React.Component{
    
     
     refresh(){
-        getFromAPI('/Categorias_Videos?sort=-createdAt')
+        getFromAPI('Categorias_Videos?sort=-createdAt')
         .then(res => {
             this.setState({
                 ...this.state,

@@ -28,9 +28,9 @@ const CardVideoOpen = (props) => (
 		</div>
 
 		<div className="cardVideo-description-open">
-			<p>
+			<label>
 				{props.description}
-			</p>
+			</label>
 		</div>
 
 		<div className="cardVideo-info-open">

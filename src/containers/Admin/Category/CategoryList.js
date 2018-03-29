@@ -1,5 +1,5 @@
 import React from 'react'
-import './ListCategory.css'
+import './CategoryList.css'
 
 
 const ListCategory =(props) =>{

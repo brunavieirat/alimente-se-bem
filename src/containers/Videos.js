@@ -120,17 +120,10 @@ export default class Videos extends Component {
 					  <input type="button" 
 					onClick={() =>{
 												
-						axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Videos/Excluir',
+						axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Videos',
 						{
-							id: 11,
-							titulo: "titulo do Vídeo",
-							descricao: "descricao do Vídeo",
-							url: "URL do Vídeo",
-							link_Externo: "vincular o vídeo a outras páginas",
-							valor: "valor do curso (inserir '00,00' caso seja gratuito",
-							categorias_Videos: null,
-							id_Cat_Videos: 1
-					})
+							id: 2
+												})
 				.then(res => {
 					alert("ok")})
 				.catch(error =>{

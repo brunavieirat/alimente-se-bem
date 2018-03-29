@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar'
 import Videos from './containers/Videos'
 // import Login from './containers/Login/Login'
 import Forum from './containers/Forum/Forum'
+import ForumTopico from './containers/Forum/ForumTopico'
 import News from './containers/News'
 import Agenda from './containers/Agenda'
 import Admin from './containers/Admin/Admin'
@@ -26,7 +27,7 @@ class App extends Component {
 				<Switch>
 					{/* <Route exact path="/"  component={}/> */}
 					<Route path="/videos" component={Videos}  />
-					<Route path="/forum" component={Forum}  />
+					<Route path="/forum" component={ForumTopico}  />
 					<Route path="/noticias" component={News} />
 					<Route path="/agenda" component={Agenda} />
 					<Route path="/admin" component={Admin} />

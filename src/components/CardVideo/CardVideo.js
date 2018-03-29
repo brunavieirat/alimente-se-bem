@@ -36,9 +36,9 @@ const CardVideo = (props) => (
 		</div>
 
 		<div className="cardVideo-description">
-			<p>
+			<label>
 				{props.description}
-			</p>
+			</label>
 		</div>
 
 		<div className="cardVideo-info">
