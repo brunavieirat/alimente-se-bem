@@ -32,9 +32,9 @@
   border-color: rgb(167, 202, 63);
   text-align: center;
 }
-.StudentForm .form-group{
+.CayegoryForm .form-group{
   margin-right: 15px;
 }
-.StudentForm .form-group:last-child{
+.CategoryForm .form-group:last-child{
   margin-right: 0px;
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import AddCategory from './AddCategory'
-import ListCategory from './ListCategory'
+import ListCategory from './CategoryList'
 import getFromAPI, { postFromAPI } from '../../../services/APIServices'
 import './AdminCategory.css'
 
