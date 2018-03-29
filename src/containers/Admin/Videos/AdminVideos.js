@@ -9,28 +9,21 @@ import './AdminVideos.css'
 class AdminVideos extends Component{
 
     state = {
-
-        videos: [
-            {
-                titulo: '',
-                descricao: '',
-                url: '',
-                valor: '',
-                link_Externo: '',
-                id_Cat_Videos: ''
-            }
-        ]
+                            
+            videos: []
+        
     }
 
-onClickCad=(video)=>{
+onClickCad=(video)=>{    
     postFromAPI('Videos/Cadastrar', video)
     .then(res=> alert('oooook'))
     .catch(error=> alert(error))
-    console.log(this.state.videos)
+    console.log(video)
 }
 
     render(){
 
+        const {videos} = this.state
         return(
 
             <AddVideos onClickCad={this.onClickCad} />

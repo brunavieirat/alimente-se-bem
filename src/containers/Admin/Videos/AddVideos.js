@@ -12,7 +12,6 @@ class AddVideos extends Component {
             titulo: '',
             descricao: '',
             url: '',
-            valor: '',
             link_Externo: '',
             id_Cat_Videos: ''
 
@@ -30,6 +29,8 @@ class AddVideos extends Component {
 onSubmit = (e) =>{
  e.preventDefault()
  this.props.onClickCad(this.state.video)
+ console.log(this.state.video)
+
 }
 
 
@@ -38,7 +39,7 @@ onSubmit = (e) =>{
     render() {
 
          const { onChangeVideo} = this
-        const {titulo, descricao, url, valor, link_Externo, id_Cat_Videos } = this.state.video
+         const {titulo, descricao, url,  link_Externo, id_Cat_Videos } = this.state.video
 
         return (
 
@@ -47,22 +48,22 @@ onSubmit = (e) =>{
                     <div className="form-group">
 
                         <label> Título </label>
-                        <input type="text" name="title" value={titulo} onChange={onChangeVideo} />
+                        <input type="text" name="titulo"  onChange={onChangeVideo} />
 
                         <label> Descrição </label>
-                        <textarea name="desc" value={descricao} onChange={onChangeVideo} />
+                        <textarea name="descricao" onChange={onChangeVideo} />
 
-                        <label> Valor </label>
-                        <input type="text" name="price" value={valor} onChange={onChangeVideo} />
+                        {/* // <label> Valor </label> */}
+                        {/* // <input type="text" name="valor"  onChange={onChangeVideo} /> */}
 
                         <label> URL Vídeo</label>
-                        <input type="text" name="url" value={url} onChange={onChangeVideo} />
+                        <input type="text" name="url"  onChange={onChangeVideo} />
 
                         <label> Link Externo para maiores informações </label>
-                        <input type="text" name="inf" value={link_Externo} onChange={onChangeVideo} />
+                        <input type="text" name="link_Externo"  onChange={onChangeVideo} />
 
                         <label> Categoria </label>
-                        <input type="text" name="category" value={id_Cat_Videos} onChange={onChangeVideo} />
+                        <input type="text" name="id_Cat_Videos"  onChange={onChangeVideo} />
 
                     </div>
                     <button className="btn-add">Cadastrar </button>
