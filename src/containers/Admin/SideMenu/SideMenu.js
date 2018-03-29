@@ -31,7 +31,7 @@ class SideMenu extends React.Component {
       },
       {
         image: faFileExcel,
-        name: 'Relatórios',
+        name: 'Fórum',
         url:'/admin'
       },
       {
