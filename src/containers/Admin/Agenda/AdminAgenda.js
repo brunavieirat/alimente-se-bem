@@ -10,23 +10,14 @@ class AdminAgenda extends Component{
 
     state = {
 
-        eventos: [
-            {
-                titulo: '',
-                descricao: '',
-                data_Evento: '',
-                valor: '',
-                tag:'',
-                id_unidade: ''
-            }
-        ]
+        eventos: []
     }
 
 onClickCad=(evento)=>{
     postFromAPI('Agenda', evento)
     .then(res=> alert('oooook'))
     .catch(error=> alert(error))
-    console.log(this.state.eventos)
+      
 }
 
     render(){
