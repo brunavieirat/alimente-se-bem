@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { postFromAPI } from '../../../services/APIServices'
 
-import AddEentos from './AddEventos'
+import AddEventos from './AddEventos'
 import './AdminAgenda.css'
 
 

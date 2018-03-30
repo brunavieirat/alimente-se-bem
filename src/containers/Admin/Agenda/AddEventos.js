@@ -14,7 +14,7 @@ class AddEventos extends Component {
             data_Evento: '',
             valor: '',
             tag:'',
-            id_unidade: ''
+            id_Unidade: ''
 
         }
     }
@@ -25,11 +25,13 @@ class AddEventos extends Component {
                 [e.target.getAttribute('name')]: e.target.value
             }
         })
+        //console.log(this.state.evento)
     }
 
 onSubmit = (e) =>{
  e.preventDefault()
  this.props.onClickCad(this.state.evento)
+ console.log(this.state.evento)
 }
 
     render() {
@@ -60,7 +62,7 @@ onSubmit = (e) =>{
                         <input type="text" name="tag" onChange={onChangeVideo} />
 
                         <label> Id Unidade </label>
-                        <input type="text" name="id_unidade"  onChange={onChangeVideo} />
+                        <input type="text" name="id_Unidade"  onChange={onChangeVideo} />
 
                     </div>
                     <button className="btn-add">Cadastrar </button>

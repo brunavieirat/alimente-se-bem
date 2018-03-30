@@ -17,11 +17,10 @@ const postFromAPI = (url, {props}) => (
 export default class Videos extends Component {
 	
 	state = {
-		descricao: 'testando API cadastro Videos',
-		url: 'https://www.youtube.com/watch?v=c7vNI0e1Adc',
-		link_Externo:'https://sesichef.sesisp.org.br/conheca-o-projeto/',
-		valor: '0.00',
-		id_Cat_Videos: '1',
+		descricao: '',
+		url: '',
+		link_Externo:'',
+		id_Cat_Videos: '',
 		// pageTitleColor: {
 		// 	background: '#E74D57',
 		// },
@@ -99,39 +98,7 @@ export default class Videos extends Component {
 				<Route path="/videos/:id"
 					component={CardVideoOpen} />
 					
-					<input type="button" 
-					onClick={() =>{
-												
-						axios.post('http://renatafelix-001-site1.gtempurl.com/api/Videos/Cadastrar',
-						{titulo: 'TESTE PELA API',
-						descricao: 'testando API cadastro Videos',
-						url: 'https://www.youtube.com/watch?v=c7vNI0e1Adc',
-						link_Externo:'https://sesichef.sesisp.org.br/conheca-o-projeto/',
-						valor: '0.00',
-						id_Cat_Videos: '1'})
-				.then(res => {
-					alert("ok")})
-				.catch(error =>{
-					console.log(error)})
-				}
-					 }
-					  value="Cadastrar"/>
-
-					  <input type="button" 
-					onClick={() =>{
-												
-						axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Videos',
-						{
-							id: 2
-												})
-				.then(res => {
-					alert("ok")})
-				.catch(error =>{
-					console.log(error)})
-				}
-					 }
-					  value="Excluir"/>
-
+					
 			<section className="sectionVideos">
 
 					{this.renderEvents()}

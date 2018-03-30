@@ -50,7 +50,7 @@ export default class Agenda extends Component {
 			<Fragment>
 				<PageTitle style={this.state.pageTitleColor} title="Agenda" />
 				<Calendario onSelectDate={(date) => console.log(date)} />
-				<input type="button" 
+				{/* <input type="button" 
 					onClick={() =>{
 												
 						axios.post('http://renatafelix-001-site1.gtempurl.com/api/Agenda',
@@ -83,7 +83,7 @@ export default class Agenda extends Component {
 					console.log(error)})
 				}
 					 }
-					  value="Excluir"/>
+					  value="Excluir"/> */}
 				{this.renderEvents()}
 
 			</Fragment>

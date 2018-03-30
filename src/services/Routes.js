@@ -9,6 +9,9 @@ import News from '../containers/News'
 import Agenda from '../containers/Agenda'
 // import NotFound from './containers/NotFound'
 import Footer from '../components/Footer/Footer'
+import AdminVideos from '../containers/Admin/Videos/AdminVideos'
+import AdminAgenda from '../containers/Admin/Agenda/AdminAgenda'
+
 
 const routes = () => (
 	<Fragment>
@@ -20,6 +23,8 @@ const routes = () => (
 			<Route path="/noticias" component={News} />
 			<Route path="/agenda" component={Agenda} />
 			{/* <Route path="*" component={NotFound}/> */}
+			<Route path="/admin/Videos" component={AdminVideos} />
+			<Route path="/admin/Agenda" component={AdminAgenda} />
 		</Switch>
 		<Footer/>
 	</Fragment>

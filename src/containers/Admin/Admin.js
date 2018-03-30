@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
+import { Route } from 'react-router-dom'
 import axios from 'axios'
 import SideMenu from './SideMenu/SideMenu'
 import './Admin.css'
-import AdminCategory from './Category/AdminCategory'
+import AdminCategoria from './Category/AdminCategoria'
 import Videos from './Videos/Videos'
+
+import Agenda from './Agenda/AdminAgenda'
 
 
 
@@ -12,19 +15,27 @@ class Admin extends React.Component {
   render() {
     
     return (
+<Fragment>
+      {/* <Route path="/admin/videos"
+					component={Videos} /> */}
+
       <div className="admin">
        <div className="admin-body"> 
               <SideMenu />
               <div className="container">
-        {/* <AdminCategory  /> */}
+        {/* <AdminCategoria  /> */}
 
-        <Videos />
+        <Videos /> 
+        <Agenda />
 
         
         </div>
         </div>
       </div>
-    );
+
+      </Fragment>
+    )
+
   }
 }
 

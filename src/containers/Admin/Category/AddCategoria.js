@@ -1,8 +1,8 @@
 import React from 'react'
-import './AddCategory.css'
+import './AddCategoria.css'
 
 
-class AddCategory extends React.Component{
+class AddCategoria extends React.Component{
 
 state={
     categoria: {
@@ -15,6 +15,9 @@ state={
 onSubmit = (e) => {
     e.preventDefault()
     this.props.onClickCad(this.state.categoria)
+    this.setState({
+        nome: ''
+    })
 }
 
 onChangeCat=(e)=>{
@@ -42,4 +45,4 @@ render(){
     )
 }
 }
-export default AddCategory
+export default AddCategoria
