@@ -25,6 +25,7 @@ class Login extends Component {
 			email: this.inputEmail.value,
 			password: this.inputPassword.value,
 		})
+			// Aqui tem que ver qual vai ser a resposta do back, pra poder colocar a lógica de verificação
 			.then(function (response) {
 				if(response){
 					localStorage.setItem('logged', true)
