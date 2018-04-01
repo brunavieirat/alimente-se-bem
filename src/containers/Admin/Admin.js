@@ -12,31 +12,31 @@ import Agenda from './Agenda/AdminAgenda'
 
 class Admin extends React.Component {
 
-  render() {
+	render() {
     
-    return (
-<Fragment>
-      {/* <Route path="/admin/videos"
+		return (
+			<Fragment>
+				{/* <Route path="/admin/videos"
 					component={Videos} /> */}
 
-      <div className="admin">
-       <div className="admin-body"> 
-              <SideMenu />
-              <div className="container">
-        {/* <AdminCategoria  /> */}
+				<div className="admin">
+					<div className="admin-body"> 
+						<SideMenu />
+						<div className="container">
+							{/* <AdminCategoria  /> */}
 
-        <Videos /> 
-        <Agenda />
+							<Videos /> 
+							<Agenda />
 
         
-        </div>
-        </div>
-      </div>
+						</div>
+					</div>
+				</div>
 
-      </Fragment>
-    )
+			</Fragment>
+		)
 
-  }
+	}
 }
 
-export default Admin;
+export default Admin

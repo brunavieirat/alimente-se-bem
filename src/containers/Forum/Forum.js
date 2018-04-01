@@ -1,8 +1,8 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../../components/PageTitle/PageTitle'
-import CardButton from '../../components/CardButton/CardButton'
 import './Forum.css'
 import axios from 'axios'
+import ListTopics from './ListTopics'
 
 
 class Forum extends Component {
@@ -42,10 +42,10 @@ class Forum extends Component {
 			<Fragment>
 				
 				<section className="forum-section">
-					{/* {alert(this.state.data.resp)} */}
-					{this.treatForumData()}
-					<PageTitle style={this.state.pageTitleColor} title/>
-					<CardButton title="Categoria X" />
+					<PageTitle style={this.state.pageTitleColor} title="FORUM"/>
+					<div className="forum-topico">
+						<ListTopics />
+					</div>
 				</section>
 			</Fragment>
 		)
