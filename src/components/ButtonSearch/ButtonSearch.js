@@ -6,19 +6,19 @@ const Search = Input.Search
 
 const buttonSearch = () =>(
 	<div className="div-button-search">
-		{/*<Search
+		<Search
 			placeholder="input search text"
 			onSearch={value => console.log(value)}
-			style={{ width: 200 }}
+			id="search"
 		/>
-		<br /><br />*/}
-		{/*<Search
+		<br /><br />
+		{/* <Search
 			placeholder="input search text"
 			onSearch={value => console.log(value)}
 			enterButton
-		/>
-	<br /><br />*/}
-		<Search enterButton="Buscar" size="default"  className="button-search"/>
+		/> 
+	 */}
+		{/* <Search enterButton="Buscar" size="default"  className="button-search"/> */}
 	</div>
 )
 

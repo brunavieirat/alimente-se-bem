@@ -1,0 +1,53 @@
+
+.div-CardCurso{
+    width: 43.5%;
+    height: 130px;
+    float: left;
+        
+}
+
+
+.cardCurso-img{
+    border: 1px solid transparent;
+    border-radius: 5%;
+    height: 110px;
+    background-color: #BEBEBE;
+    
+}
+
+.cardCuso-title{
+    background-color: #ADCA1E;
+    /*height: 20px;*/
+    text-align: center;
+    text-transform: uppercase;
+    color:white;
+    font-family: Gotham;
+    border: 1px solid transparent;
+    border-radius: 8%;
+    margin-top:-10px;
+    padding: 2px;
+    
+}
+
+
+@media (min-width: 768px) {
+
+    .div-CardCurso{
+    width: 24.7%;
+    /*height: 10%;*/
+    float: left;
+    margin: 1px;    
+}
+
+}
+
+
+@media (min-width: 1024px) {
+
+    
+.div-CardCurso{
+    width: 19.76%;
+    float: left;
+    margin: 1px;    
+}
+}

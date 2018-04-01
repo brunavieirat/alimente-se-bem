@@ -42,7 +42,7 @@
 .navbar-logo {
     margin-left: -30% !important;
     float: left;
-    position: fixed;
+    /* position: fixed; */
 }
 
 .logo{

@@ -1,0 +1,35 @@
+.section-cursos{
+    margin: 0 auto;
+    width: 100%;
+    /*display: flex;
+    justify-content: flex-start;*/
+    height: 500px;
+    /* background-color: #F2F2F2; */
+    /* padding: 2%; */
+   
+}
+
+.sectionVideos-background{
+
+    width: 100%;
+    height: 50%;
+    background-image: url(./prato.jpg);
+    box-shadow: 1px 3px 15px 0 #ADCA1E;
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+}
+
+@media (min-width: 768px){
+
+    .sectionVideos-background{
+        height: 70%;
+    }
+}
+
+@media (min-width: 1024px){
+
+    .sectionVideos-background{
+        height: 110%;
+    }
+}

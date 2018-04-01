@@ -10,6 +10,8 @@ import News from './containers/News'
 import Agenda from './containers/Agenda'
 // import NotFound from './containers/NotFound'
 import Footer from './components/Footer/Footer'
+import Admin from './containers/Admin/Admin'
+
 
 class App extends Component {
 	render() {
@@ -24,6 +26,7 @@ class App extends Component {
 					<Route path="/forum/topicos/detalhe" component={ForumDetails} /> 
 					<Route path="/noticias" component={News} />
 					<Route path="/agenda" component={Agenda} />
+					<Route path="/admin" component={Admin} />
 					{/* <Route path="*" component={NotFound}/> */}
 				</Switch>
 				<Footer/>

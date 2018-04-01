@@ -1,10 +1,94 @@
-.cardEvent{
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-    width: 35%;
+.cardEvent{
+    margin: 20px !important;    
+    float: left;
+    width: 16%;
+    /* height: 250px; */
+    
+   
+}
+
+.ant-card{
+    background-color: rgb(167, 202, 63) !important;
+    
+}
+
+
+.ant-card-body{
+    padding: 10px !important;
 }
 
 .cardEvent-image{
 
     height: 200px;
-    background-color: black;
+}
+   
+
+.cardEvent-date{
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-color: #72388D;
+    color: white;
+    text-align: center;
+    
+}
+
+.cardEvent-title{
+    margin: 0 0 10px 55px;
+    font-size: 0.9em;
+    text-align: justify;
+    font-weight: bold;
+    color: white;
+}
+
+.cardEvent-place{
+    float: left;
+    margin-top:-10px;
+    margin-left: 5px;
+    font-size: 0.7em;
+    color: white;
+}
+
+.cardVideo-info-secundary{
+    background-color: #B0CF52;
+    border: 1px solid white;
+    float: right;
+    padding: 0 5px;
+    border-radius: 5px;
+    margin: 0;
+    padding: 3px;
+    font-size: 0.6em;
+    
+}
+
+.modal-img{
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+
+
+.ant-modal{
+    width: 750px !important;  
+    top: 40px !important;
+}
+
+.ant-modal-content{
+    width: 750px;    
+   
+}
+
+.cardEvent-date{
+    text-transform: uppercase;
+}
+  
+.modal-description{
+    text-align: justify;
 }
