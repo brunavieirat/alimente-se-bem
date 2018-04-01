@@ -4,15 +4,16 @@ import './index.css'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker'
-import Login from './services/Login'
+import Login from './services/Login/Login'
 
 
-const isLogged = true
+let logged = localStorage.getItem('logged') 
+// console.log (logged)
 
 
 ReactDOM.render(
 	<BrowserRouter>
-		{isLogged ? <App />  : <Login/>}
+		{(logged === 'true') ? <App />  : <Login />}
 	</BrowserRouter>,
 	document.getElementById('root'))
 registerServiceWorker()

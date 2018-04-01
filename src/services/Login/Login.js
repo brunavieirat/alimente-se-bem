@@ -1,8 +1,11 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import FacebookLogin from 'react-facebook-login'
 import GoogleLogin from 'react-google-login'
-import {PostData} from './PostData'
+import RegularLogin from '../../components/RegularLogin/RegularLogin'
+import {PostData} from '../PostData'
 import {Redirect} from 'react-router-dom'
+import './Login.css'
+import axios from 'axios'
 // import './Welcome.css'
 
 class Login extends Component {
@@ -13,6 +16,24 @@ class Login extends Component {
 			redirect: false
 		}
 		this.signup = this.signup.bind(this)
+		this.tryLogin = this.tryLogin.bind(this)
+	}
+
+	tryLogin = () => {
+		// console.log(this.inputEmail.value, this.inputPassword.value)
+		axios.post('https://reqres.in/api/users', {
+			email: this.inputEmail.value,
+			password: this.inputPassword.value,
+		})
+			.then(function (response) {
+				if(response){
+					localStorage.setItem('logged', true)
+					window.location.href='/home'
+				}
+			})
+			.catch(function (error) {
+				console.log(error)
+			})
 	}
 
 	signup(res, type) {
@@ -68,29 +89,38 @@ class Login extends Component {
 			this.signup(response, 'google')
 		}
 
+		
+
 		return (
+			<Fragment>
+				<div className="login-container">
+					<RegularLogin 
+						tryLogin={this.tryLogin} 
+						inputPassword={el => this.inputPassword = el}
+						inputEmail={el => this.inputEmail = el} 
+					/>
+					<div className="row body">
+						<div className="medium-12 columns">
+							<div className="medium-12 columns">
 
-			<div className="row body">
-				<div className="medium-12 columns">
-					<div className="medium-12 columns">
-						<h2 id="welcomeText"></h2>
+								<FacebookLogin
+									appId="377964399342322"
+									autoLoad={false}
+									fields="name,email,picture"
+									callback={responseFacebook}/>
+								<br/><br/>
 
-						<FacebookLogin
-							appId="377964399342322"
-							autoLoad={false}
-							fields="name,email,picture"
-							callback={responseFacebook}/>
-						<br/><br/>
+								<GoogleLogin
+									clientId="505937548041-u6m5rdom3kcrfuo1m1ob3fh3gfbqjo2a.apps.googleusercontent.com"
+									buttonText="Login with Google"
+									onSuccess={responseGoogle}
+									onFailure={responseGoogle}/>
 
-						<GoogleLogin
-							clientId="505937548041-u6m5rdom3kcrfuo1m1ob3fh3gfbqjo2a.apps.googleusercontent.com"
-							buttonText="Login with Google"
-							onSuccess={responseGoogle}
-							onFailure={responseGoogle}/>
-
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			</Fragment>
 		)
 	}
 }
