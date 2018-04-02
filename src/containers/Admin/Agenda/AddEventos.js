@@ -42,9 +42,10 @@ onSubmit = (e) =>{
         return (
 
             <div className="card row -justify-center -align-center CategoryForm">
+            
                 <form className="row" onSubmit={this.onSubmit}>
                     <div className="form-group">
-
+                    <h1> Agenda </ h1>
                         <label> Título </label>
                         <input type="text" name="titulo"  onChange={onChangeVideo} />
 

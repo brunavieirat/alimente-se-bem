@@ -23,7 +23,7 @@ const AdminVideos = () => {
       <div className="container">
         <Tabs defaultActiveKey="2">
           <TabPane tab={<span><Icon type="apple" />Videos</span>} key="1">
-            <AddVideos />
+            {/* <AddVideos /> */}
             <Videos />
     </TabPane>
           <TabPane tab={<span><Icon type="android" />Categorias</span>} key="2">

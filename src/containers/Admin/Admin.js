@@ -8,6 +8,8 @@ import Videos from './Videos/Videos'
 
 import Agenda from './Agenda/AdminAgenda'
 
+import MyEditor from './Noticias/Noticias'
+
 
 
 class Admin extends React.Component {
@@ -23,15 +25,14 @@ class Admin extends React.Component {
        <div className="admin-body"> 
               <SideMenu />
               <div className="container">
-        {/* <AdminCategoria  /> */}
-
-        <Videos /> 
-        <Agenda />
-
-        
+        <AdminCategoria  /> 
+          <Agenda />
+  
+       <MyEditor /> 
         </div>
         </div>
       </div>
+
 
       </Fragment>
     )

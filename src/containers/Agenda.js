@@ -7,6 +7,7 @@ import Evento from '../components/Agenda/CardEvent/CardEvent'
 import moment from 'moment'
 import axios from 'axios'
 
+import Evento1 from '../components/Agenda/CardEvent/CardEvent.1'
 
 
 export default class Agenda extends Component {
@@ -40,6 +41,7 @@ export default class Agenda extends Component {
 					datemonth={moment(event.data_Evento).format('MMM')}
 					place={event.unidades_Sesi.nome}
 				/>
+				
 			);
 		})
 	}
@@ -85,6 +87,8 @@ export default class Agenda extends Component {
 					 }
 					  value="Excluir"/> */}
 				{this.renderEvents()}
+
+				
 
 			</Fragment>
 		)
