@@ -17,7 +17,8 @@ export default class Agenda extends Component {
 			pageTitleColor: {
 				background: '#E74D57',
 			},
-			events: []
+			events: [],
+			unidades: []
 		}
 	}
 
@@ -28,7 +29,13 @@ export default class Agenda extends Component {
 			})
 		})
 
-	}
+			getFromAPI('/Unidades_Sesi').then(res => {
+				this.setState({
+					unidades: res.data
+				})
+			})
+			console.log(this.state.unidades)
+		}
 
 	renderEvents() {
 		
@@ -39,7 +46,7 @@ export default class Agenda extends Component {
 					title={event.titulo}
 					dateday={moment(event.data_Evento).format('DD')}
 					datemonth={moment(event.data_Evento).format('MMM')}
-					place={event.unidades_Sesi.nome}
+					// place={unidades.nome}
 				/>
 				
 			);

@@ -15,8 +15,9 @@ class AddEventos extends Component {
             valor: '',
             tag:'',
             id_Unidade: ''
+        },
+        
 
-        }
     }
     onChangeVideo = (e) => {
         this.setState({

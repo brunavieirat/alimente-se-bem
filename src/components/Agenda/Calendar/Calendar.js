@@ -17,6 +17,7 @@ class Calendario extends Component {
 
 	render() {
 		return (
+			
 			<div className="calendar">
 				<Calendar
 					// dateCellRender={dateCellRender} 

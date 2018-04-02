@@ -18,6 +18,13 @@ class Admin extends React.Component {
     
     return (
 <Fragment>
+
+  
+				<Route path="/admin/videos"
+					component={Videos} />
+          <Route path="/admin/agenda"
+					component={Agenda} />
+					
       {/* <Route path="/admin/videos"
 					component={Videos} /> */}
 
@@ -25,8 +32,8 @@ class Admin extends React.Component {
        <div className="admin-body"> 
               <SideMenu />
               <div className="container">
-        <AdminCategoria  /> 
-          <Agenda />
+        <Videos  /> 
+          {/* <Agenda /> */}
   
        <MyEditor /> 
         </div>
