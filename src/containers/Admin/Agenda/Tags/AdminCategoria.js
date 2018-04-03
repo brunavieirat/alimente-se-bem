@@ -55,9 +55,12 @@ deleteByIndex = id =>{
 
 <div className="container">
     
-        <AddCategoria onClickCad={this.onClickCad}  />
+        <AddCategoria 
+        onClickCad={this.onClickCad}  />
       {/* <ListCategory categorias={this.state.categorias}/> */}
-    <ListaCategoria categorias={categorias} deleteByIndex={this.deleteByIndex} />
+    <ListaCategoria 
+    categorias={categorias} 
+    deleteByIndex={this.deleteByIndex} />
 
     {/*<button onclick={this.removeItem()}> Excluir </button>*/}
         </div>

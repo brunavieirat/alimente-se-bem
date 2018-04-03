@@ -24,7 +24,8 @@ onClickCad=(evento)=>{
  
         return(
 
-             <AddEventos onClickCad={this.onClickCad} />
+             <AddEventos 
+             onClickCad={this.onClickCad} />
 
         )
 

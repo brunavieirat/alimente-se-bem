@@ -10,7 +10,11 @@ const LinhaEvento = (props) =>{
             <td> {categoria.id} </td>
             <td> {categoria.nome} </td>
             <td>
-          <button className="btn-remove" onClick={this.onClick}>×</button>
+          <button 
+          className="btn-remove" 
+          onClick={this.onClick}>
+          ×
+          </button>
         </td>
         </tr>
 

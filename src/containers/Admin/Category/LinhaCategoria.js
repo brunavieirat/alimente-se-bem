@@ -25,7 +25,11 @@ class LinhaCategoria extends Component{
                 <input />
                 </td>
             <td>
-          <button className="btn-remove" onClick={this.onClick}>×</button>
+          <button 
+          className="btn-remove"
+           onClick={this.onClick}>
+           ×
+           </button>
         </td>
         <td>
           <button className="btn-remove" > Editar</button>

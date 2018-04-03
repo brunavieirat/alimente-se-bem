@@ -34,8 +34,6 @@ onSubmit = (e) =>{
 }
 
 
-
-
     render() {
 
          const { onChangeVideo} = this
@@ -48,10 +46,10 @@ onSubmit = (e) =>{
                     <div className="form-group">
 
                         <label> Título </label>
-                        <input type="text" name="titulo"  onChange={onChangeVideo} />
+                        <input type="text" name="titulo" value={titulo} onChange={onChangeVideo} />
 
                         <label> Descrição </label>
-                        <textarea name="descricao" onChange={onChangeVideo} />
+                        <textarea name="descricao" value={titulo} onChange={onChangeVideo} />
 
                         {/* // <label> Valor </label> */}
                         {/* // <input type="text" name="valor"  onChange={onChangeVideo} /> */}
