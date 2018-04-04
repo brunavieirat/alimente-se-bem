@@ -32,10 +32,12 @@ class Login extends Component {
 
 
 	tryLogin = () => {
+		localStorage.setItem('logged', true)
+		window.location.href='/home'
 		// console.log(this.inputEmail.value, this.inputPassword.value)
-		if( this.validation(this.inputEmail.value, this.inputPassword.value)){
-			console.log(this.state.nutricionistas)
-		}
+		// if( this.validation(this.inputEmail.value, this.inputPassword.value)){
+		// 	console.log(this.state.nutricionistas)
+		// }
 			
 	}
 
