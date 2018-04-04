@@ -15,6 +15,7 @@ state={
 onSubmit = (e) => {
     e.preventDefault()
     this.props.onClickCad(this.state.categoria)
+    
     this.setState({
         nome: ''
     })
@@ -27,7 +28,8 @@ onChangeCat=(e)=>{
       nome: e.target.value
         }
     })
-   
+    // console.log(this.state.categoria)
+  
    }
 render(){
     return(
@@ -38,7 +40,7 @@ render(){
         <label> Categorias </label>
         <input type="text" required="required" onChange={this.onChangeCat}/>
         </div>
-        <button className="btn-add">Cadastrar </button>
+        <button className="btn-add">{this.props.value} </button>
         
         </form>
         </div>

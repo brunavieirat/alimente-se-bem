@@ -33,18 +33,21 @@ componentDidMount(){
 deleteByIndex = id =>{
      
     const { categorias } = this.state;
-    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/'+id)
+    deleteFromAPI('Categorias_Videos/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
 }
 
 
+
      onClickCad=(categoria)=>{
      postFromAPI('/Categorias_Videos/Cadastrar', categoria)
      .then(res=> this.refresh())
-     .catch(error=>alert(error))
-    
+     .catch(error=>alert(error))    
      }
+
+     
+      
 
    render(){
 
@@ -56,11 +59,13 @@ deleteByIndex = id =>{
 <div className="container">
     
         <AddCategoria 
-        onClickCad={this.onClickCad}  />
+        onClickCad={this.onClickCad} value="Cadastrar" onClickEdit={this.state.categorias}/>
       {/* <ListCategory categorias={this.state.categorias}/> */}
     <ListaCategoria 
     categorias={categorias} 
-    deleteByIndex={this.deleteByIndex} />
+    deleteByIndex={this.deleteByIndex}
+    
+    />
 
     {/*<button onclick={this.removeItem()}> Excluir </button>*/}
         </div>

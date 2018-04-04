@@ -21,16 +21,20 @@ class AddVideos extends Component {
         this.setState({
             video: {
                 ...this.state.video,
-                [e.target.getAttribute('name')]: e.target.value
+                [e.target.getAttribute('name')]: e.target.value,
+               
+                
             }
+            
         })
+       
     }
 
 onSubmit = (e) =>{
  e.preventDefault()
  this.props.onClickCad(this.state.video)
  console.log(this.state.video)
-
+ 
 }
 
 

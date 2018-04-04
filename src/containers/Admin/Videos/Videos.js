@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { Tabs, Icon } from 'antd'
 import 'antd/lib/tabs/style/css'
 
-import Categorias from '../Category/AdminCategoria'
+import Categorias from '../Categoria/AdminCategoria'
 import AddVideos from './AdminVideos'
 import SideMenu from '../SideMenu/SideMenu'
 
