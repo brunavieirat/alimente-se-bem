@@ -1,15 +1,13 @@
 import React from 'react'
-import AddCategoria from './AddCategoria'
-import ListaCategoria from './ListaCategoria'
-import getFromAPI, { postFromAPI, deleteFromAPI } from '../../../services/APIServices'
-import './AdminCategoria.css'
+
+import getFromAPI from '../../../services/APIServices'
+
 
 import axios from 'axios'
 
 class AdminCategoria extends React.Component{
     state={
-        nome: '',
-          categorias: []
+        tags: []
       }
    
     

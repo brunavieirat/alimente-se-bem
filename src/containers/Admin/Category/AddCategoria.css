@@ -12,9 +12,9 @@
 
 }
 
-.form-group input{
+/* .form-group input{
     width: 300px;
-}
+} */
 .form-group > input, .btn-add {
   padding: 5px 3px;
   color: #606060;

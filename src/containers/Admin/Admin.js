@@ -1,21 +1,26 @@
 import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
-import axios from 'axios'
 import SideMenu from './SideMenu/SideMenu'
 import './Admin.css'
-import AdminCategoria from './Category/AdminCategoria'
 import Videos from './Videos/Videos'
-
 import Agenda from './Agenda/AdminAgenda'
+import MyEditor from './Noticias/Noticias'
 
 
 
-class Admin extends React.Component {
+class Admin extends Component {
 
 	render() {
     
 		return (
 			<Fragment>
+
+  
+				<Route path="/admin/videos"
+					component={Videos} />
+				<Route path="/admin/agenda"
+					component={Agenda} />
+					
 				{/* <Route path="/admin/videos"
 					component={Videos} /> */}
 
@@ -23,15 +28,14 @@ class Admin extends React.Component {
 					<div className="admin-body"> 
 						<SideMenu />
 						<div className="container">
-							{/* <AdminCategoria  /> */}
-
-							<Videos /> 
-							<Agenda />
-
-        
+							<Videos  /> 
+							{/* <Agenda /> */}
+  
+							<MyEditor /> 
 						</div>
 					</div>
 				</div>
+
 
 			</Fragment>
 		)

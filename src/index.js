@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker'
 import Login from './services/Login/Login'
 
+// import { Provider} from 'react-redux'
+// import { combineReducers, createStore } from 'redux'
 
 let logged = localStorage.getItem('logged') 
 // console.log (logged)

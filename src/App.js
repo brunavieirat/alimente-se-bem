@@ -13,11 +13,25 @@ import Footer from './components/Footer/Footer'
 import Admin from './containers/Admin/Admin'
 
 
+import firebase from 'firebase'
+const config = {
+	apiKey: 'AIzaSyBcn7sDMwuqqporRgImO3f8txHtVurr80Q',
+	authDomain: 'alimente-se-bem-dc7c4.firebaseapp.com',
+	databaseURL: 'https://alimente-se-bem-dc7c4.firebaseio.com',
+	storageBucket: 'alimente-se-bem-dc7c4.appspot.com',
+}
+
+  
+
+
+firebase.initializeApp(config)
+
 class App extends Component {
 	render() {
 		return (
 			<Fragment>
 				<Navbar />
+				{/* <SideMenu /> */}
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/videos" component={Videos}  />

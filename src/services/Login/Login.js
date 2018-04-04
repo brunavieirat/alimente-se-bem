@@ -20,20 +20,23 @@ class Login extends Component {
 		this.signup = this.signup.bind(this)
 		this.tryLogin = this.tryLogin.bind(this)
 	}
-	// email: this.inputEmail.value,
-	// password: this.inputPassword.value,
-	tryLogin = () => {
-		// console.log(this.inputEmail.value, this.inputPassword.value)
+	prepareToLogin (){
 		getFromAPI('Nutricionistas')
 			.then( response =>  {
-				if(this.checkReponse(response.status) && this.validation(this.inputEmail.value, this.inputPassword.value)){
-					console.log(this.state.nutricionistas)
-				}
-				
+				this.setState({nutricionistas: response.data})		
 			})
 			.catch(function (error) {
 				console.log(error)
 			})
+	}
+
+
+	tryLogin = () => {
+		// console.log(this.inputEmail.value, this.inputPassword.value)
+		if( this.validation(this.inputEmail.value, this.inputPassword.value)){
+			console.log(this.state.nutricionistas)
+		}
+			
 	}
 
 	validation( email, password  ){

@@ -81,6 +81,7 @@ export default class Videos extends Component {
 			return (
 
 				<CardVideo
+					key={event.id}
 					title={event.titulo}
 					price={event.valor}
 					description={event.descricao}
