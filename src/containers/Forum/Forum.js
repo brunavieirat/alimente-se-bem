@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../../components/PageTitle/PageTitle'
 import './Forum.css'
-import axios from 'axios'
+import getFromAPI from '../../services/APIServices'
 import ListTopics from './ListTopics'
 
 
@@ -16,7 +16,7 @@ class Forum extends Component {
 	}
 
 	data = () => {
-		axios.get('assets/fakejsons/forum.json').then(response => {
+		getFromAPI('Forum').then(response => {
 			let resp = response.data
 			this.setState({data: {resp}})
 		})
@@ -51,33 +51,5 @@ class Forum extends Component {
 		)
 	}
 }
-
-// const ax = axios.create({
-// 	baseURL: 'http://localhost:3000'
-//   })
-
-// fetch('http://localhost:3000/assets/fakejsons/eventos.json').then(function(response) { 
-// 	// Convert to JSON
-// 	return response.json()
-// }).then(function(j) {
-// 	// Yay, `j` is a JavaScript object
-// 	console.log(j)
-// })
-
-
-
-// fetch('http://localhost:3000/assets/fakejsons/forum.json')
-// .then( response => response.json() 
-// .then(json => {
-// 	console.log(json)
-// }))
-		
-// ax.get('/assets/fakejsons/forum.json')
-// .then(
-// 	response => (data) = response
-// ).catch(
-// 	e => console.log('Esse eh o erro ' +  e)
-// )
-// console.log(data)
 
 export default Forum

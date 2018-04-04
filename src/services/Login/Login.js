@@ -5,7 +5,8 @@ import RegularLogin from '../../components/RegularLogin/RegularLogin'
 import {PostData} from '../PostData'
 import {Redirect} from 'react-router-dom'
 import './Login.css'
-import axios from 'axios'
+import  getFromAPI  from '../APIServices'
+// import axios from 'axios'
 // import './Welcome.css'
 
 class Login extends Component {
@@ -13,28 +14,34 @@ class Login extends Component {
 		super(props)
 		this.state = {
 			loginError: false,
-			redirect: false
+			redirect: false,
+			nutricionistas: null
 		}
 		this.signup = this.signup.bind(this)
 		this.tryLogin = this.tryLogin.bind(this)
 	}
-
+	// email: this.inputEmail.value,
+	// password: this.inputPassword.value,
 	tryLogin = () => {
 		// console.log(this.inputEmail.value, this.inputPassword.value)
-		axios.post('https://reqres.in/api/users', {
-			email: this.inputEmail.value,
-			password: this.inputPassword.value,
-		})
-			// Aqui tem que ver qual vai ser a resposta do back, pra poder colocar a lógica de verificação
-			.then(function (response) {
-				if(response){
-					localStorage.setItem('logged', true)
-					window.location.href='/home'
+		getFromAPI('Nutricionistas')
+			.then( response =>  {
+				if(this.checkReponse(response.status) && this.validation(this.inputEmail.value, this.inputPassword.value)){
+					console.log(this.state.nutricionistas)
 				}
+				
 			})
 			.catch(function (error) {
 				console.log(error)
 			})
+	}
+
+	validation( email, password  ){
+		return (email && password) ? true : alert('Por favor, preencha o email e a senha.')
+	}	
+
+	checkReponse( status ){
+		return (status === 200)
 	}
 
 	signup(res, type) {
