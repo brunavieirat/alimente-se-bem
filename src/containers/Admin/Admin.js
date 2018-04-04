@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import axios from 'axios'
 import SideMenu from './SideMenu/SideMenu'
 import './Admin.css'
-import AdminCategoria from './Category/AdminCategoria'
+import AdminCategoria from './Categoria/AdminCategoria'
 import Videos from './Videos/Videos'
 
 import Agenda from './Agenda/AdminAgenda'

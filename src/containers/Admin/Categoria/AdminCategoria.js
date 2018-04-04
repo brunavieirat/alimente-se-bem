@@ -33,9 +33,15 @@ componentDidMount(){
 deleteByIndex = id =>{
      
     const { categorias } = this.state;
-    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/'+id)
+    // 
+    deleteFromAPI('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
+}
+
+edit = (categoria) => {
+
+    console.log('editAdmin ok')
 }
 
 
@@ -57,7 +63,7 @@ deleteByIndex = id =>{
     
         <AddCategoria onClickCad={this.onClickCad}  />
       {/* <ListCategory categorias={this.state.categorias}/> */}
-    <ListaCategoria categorias={categorias} deleteByIndex={this.deleteByIndex} />
+    <ListaCategoria categorias={categorias} deleteByIndex={this.deleteByIndex} edit={this.edit} />
 
     {/*<button onclick={this.removeItem()}> Excluir </button>*/}
         </div>

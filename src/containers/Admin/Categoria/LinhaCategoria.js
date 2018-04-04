@@ -6,7 +6,7 @@ class LinhaCategoria extends Component{
 
     state={
 
-        edit: false
+        
     }
 
     onClick = (e) =>{
@@ -15,23 +15,9 @@ class LinhaCategoria extends Component{
         deleteByIndex(this.props.id)
     }
 
-    onEdit = (e) => {
-
-            <tr>
-            <td> 
-            <label> {this.props.id} </label>
-            </td>
-            <td>
-                <input />
-                </td>
-            <td>
-          <button className="btn-remove" onClick={this.onClick}>×</button>
-        </td>
-        <td>
-          <button className="btn-remove" > Editar</button>
-        </td>
-        </tr>
-        
+    onClickEditar = (e) =>{
+        const { edit } = this.props
+        console.log('props linha categoria' + this.props)
     }
 
     render(){
@@ -49,7 +35,7 @@ class LinhaCategoria extends Component{
           <button className="btn-remove" onClick={this.onClick}>×</button>
         </td>
         <td>
-          <button className="btn-remove" onClick={this.onEdit} > Editar</button>
+          <button className="btn-remove" onClick={this.onClickEditar} > Editar</button>
         </td>
         </tr>
             
