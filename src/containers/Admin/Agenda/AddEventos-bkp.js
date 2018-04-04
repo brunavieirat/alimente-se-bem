@@ -3,16 +3,12 @@ import React, { Component } from 'react'
 
 import './AddEventos.css'
 
-import firebase from 'firebase';
-import FileUploader from 'react-firebase-file-uploader';
 
 
 class AddEventos extends Component {
 
     state = {
         evento: {
-            image: '',
-            imageUrl:'',
             titulo: '',
             descricao: '',
             data_Evento: '',
@@ -39,25 +35,10 @@ onSubmit = (e) =>{
  console.log(this.state.evento)
 }
 
- handleUploadSuccess = (filename, { snapshot }, b) => {
-        // this.setState({ 
-        //     image: filename
-        // });
-        console.log('filename ' + filename, snapshot.downloadURL)
-
-        firebase.storage().ref('images').child(filename).getDownloadURL()
-        .then(
-            console.log('imageURL: '+ this.state.evento.imageUrl)
-        //     url => this.setState({ 
-        //     imageURL: url 
-        // })
-        );
-    };
-
     render() {
 
          const { onChangeVideo} = this
-        const {image, imageUrl, titulo, descricao, data_Evento, valor, tag, id_unidade } = this.state.evento
+        const {titulo, descricao, data_Evento, valor, tag, id_unidade } = this.state.evento
 
         return (
 
@@ -66,25 +47,6 @@ onSubmit = (e) =>{
                 <form className="row" onSubmit={this.onSubmit}>
                     <div className="form-group">
                     <h1> Agenda </ h1>
-
-                            <label>Imagem:</label>
-
-                            {imageUrl &&
-                        <img src={imageUrl} />
-                    }
-
-                    <FileUploader
-                        accept="image/*"
-                        name="image"
-                        randomizeFilename
-                        storageRef={firebase.storage().ref('images')}
-                        onUploadError={this.handleUploadError}
-                        onUploadSuccess={this.handleUploadSuccess}
-                      
-                    />
-                    
-                    
-
                         <label> Título </label>
                         <input type="text" name="titulo" required="required" onChange={onChangeVideo} />
 

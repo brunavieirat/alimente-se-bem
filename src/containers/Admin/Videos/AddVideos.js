@@ -46,22 +46,22 @@ onSubmit = (e) =>{
                     <div className="form-group">
 
                         <label> Título </label>
-                        <input type="text" name="titulo" value={titulo} onChange={onChangeVideo} />
+                        <input type="text" name="titulo" required="required" value={titulo} onChange={onChangeVideo} />
 
                         <label> Descrição </label>
-                        <textarea name="descricao" value={titulo} onChange={onChangeVideo} />
+                        <textarea name="descricao" required="required" value={descricao} onChange={onChangeVideo} />
 
                         {/* // <label> Valor </label> */}
                         {/* // <input type="text" name="valor"  onChange={onChangeVideo} /> */}
 
                         <label> URL Vídeo</label>
-                        <input type="text" name="url"  onChange={onChangeVideo} />
+                        <input type="text" name="url" required="required" onChange={onChangeVideo} />
 
                         <label> Link Externo para maiores informações </label>
                         <input type="text" name="link_Externo"  onChange={onChangeVideo} />
 
                         <label> Categoria </label>
-                        <input type="text" name="id_Cat_Videos"  onChange={onChangeVideo} />
+                        <input type="text" name="id_Cat_Videos" required="required" onChange={onChangeVideo} />
 
                     </div>
                     <button className="btn-add">Cadastrar </button>
