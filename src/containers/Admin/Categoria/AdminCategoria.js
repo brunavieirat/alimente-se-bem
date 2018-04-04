@@ -63,7 +63,7 @@ edit = (categoria) => {
     
         <AddCategoria onClickCad={this.onClickCad}  />
       {/* <ListCategory categorias={this.state.categorias}/> */}
-    <ListaCategoria categorias={categorias} deleteByIndex={this.deleteByIndex} edit={this.edit} />
+    <ListaCategoria categorias={categorias} deleteByIndex={this.deleteByIndex} refresh={this.refresh} />
 
     {/*<button onclick={this.removeItem()}> Excluir </button>*/}
         </div>

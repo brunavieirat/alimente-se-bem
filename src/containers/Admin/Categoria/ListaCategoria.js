@@ -33,7 +33,7 @@ class ListaCategoria extends Component {
             nome={categoria.nome}
             deleteByIndex={deleteByIndex}
             categorias={categorias}
-            edit={edit}
+            
 
             
             />

@@ -1,50 +1,112 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './LinhaCategoria.css'
 
+import { Modal } from 'antd'
+import 'antd/lib/modal/style/css'
+import AddCategoria from './AddCategoria'
 
-class LinhaCategoria extends Component{
+import getFromAPI, { postFromAPI, deleteFromAPI, putFromAPI } from '../../../services/APIServices'
+import axios from 'axios'
 
-    state={
+class LinhaCategoria extends Component {
+    state = {
+        visible: false,
+        categoria:{
+            id: '',
+            nome:'',
+            videos: []
 
-        
+        }      
     }
 
-    onClick = (e) =>{
-        const { deleteByIndex} = this.props
+    showModal = () => {
+        this.state.visible = true;
+        this.setState({
+            visible: true,
+        });
+    }
+    handleCancel = () => {
+        this.setState({
+            visible: false,
+        });
+    }
+
+    handleOk = () => {
+        this.setState({
+            visible: false,
+        });
+    }
+
+
+
+    onClick = (e) => {
+        const { deleteByIndex } = this.props
         e.preventDefault()
         deleteByIndex(this.props.id)
     }
 
-    onClickEditar = (e) =>{
-        const { edit } = this.props
-        console.log('props linha categoria' + this.props)
+   
+
+    onClickEdit=(cat)=>{
+        
+        const teste ={
+            id: this.props.categoria.id,
+            nome: cat.nome,
+            videos: this.props.categoria.videos
+        }
+       
+        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/Atualizar', teste)
+        .then(res=> console.log('ok'))
+        .catch(error=>alert(error))    
+        
+        
+        
+   
+    console.log(teste)
+  
     }
 
-    render(){
+    render() {
 
-        return(
+        return (
 
-                       <tr>
-            <td> 
-            <label> {this.props.id} </label>
-            </td>
-            <td>
-                <label> {this.props.nome} </label>
-                </td>
-            <td>
-          <button className="btn-remove" onClick={this.onClick}>×</button>
-        </td>
-        <td>
-          <button className="btn-remove" onClick={this.onClickEditar} > Editar</button>
-        </td>
-        </tr>
-            
-       
+            <Fragment>
+
+                <tr>
+                    <td>
+                        <label> {this.props.id} </label>
+                    </td>
+                    <td>
+                        <label> {this.props.nome} </label>
+                    </td>
+                    <td>
+                        <button className="btn-remove" onClick={this.onClick}>×</button>
+                    </td>
+                    <td>
+                        <button className="btn-remove" onClick={this.showModal} > Editar</button>
+                    </td>
+                </tr>
+
+                <Modal
+                    wrapClassName="modal"
+                    title={this.props.title}
+                    visible={this.state.visible}
+                    onOk={this.handleOk}
+                    okText="Editar"
+                    onCancel={this.handleCancel}
+                    
+                >
+                   
+           <AddCategoria value="Editar"  onClickCad={this.onClickEdit} />
+                   
+                </Modal>
+
+            </Fragment>
         )
     }
-    
 
-    
+
+
 
 }
 export default LinhaCategoria
