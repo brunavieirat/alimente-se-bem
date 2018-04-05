@@ -4,8 +4,6 @@ import './CardEvent.css'
 import { Card, Modal } from 'antd'
 import 'antd/lib/card/style/css'
 import 'antd/lib/modal/style/css'
-import sucos from './sucos.jpg'
-
 
 
 class CardEvent extends React.Component {
@@ -38,7 +36,11 @@ class CardEvent extends React.Component {
 			<Fragment>
 				<Card
 					className="cardEvent"
-					cover={<img alt="example" src={sucos} />}
+					cover={
+					<img alt="example" 
+					src={this.props.urlImagem} 
+					className="cardEvent-img"
+					/>}
 				>
 					<div className="cardEvent-date">
 						<label> {this.props.dateday} <br />
@@ -66,7 +68,7 @@ class CardEvent extends React.Component {
 					onCancel={this.handleCancel}
 				>
 					<div className="modal-img">
-						<img className="modal-img" alt="example" src={sucos} />
+						<img className="modal-img" alt="example" src={this.props.urlImagem} />
 					</div>
 					<label className="modal-description">
 						Nessa próxima parte do código, vamos chamar o método document.write, que tem a função de escrever na tela. Dentro, nós colocaremos o código principal, responsável pela criação das datas. O que se encontra dentro de aspas, a partir de agora, será um texto; e o que estiver fora de aspas, será o tal código que deveremos estudar.

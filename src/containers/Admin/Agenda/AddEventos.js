@@ -10,9 +10,9 @@ import FileUploader from 'react-firebase-file-uploader';
 class AddEventos extends Component {
 
     state = {
-        evento: {
-            image: '',
-            imageUrl:'',
+        evento: {            
+            url_Imagem:'',
+            image:'',
             titulo: '',
             descricao: '',
             data_Evento: '',
@@ -36,22 +36,31 @@ class AddEventos extends Component {
 onSubmit = (e) =>{
  e.preventDefault()
  this.props.onClickCad(this.state.evento)
- console.log(this.state.evento)
+ 
 }
 
  handleUploadSuccess = (filename, { snapshot }, b) => {
-        // this.setState({ 
-        //     image: filename
-        // });
+        this.setState({ 
+           evento:{
+               image: filename
+           }
+          
+        });
         console.log('filename ' + filename, snapshot.downloadURL)
 
         firebase.storage().ref('images').child(filename).getDownloadURL()
         .then(
-            console.log('imageURL: '+ this.state.evento.imageUrl)
+            this.setState({
+                evento: {
+                url_Imagem: snapshot.downloadURL
+                }
+            })
+           
         //     url => this.setState({ 
         //     imageURL: url 
         // })
         );
+        console.log('imageURL: '+ this.state.url_Image)
     };
 
     render() {

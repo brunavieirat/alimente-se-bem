@@ -14,6 +14,8 @@ class AdminAgenda extends Component{
     }
 
 onClickCad=(evento)=>{
+
+    console.log(evento)
     postFromAPI('Agenda', evento)
     .then(res=> alert('oooook'))
     .catch(error=> alert(error))

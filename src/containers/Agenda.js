@@ -7,7 +7,6 @@ import Evento from '../components/Agenda/CardEvent/CardEvent'
 import moment from 'moment'
 import axios from 'axios'
 
-import Evento1 from '../components/Agenda/CardEvent/CardEvent.1'
 
 
 export default class Agenda extends Component {
@@ -44,6 +43,7 @@ export default class Agenda extends Component {
 				<Evento
 					key={event.id}
 					title={event.titulo}
+					urlImagem={event.url_Imagem}
 					dateday={moment(event.data_Evento).format('DD')}
 					datemonth={moment(event.data_Evento).format('MMM')}
 					// place={unidades.nome}
