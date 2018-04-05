@@ -5,7 +5,7 @@ import { Modal } from 'antd'
 import 'antd/lib/modal/style/css'
 import AddCategoria from './AddCategoria'
 
-import getFromAPI, { postFromAPI, deleteFromAPI} from '../../../services/APIServices'
+// import getFromAPI, { postFromAPI, deleteFromAPI} from '../../../services/APIServices'
 import axios from 'axios'
 
 class LinhaCategoria extends Component {
@@ -96,7 +96,14 @@ class LinhaCategoria extends Component {
                     onCancel={this.handleCancel}
                     
                 >
-                   
+                    <tr>
+                    <td>
+                        <label> {this.props.id} </label>
+                    </td>
+                    <td>
+                        <label> {this.props.nome} </label>
+                    </td>
+                    </tr>
            <AddCategoria value="Editar"  onClickCad={this.onClickEdit} />
                    
                 </Modal>

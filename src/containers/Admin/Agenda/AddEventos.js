@@ -66,7 +66,7 @@ onSubmit = (e) =>{
     render() {
 
          const { onChangeVideo} = this
-        const {image, imageUrl, titulo, descricao, data_Evento, valor, tag, id_unidade } = this.state.evento
+        const { imageUrl } = this.state.evento
 
         return (
 

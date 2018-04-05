@@ -24,7 +24,7 @@ onClickCad=(video)=>{
 
     render(){
 
-        const {videos} = this.state
+       
         return(
 
             <AddVideos onClickCad={this.onClickCad} />

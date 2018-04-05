@@ -41,7 +41,7 @@ onSubmit = (e) =>{
     render() {
 
          const { onChangeVideo} = this
-         const {titulo, descricao, url,  link_Externo, id_Cat_Videos } = this.state.video
+         const {titulo, descricao } = this.state.video
 
         return (
 

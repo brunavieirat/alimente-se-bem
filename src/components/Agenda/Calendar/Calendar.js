@@ -15,16 +15,14 @@ import 'moment/locale/pt-br'
 
 class Calendario extends Component {
 
+
 	render() {
 		return (
 			
 			<div className="calendar">
 				<Calendar
-					// dateCellRender={dateCellRender} 
-					// monthCellRender={monthCellRender}
-					onSelect={this.props.onSelectDate}
+				onSelect={this.props.onSelect}
 					fullscreen={false}
-
 				/>
 			</div>
 		)

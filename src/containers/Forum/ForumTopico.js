@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import ListaTopicos from './ListaTopico'
-import AddTopico from './AddTopico'
+// import AddTopico from './AddTopico'
 
 import './ForumTopico.css'
 

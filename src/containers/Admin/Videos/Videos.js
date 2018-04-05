@@ -4,9 +4,9 @@ import 'antd/lib/tabs/style/css'
 
 import Categorias from '../Categoria/AdminCategoria'
 import AddVideos from './AdminVideos'
-import SideMenu from '../SideMenu/SideMenu'
+// import SideMenu from '../SideMenu/SideMenu'
 
-import Videos from '../../Videos'
+// import Videos from '../../Videos'
 
 const TabPane = Tabs.TabPane;
 

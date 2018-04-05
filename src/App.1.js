@@ -13,40 +13,21 @@ import Admin from './containers/Admin/Admin'
 // import SideMenu from './containers/Admin/SideMenu/SideMenu';
 // import NotFound from './containers/NotFound'
 
-import FacebookLoginButton from './containers/Login/FacebookLoginButton'
-
 import firebase from 'firebase';
-
 const config = {
-	apiKey: "AIzaSyBcn7sDMwuqqporRgImO3f8txHtVurr80Q",
-	authDomain: "alimente-se-bem-dc7c4.firebaseapp.com",
-	databaseURL: "https://alimente-se-bem-dc7c4.firebaseio.com",
-	storageBucket: "alimente-se-bem-dc7c4.appspot.com",
-	};
-	
+apiKey: "AIzaSyBcn7sDMwuqqporRgImO3f8txHtVurr80Q",
+authDomain: "alimente-se-bem-dc7c4.firebaseapp.com",
+databaseURL: "https://alimente-se-bem-dc7c4.firebaseio.com",
+storageBucket: "alimente-se-bem-dc7c4.appspot.com",
+};
+
+  
+
 
 firebase.initializeApp(config);
 
 class App extends Component {
-
-	state = {
-		username: null
-	  };
-	
-	  onFacebookLogin = (loginStatus, resultObject) => {
-		if (loginStatus === true) {
-		  this.setState({
-			username: resultObject.user.name
-		  });
-		} else {
-		  alert('Facebook login error');
-		}
-	  }
-	  
 	render() {
-
-		const { username } = this.state;
-
 		return (
 			<Fragment>
 
@@ -67,26 +48,6 @@ class App extends Component {
 					{/* <Route path="*" component={NotFound}/> */}
 				</Switch>
 				
-
-				<div className="App">
-        <header className="App-header">
-          <h1 className="App-title">React Social Media Login</h1>
-        </header>
-
-        <div className="App-intro">
-          { !username &&
-            <div>
-              <p>Click on one of any button below to login</p>
-              <FacebookLoginButton onLogin={this.onFacebookLogin}>
-                <button>Facebook</button>
-              </FacebookLoginButton>
-            </div>
-          }
-          {username &&
-            <p>Welcome back, {username}</p>
-          }
-        </div>
-      </div>
 
 			</Fragment>
 		)
