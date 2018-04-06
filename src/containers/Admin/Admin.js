@@ -14,8 +14,6 @@ class Admin extends Component {
     
 		return (
 			<Fragment>
-
-  
 				<Route path="/admin/videos"
 					component={Videos} />
 				<Route path="/admin/agenda"

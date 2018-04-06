@@ -19,7 +19,14 @@ class Login extends Component {
 		}
 		this.signup = this.signup.bind(this)
 		this.tryLogin = this.tryLogin.bind(this)
+		this.prepareToLogin = this.prepareToLogin.bind (this)
 	}
+
+	componentWillMount(){
+		this.prepareToLogin()
+	}
+
+
 	prepareToLogin (){
 		getFromAPI('Nutricionistas')
 			.then( response =>  {
@@ -32,12 +39,13 @@ class Login extends Component {
 
 
 	tryLogin = () => {
-		localStorage.setItem('logged', true)
-		window.location.href='/home'
+
+		// return true
+		// this.login()
 		// console.log(this.inputEmail.value, this.inputPassword.value)
-		// if( this.validation(this.inputEmail.value, this.inputPassword.value)){
-		// 	console.log(this.state.nutricionistas)
-		// }
+		if( this.validation(this.inputEmail.value, this.inputPassword.value)){
+			this.checkLogin(this.inputEmail.value, this.inputPassword.value)
+		}
 			
 	}
 
@@ -47,6 +55,28 @@ class Login extends Component {
 
 	checkReponse( status ){
 		return (status === 200)
+	}
+
+	checkLogin(email, password){
+		let loginUsersData = this.state.nutricionistas
+		let loginUsersEmailNif = loginUsersData.map(
+			usersData => ( console.log(usersData, password)
+				// usersData.map(
+				// 	users => {
+				// 		if(user.)
+				// 	}
+				// )
+			)
+			
+		)
+		console.log(loginUsersData)
+		console.log(loginUsersEmailNif)
+		// console.log(loginUsersEmailNif)
+	}
+
+	login(){
+		localStorage.setItem('logged', true)
+		window.location.href='/home'
 	}
 
 	signup(res, type) {
