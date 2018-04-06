@@ -8,7 +8,7 @@ import Videos from './Videos/Videos'
 
 import Agenda from './Agenda/AdminAgenda'
 
-import MyEditor from './Noticias/Noticias'
+import Noticias from './Noticias/Noticias'
 
 
 
@@ -24,6 +24,8 @@ class Admin extends React.Component {
 					component={Videos} />
           <Route path="/admin/agenda"
 					component={Agenda} />
+            <Route path="/admin/noticias"
+					component={Noticias} />
 					
       {/* <Route path="/admin/videos"
 					component={Videos} /> */}
@@ -34,6 +36,7 @@ class Admin extends React.Component {
               <div className="container">
         <Videos  /> 
           {/* <Agenda /> */}
+          
   
         </div>
         </div>

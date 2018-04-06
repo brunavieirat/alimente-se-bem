@@ -53,8 +53,7 @@ listaCategoria(){
          
          value={categoria.id}> {categoria.nome}</option>
 
-         
-        )
+                 )
 
 
      })

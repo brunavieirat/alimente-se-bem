@@ -26,14 +26,13 @@ class AdminCategoria extends React.Component{
     })
 }
 
-componentDidMount(){
+componentWillMount(){
     this.refresh()
 
 }
 
 deleteByIndex = id =>{
      
-    
     deleteFromAPI('Categorias_Videos/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
@@ -43,7 +42,12 @@ deleteByIndex = id =>{
 
      onClickCad=(categoria)=>{
      postFromAPI('/Categorias_Videos/Cadastrar', categoria)
-     .then(res=> this.refresh())
+     .then(res=> {
+
+        alert('Categoria cadastrada com sucesso!')
+         this.refresh()
+                
+        })
      .catch(error=>alert(error))
      
      }
@@ -61,7 +65,9 @@ deleteByIndex = id =>{
 <div className="container">
     
         <AddCategoria 
-        onClickCad={this.onClickCad} value="Cadastrar" onClickEdit={this.state.categorias}/>
+        onClickCad={this.onClickCad}
+         value="Cadastrar" 
+         onClickEdit={this.state.categorias}/>
       {/* <ListCategory categorias={this.state.categorias}/> */}
     <ListaCategoria 
     categorias={categorias} 

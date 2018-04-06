@@ -36,7 +36,7 @@ render(){
         <form className="row" onSubmit={this.onSubmit}>
         <div className="form-group">
         <label> Categorias </label>
-        <input type="text" required="required" onChange={this.onChangeCat}/>
+        <input type="text" required="required" value={this.state.nome} onChange={this.onChangeCat}/>
         </div>
         <button className="btn-add">{this.props.value} </button>
         

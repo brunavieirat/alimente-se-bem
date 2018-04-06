@@ -27,7 +27,7 @@ class SideMenu extends React.Component {
       {
         image: faNewspaper,
         name: 'Notícias',
-        url: '/admin'
+        url: '/admin/noticias'
       },
       {
         image: faFileExcel,

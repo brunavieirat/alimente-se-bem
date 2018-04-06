@@ -21,7 +21,7 @@ class AdminVideos extends Component{
             this.setState({
                 ...this.state,
                 videos: res.data,
-                nome: ''                
+                              
         })
                 
     })
@@ -39,7 +39,7 @@ componentDidMount(){
                     categorias: res.data,
                     
         })
-      //  console.log(this.state.categorias)
+        console.log(this.state)
         
     })
     

@@ -63,7 +63,11 @@ class LinhaCategoria extends Component {
         }
        
         axios.put('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/Atualizar', teste)
-        .then(res=> console.log('ok'))
+        .then(res=>{
+            
+            alert('Categoria Editada com Sucesso!')
+            
+        })
         .catch(error=>alert(error))    
         
         
@@ -86,12 +90,12 @@ class LinhaCategoria extends Component {
                     <td>
                         <label> {this.props.nome} </label>
                     </td>
-                    <td>
+                    {/* <td>
                         <button className="btn-remove" onClick={this.onClick}>×</button>
                     </td>
                     <td>
                         <button className="btn-remove" onClick={this.showModal} > Editar</button>
-                    </td>
+                    </td> */}
                 </tr>
 
                 <Modal

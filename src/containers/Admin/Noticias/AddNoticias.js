@@ -15,20 +15,42 @@ class AddNoticias extends Component {
             headline: '',
             descricao: '',
             imagem:'',
-            link_externo: '',
+            link_Externo: '',
             id_Cat_Noticias:''
-        },
+        }
         
 
     }
-    onChangeVideo = (e) => {
+
+    listaCategoria(){
+
+        const {categorias} = this.props
+       // console.log(categorias)
+    
+        return categorias.map((categoria) => {
+             
+            return (
+             <option
+             
+             key={categoria.id}
+             
+             value={categoria.id}> {categoria.nome}</option>
+    
+                     )
+    
+    
+         })
+     
+    }
+    onChange = (e) => {
         this.setState({
-            noticia: {
+            noticia:{
                 ...this.state.noticia,
                 [e.target.getAttribute('name')]: e.target.value
+            //    titulo: e.target.value
             }
         })
-        //console.log(this.state.evento)
+        console.log(this.state)
     }
 
 onSubmit = (e) =>{
@@ -40,11 +62,11 @@ onSubmit = (e) =>{
  handleUploadSuccess = (filename, { snapshot }, b) => {
         this.setState({ 
            noticia:{
-               image: filename
+               imagem: filename
            }
           
         });
-        console.log('filename ' + filename, snapshot.downloadURL)
+    //    console.log('filename ' + filename, snapshot.downloadURL)
 
         firebase.storage().ref('images').child(filename).getDownloadURL()
         .then(
@@ -63,7 +85,7 @@ onSubmit = (e) =>{
 
     render() {
 
-         const { onChangeVideo} = this
+         const {onChange} = this
         const { imagem } = this.state.noticia
 
         return (
@@ -77,37 +99,47 @@ onSubmit = (e) =>{
                             <label>Imagem:</label>
 
                             {imagem &&
-                        <img src={imagem} />
+                        <img src={imagem} className="cardEvent-img"/>
                     }
 
                     <FileUploader
                         accept="image/*"
-                        name="image"
+                        name="imagem"
                         randomizeFilename
                         storageRef={firebase.storage().ref('images')}
                         onUploadError={this.handleUploadError}
                         onUploadSuccess={this.handleUploadSuccess}
+                       
                       
                     />
                     
                     
 
                         <label> Título </label>
-                        <input type="text" name="titulo" required="required" onChange={onChangeVideo} />
+                        <input type="text" name="titulo" required="required" onChange={onChange} />
 
                         <label> HeadLine </label>
-                        <textarea name="headline" required="required" onChange={onChangeVideo} />
+                        <textarea name="headline" required="required" onChange={onChange} />
 
                         <label> Descrição </label>
-                        <textarea name="descricao" required="required" onChange={onChangeVideo} />
+                        <textarea name="descricao" required="required" onChange={onChange} />
 
                         
                         
                         <label> Link Externo </label>
-                        <input type="text" name="link_externo"  onChange={onChangeVideo} />
+                        <input type="text" name="link_Externo"  onChange={onChange} />
 
-                        <label> Id Categoria  </label>
-                        <input type="text" name="id_Cat_Noticias" required="required" onChange={onChangeVideo} />
+                        {/* <label> Id Categoria  </label>
+                        <input type="text" name="id_Cat_Noticias" required="required" onChange={onChange} /> */}
+                        
+                        <label> Selecione a categoria </label>
+
+                        <select name="id_Cat_Noticias"  onChange={onChange} required="required"> 
+                        <option> Selecione uma categoria </option>
+
+                        {this.listaCategoria()}
+
+                        </select>
 
                     </div>
                     <button className="btn-add">Cadastrar </button>

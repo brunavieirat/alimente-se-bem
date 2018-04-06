@@ -58,7 +58,7 @@ class LinhaVideo extends Component {
 
    
 
-    onClickEdit=(videos)=>{
+    onClickEdit=(videos, categorias)=>{
         
         
         const teste ={
@@ -69,12 +69,12 @@ class LinhaVideo extends Component {
             url: videos.url,
             link_Externo: videos.link_Externo,
             id_Cat_Videos: videos.id_Cat_Videos,
-            //nome_Cat: ''
+            // nome_Cat: categorias.nome
             
         }
        
         axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', teste)
-        .then(res=> console.log('Video atualizado com sucesso!'))
+        .then(res=> console.log(this.state))
         .catch(error=>alert(error))    
         
         
@@ -105,7 +105,7 @@ class LinhaVideo extends Component {
                         <label> {this.props.link_Externo} </label>
                     </td>
                     <td>
-                        <label> {this.props.id_Cat} </label>
+                        <label> {this.props.categorias.nome} </label>
                     </td>
                     <td>
                         <button className="btn-remove" onClick={this.onClick}>×</button>
@@ -136,7 +136,7 @@ class LinhaVideo extends Component {
 
                     <label> Link {this.props.link_Externo} </label>
 
-                    <label>Cat {this.props.id_Cat_Videos} </label>
+                    <label>Cat {this.props.nome} </label>
                     {/* </tr> */} */}
             <AddVideos value="Editar"  onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
             
