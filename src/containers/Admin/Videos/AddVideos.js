@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import axios from 'axios'
 
 import './AddVideos.css'
 
@@ -13,11 +13,32 @@ class AddVideos extends Component {
             descricao: '',
             url: '',
             link_Externo: '',
-            id_Cat_Videos: ''
-
-        }
+            id_Cat_Videos: '',
+            nome_Cat: ''
+        },
+        categorias: []
     }
-    onChangeVideo = (e) => {
+
+    componentWillMount(){
+        
+        axios.get('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos')
+        .then(res=>{
+            
+            this.setState({
+                        ...this.state,
+                        categorias: res.data,
+                        
+            })
+            const teste=res.data
+            console.log(this.state)
+        })
+                
+
+    }
+
+
+
+    onChange = (e) => {
         this.setState({
             video: {
                 ...this.state.video,
@@ -38,9 +59,29 @@ onSubmit = (e) =>{
 }
 
 
+listaCategoria(){
+
+    return this.state.categorias.map((categoria) => {
+         
+        return (
+         <option
+         
+         key={categoria.id}
+         
+         value={categoria.id}> {categoria.nome}</option>
+
+         
+        )
+
+
+     })
+ 
+}
+
+
     render() {
 
-         const { onChangeVideo} = this
+         const { onChange} = this
          const {titulo, descricao } = this.state.video
 
         return (
@@ -50,23 +91,28 @@ onSubmit = (e) =>{
                     <div className="form-group">
 
                         <label> Título </label>
-                        <input type="text" name="titulo" required="required" value={titulo} onChange={onChangeVideo} />
+                        <input type="text" name="titulo" required="required" value={titulo} onChange={onChange} />
 
                         <label> Descrição </label>
-                        <textarea name="descricao" required="required" value={descricao} onChange={onChangeVideo} />
+                        <textarea name="descricao" required="required" value={descricao} onChange={onChange} />
 
                         {/* // <label> Valor </label> */}
                         {/* // <input type="text" name="valor"  onChange={onChangeVideo} /> */}
 
                         <label> URL Vídeo</label>
-                        <input type="text" name="url" required="required" onChange={onChangeVideo} />
+                        <input type="text" name="url" required="required" onChange={onChange} />
 
                         <label> Link Externo para maiores informações </label>
-                        <input type="text" name="link_Externo"  onChange={onChangeVideo} />
+                        <input type="text" name="link_Externo"  onChange={onChange} />
+                        <label> Selecione a categoria </label>
 
-                        <label> Categoria </label>
-                        <input type="text" name="id_Cat_Videos" required="required" onChange={onChangeVideo} />
+                        {/* <input type="text" name="id_categoria" required="required" onChange={onChangeVideo} /> */}
+                        <select name="id_Cat_Videos"  onChange={onChange} required="required"> 
+                        <option> Selecione uma categoria </option>
 
+                        {this.listaCategoria()}
+
+                        </select>
                     </div>
                     <button className="btn-add">Cadastrar </button>
 

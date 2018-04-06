@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { postFromAPI } from '../../../services/APIServices'
 
 import AddVideos from './AddVideos'
 import './AdminVideos.css'
+
+import ListaVideos from './ListaVideos'
 
 
 
@@ -23,12 +25,19 @@ onClickCad=(video)=>{
 }
 
     render(){
+        const { videos } = this.state.videos
 
        
         return(
+            <Fragment>
 
             <AddVideos onClickCad={this.onClickCad} />
-
+            <ListaVideos
+            videos={videos} 
+            deleteByIndex={this.deleteByIndex}
+            
+            />
+            </Fragment>
         )
 
     }

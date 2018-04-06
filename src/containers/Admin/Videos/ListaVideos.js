@@ -1,27 +1,60 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-class ListaVideos extends Component {
-state={
-    videos:{
+
+import LinhaVideo from './LinhaVideo'
+
+
+class ListaVideo extends Component {
+         
+     
+            render(){
+
+                const {videos, deleteByIndex, onEdit} = this.props
+
+            return (
+                <div className="card StudentList">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th> Título </th>
+                      <th> Descrição </th>
+                      <th> URL </th>
+                      <th> Link </th>
+                      <th> Categoria </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                        
         
-    }
-}
-
-render() {
-
-
-    return this.state.events.map((event) => {
         
-        return (
+        {videos.map((video) => (
+            
+            <LinhaVideo
+            
+            key={video.id}
+            id={video.id}
+            titulo={video.titulo}
+            descricao={video.descricao}
+            url={video.url}
+            link_Externo={video.link_Externo}
+            id_Cat_Videos={video.id_Cat_Videos}
+            deleteByIndex={deleteByIndex}
+            onEdit={onEdit}
+            video={video}
+            
+            />
+        
+        ))
+        
+            }
 
-            <CardVideo
-                title={event.titulo}
-                price={event.valor}
-                description={event.descricao}
-                url={event.url}
-            />				
-        )
-        })
-    }
+                      </tbody>
+                      </table>
+                      </div>
+            )
+        }
+
 
 }
+export default ListaVideo

@@ -76,7 +76,7 @@ class AddEventos extends Component {
 onSubmit = (e) =>{
  e.preventDefault()
  this.props.onClickCad(this.state.evento)
- 
+ console.log(this.state.evento)
 }
 
  handleUploadSuccess = (filename, { snapshot }, b) => {
@@ -131,6 +131,7 @@ onSubmit = (e) =>{
                         storageRef={firebase.storage().ref('images')}
                         onUploadError={this.handleUploadError}
                         onUploadSuccess={this.handleUploadSuccess}
+                        required="required"
                       
                     />
                     
@@ -158,7 +159,8 @@ onSubmit = (e) =>{
 
                         <label> Selecione a Unidade </label>
                         {/* <input type="text" name="id_unidade" required="required" onChange={onChangeVideo} /> */}
-                        <select name="id_unidade"  onChange={onChange}> 
+                        <select name="id_unidade"  onChange={onChange} required="required"> 
+                        <option> Selecione uma Unidade </option>
 
                         {this.listaUnidades()}
 
