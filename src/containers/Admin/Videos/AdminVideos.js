@@ -50,7 +50,7 @@ componentDidMount(){
 deleteByIndex = id =>{
      
    
-    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Videos/Excluir/'+id)
+    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Videos/Excluir'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
 }

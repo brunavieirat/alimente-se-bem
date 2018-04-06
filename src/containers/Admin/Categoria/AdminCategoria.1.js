@@ -12,12 +12,10 @@ class AdminCategoria extends React.Component{
         nome: '',
           categorias: []
       }
-
-      
    
     
     refresh(){
-        getFromAPI(this.props.urlGet)
+        getFromAPI('Categorias_Videos?sort=-createdAt')
         .then(res => {
             this.setState({
                 ...this.state,
@@ -35,7 +33,7 @@ componentWillMount(){
 
 deleteByIndex = id =>{
      
-    deleteFromAPI(this.props.urlDelete+id)
+    deleteFromAPI('Categorias_Videos/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
 }
@@ -43,7 +41,7 @@ deleteByIndex = id =>{
 
 
      onClickCad=(categoria)=>{
-     postFromAPI( this.props.urlPost, categoria)
+     postFromAPI('/Categorias_Videos/Cadastrar', categoria)
      .then(res=> {
 
         alert('Categoria cadastrada com sucesso!')
@@ -74,7 +72,6 @@ deleteByIndex = id =>{
     <ListaCategoria 
     categorias={categorias} 
     deleteByIndex={this.deleteByIndex}
-    urlPut={this.props.urlPut}
     
     />
 

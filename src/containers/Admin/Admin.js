@@ -10,6 +10,7 @@ import Agenda from './Agenda/AdminAgenda'
 
 import Noticias from './Noticias/Noticias'
 
+import Forum from '../Forum/Forum'
 
 
 class Admin extends React.Component {
@@ -26,6 +27,8 @@ class Admin extends React.Component {
 					component={Agenda} />
             <Route path="/admin/noticias"
 					component={Noticias} />
+          <Route path="/admin/forum"
+					component={Forum} />
 					
       {/* <Route path="/admin/videos"
 					component={Videos} /> */}
@@ -34,7 +37,7 @@ class Admin extends React.Component {
        <div className="admin-body"> 
               <SideMenu />
               <div className="container">
-        <Videos  /> 
+        <Noticias  /> 
           {/* <Agenda /> */}
           
   

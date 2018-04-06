@@ -1,23 +1,27 @@
 import React, { Component, Fragment } from 'react'
-import {putFromAPI}  from '../../../services/APIServices'
 
 import { Modal } from 'antd'
 import 'antd/lib/modal/style/css'
-import AddCategoria from './AddCategoria'
+import AddNoticias from './AddNoticias'
 
 // import getFromAPI, { postFromAPI, deleteFromAPI} from '../../../services/APIServices'
 import axios from 'axios'
 
-class LinhaCategoria extends Component {
+class LinhaNoticia extends Component {
     state = {
         visible: false,
-        categoria:{
-            id: '',
-            nome:'',
-            videos: []
-
-        }      
+        video: {
+            titulo: '',
+            descricao: '',
+            url: '',
+            link_Externo: '',
+            id_Cat_Videos: '',
+            nome_Cat: ''
+        }
+            
     }
+        
+    
 
     showModal = () => {
         this.state.visible = true;
@@ -45,7 +49,7 @@ class LinhaCategoria extends Component {
         if (window.confirm("Deseja Excluir?"))
         {
             deleteByIndex(this.props.id)
-            //e.preventDefault();
+           // e.preventDefault();
         }
         
         e.preventDefault()
@@ -54,29 +58,24 @@ class LinhaCategoria extends Component {
 
    
 
-    onClickEdit=(cat)=>{
+    onClickEdit=(noticias, categorias)=>{
         
         
         const teste ={
-            id: this.props.categoria.id,
-            nome: cat.nome,
-            videos: this.props.categoria.videos
+            id: this.props.noticia.id,
+            
+            titulo: noticias.titulo,
+            headline: noticias.headline,
+            descricao: noticias.descricao,
+            url: noticias.url,
+            link_Externo: noticias.link_Externo,
+            id_Cat_Videos: noticias.id_Cat_Videos,
+            // nome_Cat: categorias.nome
+            
         }
        
-        // axios.put('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/Atualizar', teste)
-        // .then(res=>{
-            
-        //     alert('Categoria Editada com Sucesso!')
-            
-        // })
-        // .catch(error=>alert(error)) 
-        
-        putFromAPI(this.props.urlPut, teste)
-        .then(res=>{
-            
-            alert('Categoria Editada com Sucesso!')
-            
-        })
+        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', teste)
+        .then(res=> console.log(this.state))
         .catch(error=>alert(error))    
         
         
@@ -91,13 +90,23 @@ class LinhaCategoria extends Component {
         return (
 
             <Fragment>
+              
 
                 <tr>
                     <td>
                         <label> {this.props.id} </label>
                     </td>
                     <td>
-                        <label> {this.props.nome} </label>
+                        <label> {this.props.descricao} </label>
+                    </td>
+                    <td>
+                        <label> {this.props.url} </label>
+                    </td>
+                    <td>
+                        <label> {this.props.link_Externo} </label>
+                    </td>
+                    <td>
+                        <label> {this.props.categorias.nome} </label>
                     </td>
                     <td>
                         <button className="btn-remove" onClick={this.onClick}>×</button>
@@ -116,14 +125,22 @@ class LinhaCategoria extends Component {
                     onCancel={this.handleCancel}
                     
                 >
+                    {/* <tr>
+                    <td> */}
+                        <label> ID {this.props.id} </label>
+                    {/* </td>
+                    <td> */}
+                        <label> Desc {this.props.descricao} </label>
+                    {/* {/* </td> */}
 
-                <label> {this.props.id} </label>
+                    <label> URL {this.props.url} </label>
 
-                <label> {this.props.nome} </label>
-               
-                   
-           <AddCategoria value="Editar"  onClickCad={this.onClickEdit} />
-                   
+                    <label> Link {this.props.link_Externo} </label>
+
+                    <label>Cat {this.props.nome} </label>
+                    {/* </tr> */} */}
+            <AddVideos value="Editar"  onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
+            
                 </Modal>
 
             </Fragment>
@@ -131,7 +148,5 @@ class LinhaCategoria extends Component {
     }
 
 
-
-
 }
-export default LinhaCategoria
+export default LinhaNoticia

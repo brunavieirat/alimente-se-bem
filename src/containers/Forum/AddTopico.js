@@ -1,77 +1,81 @@
-import React from 'react'
-import './AddTopico.css'
-import ForumTopico from './ForumTopico'
+import React, { Component } from 'react'
+import axios from 'axios'
 
 
 
-class AddTopico extends React.Component{
+class AddTopico extends Component {
 
-state={
-    categoria: {
-
-        nome: ''
+    state = {
+        topico: {
+            titulo: '',
+            descricao: '',
+            id_Nutricionista: 3,
+            id_Cat_Forum: 1,
+            data_Criacao: '2018-04-05',
+            tags: ''
+        }
     }
 
-}
-
-
-onSubmit = (e) => {
-    e.preventDefault()
-    this.props.onClickCad(this.state.categoria)
-}
-
-onChangeCat=(e)=>{
-    this.setState({
-        categoria:{
-        ...this.state.categoria,
-      [e.target.getAttribute('name')]: e.target.value
-        }
-    })
-   
-   }
-
-   renderInput(){
-    return(
-
-        // console.log('entrou')
-    // <input type="text" />
-    <ForumTopico />
-    // console.log('passou pelo input')
-    )
-   }
-   
-  handleKeyPress=(e)=> {
-    if (e.key === 'Enter') {
-        {this.renderInput()}
+                
+    onChange = (e) => {
+        this.setState({
+            topico: {
+                ...this.state.topico,
+                [e.target.getAttribute('name')]: e.target.value,
+               
+                
+            }           
+            
+        })
       
     }
-  }
 
-  
-render(){
+onSubmit = (e) =>{
+ e.preventDefault()
+ //this.props.onClickCad(this.state.video)
 
-    return(
+ axios.post('http://renatafelix-001-site1.gtempurl.com/api/Forum', this.state.topico)
+ .then(res=>console.log('oook'))
+ .catch(error=>console.log(error))
+ console.log(this.state)
+ }
 
-        <section className="forum-topico">
+
+
+    render() {
+
+         const { onChange} = this
+         const {titulo, descricao } = this.state.topico
+
+        return (
+            
+
+            <section className="forum-topico">
+            <form onSubmit={this.onSubmit}>
 
         <label> Título </label>
 
-        <input type="text" />
+        <input type="text" name="titulo" onChange={onChange} />
         <label> Descrição </label>
 
-        <textarea className="forum-topico__respUserTextarea">
+        <textarea name="descricao" onChange={onChange} className="forum-topico__respUserTextarea">
 
 </textarea>
 
 <label> Tags </label>
 
-<input id="enter" type="text"  onKeyPress={this.handleKeyPress}/>
+<input name="tags" type="text" onChange={onChange}/>
 
-   
+<button className="btn-add"> Publicar </button>
+
+   </form>
 
 
     </section>
-    )
+            
+        )
+
+    }
 }
-}
+
 export default AddTopico

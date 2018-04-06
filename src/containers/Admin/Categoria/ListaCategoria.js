@@ -34,9 +34,10 @@ class ListaCategoria extends Component {
             deleteByIndex={deleteByIndex}
             onEdit={onEdit}
             categoria={categoria}
+            urlPut={this.props.urlPut}
             
             />
-        
+       
         ))
         
             }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import getFromAPI, { postFromAPI, putFromAPI, deleteFromAPI } from '../../../services/APIServices'
+import getFromAPI, { postFromAPI } from '../../../services/APIServices'
 
 import AddNoticias from './AddNoticias'
 import axios from 'axios'
@@ -32,7 +32,7 @@ class AdminNoticia extends Component{
 componentDidMount(){
    this.refresh()
 
-    getFromAPI('/Categorias_Noticias')
+    axios.get('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Noticias')
     .then(res=>{
         console.log(res.data)
         
@@ -51,7 +51,7 @@ componentDidMount(){
 deleteByIndex = id =>{
      
    
-    deleteFromAPI('/Noticias/Excluir/'+id)
+    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Noticias/Excluir/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
 }
