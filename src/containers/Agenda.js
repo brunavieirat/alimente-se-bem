@@ -22,37 +22,38 @@ export default class Agenda extends Component {
 		}
 	}
 
-	// componentDidMount() {
-	// 	// getFromAPI('/Agenda').then(res => {
-	// 	// 	this.setState({
-	// 	// 		events: res.data
-	// 	// 	})
-	// 	// })
-	// 	const data = new Date()
-	// 	const mes = data.getMonth()+1
-	// 	const ano = data.getFullYear()			
+	componentDidMount() {
+		// getFromAPI('/Agenda').then(res => {
+		// 	this.setState({
+		// 		events: res.data
+		// 	})
+		// })
+		const data = new Date()
+		const mes = data.getMonth()+1
+		const ano = data.getFullYear()			
 
-	// 	axios.get('http://renatafelix-001-site1.gtempurl.com/api/Agenda/Data?ano='+ ano + '&mes=' + mes)
-	// 	.then(res=>{
-	// 		this.setState({
-	// 		events: res.data,
+		axios.get('http://renatafelix-001-site1.gtempurl.com/api/Agenda/Mes?ano='+ ano + '&mes=' + mes)
+		.then(res=>{
+			this.setState({
+			events: res.data,
 			
-	// 		})
-	// 		// console.log(this.state.events)
-	// 	})
-    // .catch(error=> alert(error))
+			})
+			// console.log(this.state.events)
+		})
+    .catch(error=> alert(error))
 		
-	// 	// {moment(event.data_Evento).format('DD')}
-	// }
+		// {moment(event.data_Evento).format('DD')}
+	}
 
 
 	onSelect=(date) => {
 
 		
 		const mes = moment(date._d).format('MM')
-		const ano = moment(date._d).format('YYYY')		
-
-		axios.get('http://renatafelix-001-site1.gtempurl.com/api/Agenda/Data?ano='+ ano + '&mes=' + mes)
+		const ano = moment(date._d).format('YYYY')	
+		const dia = moment(date._d).format('DD')	
+		
+		axios.get('http://renatafelix-001-site1.gtempurl.com/api/Agenda/Data?ano='+ ano+ '&mes=' + mes + '&dia=' + dia )
 		.then(res=>{
 			this.setState({
 			events: res.data,

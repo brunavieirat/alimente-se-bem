@@ -1,32 +1,30 @@
 import React, { Component } from 'react'
 
 
-import './AddEventos.css'
+
 
 import firebase from 'firebase';
 import FileUploader from 'react-firebase-file-uploader';
 
 
-class AddEventos extends Component {
+class AddNoticias extends Component {
 
     state = {
-        evento: {            
-            url_Imagem:'',
-            image:'',
+        noticia: {            
             titulo: '',
+            headline: '',
             descricao: '',
-            data_Evento: '',
-            valor: '',
-            tag:'',
-            id_Unidade: ''
+            imagem:'',
+            link_externo: '',
+            id_Cat_Noticias:''
         },
         
 
     }
     onChangeVideo = (e) => {
         this.setState({
-            evento: {
-                ...this.state.evento,
+            noticia: {
+                ...this.state.noticia,
                 [e.target.getAttribute('name')]: e.target.value
             }
         })
@@ -35,13 +33,13 @@ class AddEventos extends Component {
 
 onSubmit = (e) =>{
  e.preventDefault()
- this.props.onClickCad(this.state.evento)
+ this.props.onClickCad(this.state.noticia)
  
 }
 
  handleUploadSuccess = (filename, { snapshot }, b) => {
         this.setState({ 
-           evento:{
+           noticia:{
                image: filename
            }
           
@@ -51,8 +49,8 @@ onSubmit = (e) =>{
         firebase.storage().ref('images').child(filename).getDownloadURL()
         .then(
             this.setState({
-                evento: {
-                url_Imagem: snapshot.downloadURL
+                noticia: {
+                imagem: snapshot.downloadURL
                 }
             })
            
@@ -60,13 +58,13 @@ onSubmit = (e) =>{
         //     imageURL: url 
         // })
         );
-      
+       
     };
 
     render() {
 
          const { onChangeVideo} = this
-        const { url_Imagem } = this.state.evento
+        const { imagem } = this.state.noticia
 
         return (
 
@@ -74,12 +72,12 @@ onSubmit = (e) =>{
             
                 <form className="row" onSubmit={this.onSubmit}>
                     <div className="form-group">
-                    <h1> Agenda </ h1>
+                    <h1> Notícia </ h1>
 
                             <label>Imagem:</label>
 
-                            {url_Imagem &&
-                        <img src={url_Imagem} />
+                            {imagem &&
+                        <img src={imagem} />
                     }
 
                     <FileUploader
@@ -97,21 +95,19 @@ onSubmit = (e) =>{
                         <label> Título </label>
                         <input type="text" name="titulo" required="required" onChange={onChangeVideo} />
 
+                        <label> HeadLine </label>
+                        <textarea name="headline" required="required" onChange={onChangeVideo} />
+
                         <label> Descrição </label>
                         <textarea name="descricao" required="required" onChange={onChangeVideo} />
 
-                        <label> Data do Evento</label>
-                        <input type="date" name="data_Evento" required="required"  pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2154-02-18" onChange={onChangeVideo} />
-
-                        <label> Valor </label>
-                        <input type="text" name="valor" required="required" pattern="[0-9]+$" onChange={onChangeVideo} />
-
                         
-                        <label> Tag </label>
-                        <input type="text" name="tag"  onChange={onChangeVideo} />
+                        
+                        <label> Link Externo </label>
+                        <input type="text" name="link_externo"  onChange={onChangeVideo} />
 
-                        <label> Id Unidade </label>
-                        <input type="text" name="id_Unidade" required="required" onChange={onChangeVideo} />
+                        <label> Id Categoria  </label>
+                        <input type="text" name="id_Cat_Noticias" required="required" onChange={onChangeVideo} />
 
                     </div>
                     <button className="btn-add">Cadastrar </button>
@@ -123,4 +119,4 @@ onSubmit = (e) =>{
     }
 }
 
-export default AddEventos
+export default AddNoticias

@@ -13,7 +13,6 @@ import Admin from './containers/Admin/Admin'
 // import SideMenu from './containers/Admin/SideMenu/SideMenu';
 // import NotFound from './containers/NotFound'
 
-import FacebookLoginButton from './containers/Login/FacebookLoginButton'
 
 import firebase from 'firebase';
 
@@ -68,25 +67,6 @@ class App extends Component {
 				</Switch>
 				
 
-				<div className="App">
-        <header className="App-header">
-          <h1 className="App-title">React Social Media Login</h1>
-        </header>
-
-        <div className="App-intro">
-          { !username &&
-            <div>
-              <p>Click on one of any button below to login</p>
-              <FacebookLoginButton onLogin={this.onFacebookLogin}>
-                <button>Facebook</button>
-              </FacebookLoginButton>
-            </div>
-          }
-          {username &&
-            <p>Welcome back, {username}</p>
-          }
-        </div>
-      </div>
 
 			</Fragment>
 		)

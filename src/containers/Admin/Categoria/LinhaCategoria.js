@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react'
-import './LinhaCategoria.css'
 
 import { Modal } from 'antd'
 import 'antd/lib/modal/style/css'
@@ -41,13 +40,21 @@ class LinhaCategoria extends Component {
 
     onClick = (e) => {
         const { deleteByIndex } = this.props
+
+        if (window.confirm("Deseja Excluir?"))
+        {
+            deleteByIndex(this.props.id)
+            e.preventDefault();
+        }
+        
         e.preventDefault()
-        deleteByIndex(this.props.id)
+       // deleteByIndex(this.props.id)
     }
 
    
 
     onClickEdit=(cat)=>{
+        
         
         const teste ={
             id: this.props.categoria.id,

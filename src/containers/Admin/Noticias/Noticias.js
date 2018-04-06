@@ -1,20 +1,35 @@
-import React from 'react';
+import React from 'react'
+// import './Agenda.css'
 
-import {Editor, EditorState} from 'draft-js';
+import { Tabs, Icon } from 'antd'
+import 'antd/lib/tabs/style/css'
 
-class MyEditor extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {editorState: EditorState.createEmpty()};
-    this.onChange = (editorState) => this.setState({editorState});
-  }
-  render() {
+import AdminNoticia from './AdminNoticia'
+
+const TabPane = Tabs.TabPane;
+const AdminNoticias = () =>{
+
     return (
-        <Editor
-         editorState={this.state.editorState} 
-         onChange={this.onChange} />
-    );
-  }
+
+      <AdminNoticia />
+      
+        // <div className="App">
+    
+        //   <div className="container">
+        //     <Tabs defaultActiveKey="2">
+        //       <TabPane tab={<span><Icon type="apple" />Videos</span>} key="1">
+        //         <AdminAgenda />
+        // </TabPane>
+        //       <TabPane tab={<span><Icon type="android" />Categorias</span>} key="2">
+        //         Tag Agenda
+        //       </TabPane>
+        //     </Tabs>
+        //   </div>
+        // </div>
+      )
+
+
+
 }
 
-export default MyEditor
+export default AdminNoticias

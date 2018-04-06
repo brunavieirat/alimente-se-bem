@@ -70,6 +70,8 @@ export default class News extends Component {
 
                     description={noticia.descricao}
 
+                    image={noticia.imagem}
+
                 />
 
             );

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { postFromAPI } from '../../../services/APIServices'
 
 import AddEventos from './AddEventos'
-import './AdminAgenda.css'
+
 
 
 
@@ -17,7 +17,7 @@ onClickCad=(evento)=>{
 
     console.log(evento)
     postFromAPI('Agenda', evento)
-    .then(res=> alert('oooook'))
+    .then(res=> alert('Evento cadastrado com Sucesso!'))
     .catch(error=> alert(error))
       
 }
