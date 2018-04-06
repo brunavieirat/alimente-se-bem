@@ -4,6 +4,7 @@ import axios from 'axios'
 import './ListaTopicos.css'
 
 import moment from 'moment'
+import ForumTopico from './ForumTopico';
 
 class ListaTopico extends Component {
 
@@ -42,7 +43,7 @@ listaTopico(){
                 <div className="design-border" key={topico.id}>
                     <div className="left">
                         <div className="forum-title list">
-                            <h1> {topico.titulo} </h1>
+                           <a> <h1> {topico.titulo} </h1></a>
                         </div>
                         <br />
                         <div className="forum-tags inline">
@@ -71,23 +72,12 @@ listaTopico(){
 
 }
 
-// }
-// return (
-//     <option
-    
-//     key={categoria.id}
-    
-//     value={categoria.id}> {categoria.nome}</option>
-
-//             )
-
-
-// })
 
     render() {
 
         return (
 
+            
             <section className="forum-topico" >
                 
 
@@ -98,6 +88,8 @@ listaTopico(){
                 
                 
             </section>
+
+            //<ForumTopico topicos={this.state.topicos} />
         )
     }
 }
