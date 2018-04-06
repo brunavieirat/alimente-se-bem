@@ -35,7 +35,6 @@ class Admin extends React.Component {
         <Videos  /> 
           {/* <Agenda /> */}
   
-       <MyEditor /> 
         </div>
         </div>
       </div>

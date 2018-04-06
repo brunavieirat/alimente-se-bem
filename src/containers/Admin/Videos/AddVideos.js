@@ -15,29 +15,10 @@ class AddVideos extends Component {
             link_Externo: '',
             id_Cat_Videos: '',
             nome_Cat: ''
-        },
-        categorias: []
+        }
     }
 
-    componentWillMount(){
-        
-        axios.get('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos')
-        .then(res=>{
-            
-            this.setState({
-                        ...this.state,
-                        categorias: res.data,
-                        
-            })
-            const teste=res.data
-            console.log(this.state)
-        })
                 
-
-    }
-
-
-
     onChange = (e) => {
         this.setState({
             video: {
@@ -54,14 +35,16 @@ class AddVideos extends Component {
 onSubmit = (e) =>{
  e.preventDefault()
  this.props.onClickCad(this.state.video)
- console.log(this.state.video)
- 
-}
+ //console.log("video" +this.state.video)
+ }
 
 
 listaCategoria(){
 
-    return this.state.categorias.map((categoria) => {
+    const {categorias} = this.props
+  //  console.log(categorias)
+
+    return categorias.map((categoria) => {
          
         return (
          <option
@@ -85,6 +68,7 @@ listaCategoria(){
          const {titulo, descricao } = this.state.video
 
         return (
+            
 
             <div className="card row -justify-center -align-center CategoryForm">
                 <form className="row" onSubmit={this.onSubmit}>
@@ -118,6 +102,7 @@ listaCategoria(){
 
                 </form>
             </div>
+            
         )
 
     }

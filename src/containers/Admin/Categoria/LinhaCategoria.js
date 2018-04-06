@@ -103,14 +103,16 @@ class LinhaCategoria extends Component {
                     onCancel={this.handleCancel}
                     
                 >
-                    <tr>
-                    <td>
+               
+                    {/* <tr>
+                    <td> */}
                         <label> {this.props.id} </label>
-                    </td>
-                    <td>
+                    {/* </td>
+                    <td> */}
                         <label> {this.props.nome} </label>
-                    </td>
+                    {/* </td>
                     </tr>
+                    </table> */}
            <AddCategoria value="Editar"  onClickCad={this.onClickEdit} />
                    
                 </Modal>

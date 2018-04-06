@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import getFromAPI, { postFromAPI, deleteFromAPI } from '../../../services/APIServices'
-
+import axios from 'axios'
 import AddVideos from './AddVideos'
 import './AdminVideos.css'
 
@@ -10,7 +10,8 @@ import ListaVideos from './ListaVideos'
 
 class AdminVideos extends Component{
     state={
-        videos: []
+        videos: [],
+        categorias: []
       }
    
     
@@ -24,18 +25,32 @@ class AdminVideos extends Component{
         })
                 
     })
-    console.log(this.state.videos)
+  //  console.log(this.state.videos)
 }
 
 componentDidMount(){
     this.refresh()
 
+    axios.get('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos')
+    .then(res=>{
+        
+        this.setState({
+                    ...this.state,
+                    categorias: res.data,
+                    
+        })
+      //  console.log(this.state.categorias)
+        
+    })
+    
 }
+
+
 
 deleteByIndex = id =>{
      
    
-    deleteFromAPI('Videos/'+id)
+    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Videos/Excluir/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
 }
@@ -51,15 +66,18 @@ onClickCad=(video)=>{
 }
 
     render(){
-        const { videos } = this.state
+        const { videos, categorias } = this.state
 
        
         return(
             <Fragment>
 
-            <AddVideos onClickCad={this.onClickCad} />
+            <AddVideos onClickCad={this.onClickCad}
+            categorias={categorias} />
+
             <ListaVideos
             videos={videos} 
+            categorias={categorias}
             deleteByIndex={this.deleteByIndex}
             
             />

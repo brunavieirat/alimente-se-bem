@@ -4,6 +4,7 @@ import ListaCategoria from './ListaCategoria'
 import getFromAPI, { postFromAPI, deleteFromAPI } from '../../../services/APIServices'
 import './AdminCategoria.css'
 
+import axios from 'axios'
 
 
 class AdminCategoria extends React.Component{
@@ -32,7 +33,7 @@ componentDidMount(){
 
 deleteByIndex = id =>{
      
-   
+    
     deleteFromAPI('Categorias_Videos/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))

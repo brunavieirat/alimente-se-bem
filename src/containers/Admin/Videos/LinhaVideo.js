@@ -58,23 +58,29 @@ class LinhaVideo extends Component {
 
    
 
-    onClickEdit=(cat)=>{
+    onClickEdit=(videos)=>{
         
         
-        // const teste ={
-        //     id: this.props.categoria.id,
-        //     nome: cat.nome,
-        //     videos: this.props.categoria.videos
-        // }
+        const teste ={
+            id: this.props.video.id,
+            
+            titulo: videos.titulo,
+            descricao: videos.descricao,
+            url: videos.url,
+            link_Externo: videos.link_Externo,
+            id_Cat_Videos: videos.id_Cat_Videos,
+            //nome_Cat: ''
+            
+        }
        
-        // axios.put('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/Atualizar', teste)
-        // .then(res=> console.log('ok'))
-        // .catch(error=>alert(error))    
+        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', teste)
+        .then(res=> console.log('Video atualizado com sucesso!'))
+        .catch(error=>alert(error))    
         
         
         
    
-    console.log(cat)
+    console.log(teste)
   
     }
 
@@ -118,16 +124,22 @@ class LinhaVideo extends Component {
                     onCancel={this.handleCancel}
                     
                 >
-                    <tr>
-                    <td>
-                        <label> {this.props.id} </label>
-                    </td>
-                    <td>
-                        <label> {this.props.nome} </label>
-                    </td>
-                    </tr>
-           <AddVideos value="Editar"  onClickCad={this.onClickEdit} />
-                   
+                    {/* <tr>
+                    <td> */}
+                        <label> ID {this.props.id} </label>
+                    {/* </td>
+                    <td> */}
+                        <label> Desc {this.props.descricao} </label>
+                    {/* {/* </td> */}
+
+                    <label> URL {this.props.url} </label>
+
+                    <label> Link {this.props.link_Externo} </label>
+
+                    <label>Cat {this.props.id_Cat_Videos} </label>
+                    {/* </tr> */} */}
+            <AddVideos value="Editar"  onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
+            
                 </Modal>
 
             </Fragment>
