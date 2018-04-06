@@ -43,7 +43,8 @@ deleteByIndex = id =>{
      onClickCad=(categoria)=>{
      postFromAPI('/Categorias_Videos/Cadastrar', categoria)
      .then(res=> this.refresh())
-     .catch(error=>alert(error))    
+     .catch(error=>alert(error))
+     
      }
 
      

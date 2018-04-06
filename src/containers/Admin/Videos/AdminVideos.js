@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { postFromAPI } from '../../../services/APIServices'
+import getFromAPI, { postFromAPI, deleteFromAPI } from '../../../services/APIServices'
 
 import AddVideos from './AddVideos'
 import './AdminVideos.css'
@@ -9,12 +9,37 @@ import ListaVideos from './ListaVideos'
 
 
 class AdminVideos extends Component{
+    state={
+        videos: []
+      }
+   
+    
+    refresh(){
+        getFromAPI('Videos?sort=-createdAt')
+        .then(res => {
+            this.setState({
+                ...this.state,
+                videos: res.data,
+                nome: ''                
+        })
+                
+    })
+    console.log(this.state.videos)
+}
 
-    state = {
-                            
-            videos: []
-        
-    }
+componentDidMount(){
+    this.refresh()
+
+}
+
+deleteByIndex = id =>{
+     
+   
+    deleteFromAPI('Videos/'+id)
+    .then(resp => this.refresh())
+    .catch(error => alert(error))
+}
+     
 
 onClickCad=(video)=>{    
 
@@ -22,10 +47,11 @@ onClickCad=(video)=>{
     .then(res=> alert('Vídeo Cadastrado com Sucesso!'))
     .catch(error=> alert(error))
     //console.log(video)
+    
 }
 
     render(){
-        const { videos } = this.state.videos
+        const { videos } = this.state
 
        
         return(

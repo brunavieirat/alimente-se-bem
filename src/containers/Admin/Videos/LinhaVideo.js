@@ -49,7 +49,7 @@ class LinhaVideo extends Component {
         if (window.confirm("Deseja Excluir?"))
         {
             deleteByIndex(this.props.id)
-            e.preventDefault();
+           // e.preventDefault();
         }
         
         e.preventDefault()

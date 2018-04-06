@@ -16,9 +16,7 @@ onSubmit = (e) => {
     e.preventDefault()
     this.props.onClickCad(this.state.categoria)
     
-    this.setState({
-        nome: ''
-    })
+   
 }
 
 onChangeCat=(e)=>{
