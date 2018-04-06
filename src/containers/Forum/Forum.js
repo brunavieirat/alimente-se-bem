@@ -3,6 +3,7 @@ import PageTitle from '../../components/PageTitle/PageTitle'
 import './Forum.css'
 import getFromAPI from '../../services/APIServices'
 import ListTopics from './ListTopics'
+import ForumTags from '../../components/Forum/ForumTags'
 
 
 class Forum extends Component {
@@ -10,31 +11,29 @@ class Forum extends Component {
 		pageTitleColor: {
 			background: '#ADC837',
 		},
-		data: [],
-		urlGetForumTopics: '',
-			
-	}
-
-	data = () => {
-		getFromAPI('Forum').then(response => {
-			let resp = response.data
-			this.setState({data: {resp}})
-		})
+		forumData: [],
+		forumTags: [],
 	}
 	
 
 	componentWillMount(){
-		this.data()
-	}
-	
-	treatForumData(){
-		return (this.state.data.resp) ? 
-			<h1> {this.state.data.resp.map((obj) => (obj.DATA_CRIACAO))}  </h1>
-			: <h1>Opa </h1>
+		this.getListTopics()
 	}
 
-	componentDidMount(){
-		console.log ('component Did Mount? ==== ', this.state.data)
+	getNutricionistaName(id){
+		return getFromAPI('./Nutricionistas/' + id)
+			.then(response => response.nome)	
+			// return nutricionistaData
+	}
+
+	getListTopics(){
+		getFromAPI('Forum').then(response => {
+			this.setState({
+				forumData: response.data
+			})
+		}).catch(
+			error => console.log(error)
+		)
 	}
 
 	render(){
@@ -44,7 +43,9 @@ class Forum extends Component {
 				<section className="forum-section">
 					<PageTitle style={this.state.pageTitleColor} title="FORUM"/>
 					<div className="forum-topico">
-						<ListTopics />
+						<ListTopics forumData={this.state.forumData} >
+							<ForumTags />
+						</ListTopics>
 					</div>
 				</section>
 			</Fragment>
