@@ -9,7 +9,7 @@ class ListaCategoria extends Component {
      
             render(){
 
-                const {categorias, deleteByIndex} = this.props
+                const {categorias, deleteByIndex, onEdit} = this.props
 
             return (
                 <div className="card StudentList">
@@ -32,10 +32,12 @@ class ListaCategoria extends Component {
             id={categoria.id}
             nome={categoria.nome}
             deleteByIndex={deleteByIndex}
-
+            onEdit={onEdit}
+            categoria={categoria}
+            urlPut={this.props.urlPut}
             
             />
-        
+       
         ))
         
             }

@@ -2,38 +2,27 @@ import React, { Component, Fragment } from 'react'
 
 import { Modal } from 'antd'
 import 'antd/lib/modal/style/css'
-import AddEventos from './AddEventos'
+import AddNoticias from './AddNoticias'
+
 // import getFromAPI, { postFromAPI, deleteFromAPI} from '../../../services/APIServices'
 import axios from 'axios'
 
-class LinhaEvento extends Component {
+class LinhaNoticia extends Component {
     state = {
         visible: false,
-        video: {
+        noticia: {
             id: this.props.id,
+            titulo: this.props.titulo,
             descricao: this.props.descricao,
-            url_Imagem: this.props.url_Imagem,
-            data_Evento: this.props.data_Evento,
-            tag: this.props.tag,
-            valor: this.props.valor
-            //nome_Cat: ''
+            imagem: this.props.imagem,
+            link_Externo: this.props.link_Externo,
+            id_Cat_Noticias: this.props.id_Cat_Noticias,
+            
         }
             
     }
         
-    componentDidMount(){
-
-        // this.setState({
-        //     video:{
-        //     titulo:this.props.titulo,
-        //     descricao:this.props.descricao, 
-        //     url:this.props.url,
-        //     link_Externo:this.props.link_Externo,
-        //     id_Cat_Videos:this.props.id_Cat_Videos
-        //     }
-        // })
-        // console.log(this.state)
-    }
+    
 
     showModal = () => {
         this.state.visible = true;
@@ -67,13 +56,10 @@ class LinhaEvento extends Component {
         e.preventDefault()
        // deleteByIndex(this.props.id)
     }
-
-   
-
-    onClickEdit=(evento)=>{
-       
-      
-        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Agenda/Atualizar', evento)
+    onClickEdit=(noticias)=>{
+        
+               
+        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Noticias/Atualizar', noticias)
         .then(res=> alert('Vídeo Editado com Sucesso!'))
         .catch(error=>alert(error))    
         
@@ -85,9 +71,7 @@ class LinhaEvento extends Component {
     }
 
     render() {
-      
-        const {titulo, id, descricao, url_Imagem, data_Evento, tag, valor } = this.props;
-
+         
         return (
 
             <Fragment>
@@ -98,25 +82,18 @@ class LinhaEvento extends Component {
                         <label> {this.props.id} </label>
                     </td>
                     <td>
-                        <label> {this.props.titulo} </label>
-                    </td>
-                    {/* <td>
                         <label> {this.props.descricao} </label>
-                    </td> */}
-                    <td>
-                        <label> {this.props.data_Evento} </label>
                     </td>
-                    {/* <td>
+                    <td>
+                        <label> {this.props.url} </label>
+                    </td>
+                    <td>
                         <label> {this.props.link_Externo} </label>
-                    </td> */}
-                    {/* <td>
-                        <label> {this.props.categorias.nome} </label>
-                    </td> */}
-                    
+                    </td>
+                   
                     <td>
                         <button className="btn-edit" onClick={this.showModal} > Editar</button>
                     </td>
-
                     <td>
                         <button className="btn-remove" onClick={this.onClick}>×</button>
                     </td>
@@ -133,16 +110,16 @@ class LinhaEvento extends Component {
                     
                 >
                     
-            <AddEventos value="Editar"
-            id={this.props.id}
-             titulo={titulo} 
-             descricao={this.props.descricao} 
-             url_Imagem={this.props.url_Imagem}
-             data_Evento={this.props.data_Evento} 
-             tag={this.props.tag}
-             valor={this.props.valor}
-
-             onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
+            <AddNoticias value="Editar" 
+             id= {this.props.id}
+             titulo= {this.props.titulo}
+             descricao= {this.props.descricao}
+             imagem= {this.props.imagem}
+             link_Externo= {this.props.link_Externo}
+             id_Cat_Noticias= {this.props.id_Cat_Noticias}
+            
+            onClickCad={this.onClickEdit} 
+            categorias={this.props.categorias}/> 
             
                 </Modal>
 
@@ -152,4 +129,4 @@ class LinhaEvento extends Component {
 
 
 }
-export default LinhaEvento
+export default LinhaNoticia

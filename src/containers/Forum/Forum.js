@@ -1,59 +1,27 @@
-import React, { Fragment, Component } from 'react'
-import PageTitle from '../../components/PageTitle/PageTitle'
-import CardButton from '../../components/CardButton/CardButton'
-import './Forum.css'
-// import axios from 'axios'git 
+import React, { Component, Fragment } from 'react'
+import { Route } from 'react-router-dom'
+import axios from 'axios'
 
-class Forum extends Component {
-	constructor(props){
-		super(props)
-		this.state = {
-			pageTitleColor: {
-				background: '#ADC837',
-			},
-			data: []
-			
-		}
-	}
-	render(){
-
-		// const ax = axios.create({
-		// 	baseURL: 'http://localhost:3000'
-		//   })
-
-		// fetch('http://localhost:3000/assets/fakejsons/eventos.json').then(function(response) { 
-		// 	// Convert to JSON
-		// 	return response.json()
-		// }).then(function(j) {
-		// 	// Yay, `j` is a JavaScript object
-		// 	console.log(j)
-		// })
+import AddTopico from './AddTopico'
 
 
 
-		// fetch('http://localhost:3000/assets/fakejsons/forum.json')
-		// .then( response => response.json() 
-		// .then(json => {
-		// 	console.log(json)
-		// }))
-		
-		// ax.get('/assets/fakejsons/forum.json')
-		// .then(
-		// 	response => (data) = response
-		// ).catch(
-		// 	e => console.log('Esse eh o erro ' +  e)
-		// )
-		// console.log(data)
 
-		return(
-			<Fragment>
-				<section className="forum-section">
-					<PageTitle style={this.state.pageTitleColor} title="Forum" />
-					<CardButton title="Categoria X" />
-				</section>
-			</Fragment>
-		)
-	}
+class Admin extends React.Component {
+
+  render() {
+    
+    return (
+<Fragment>
+
+  
+				<AddTopico />
+
+
+      </Fragment>
+    )
+
+  }
 }
 
-export default Forum
+export default Admin;
