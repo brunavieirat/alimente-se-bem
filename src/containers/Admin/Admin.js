@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import axios from 'axios'
-import SideMenu from './SideMenu/SideMenu'
+
+import SideMenu from '../Admin/SideMenu/SideMenu'
 import './Admin.css'
 import AdminCategoria from './Categoria/AdminCategoria'
 import Videos from './Videos/Videos'

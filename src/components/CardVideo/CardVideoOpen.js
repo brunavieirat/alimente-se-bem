@@ -29,7 +29,9 @@ const CardVideoOpen = (props) => (
 
 		<div className="cardVideo-description-open">
 			<label>
-				{props.description}
+			O concurso culinário, criado pelo Sesi-SP, que combina saúde, boa alimentação e economia.
+
+Participar é muito fácil: envie sua receita, levando em conta o baixo custo e o aproveitamento integral dos alimentos, e torça para ser selecionado.
 			</label>
 		</div>
 

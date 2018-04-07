@@ -49,10 +49,9 @@ onSubmit = (e) =>{
 
         return (
             
-
             <section className="forum-topico">
-            <form onSubmit={this.onSubmit}>
-
+            <form className="row" onSubmit={this.onSubmit}>
+            <div className="form-group">
         <label> Título </label>
 
         <input type="text" name="titulo" onChange={onChange} />
@@ -67,7 +66,7 @@ onSubmit = (e) =>{
 <input name="tags" type="text" onChange={onChange}/>
 
 <button className="btn-add"> Publicar </button>
-
+</div>
    </form>
 
 
