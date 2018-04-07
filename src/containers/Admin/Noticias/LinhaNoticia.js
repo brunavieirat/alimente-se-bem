@@ -10,12 +10,12 @@ import axios from 'axios'
 class LinhaNoticia extends Component {
     state = {
         visible: false,
-        video: {
+        noticia: {
             titulo: '',
             descricao: '',
-            url: '',
+            imagem: '',
             link_Externo: '',
-            id_Cat_Videos: '',
+            id_Cat_Noticias: '',
             nome_Cat: ''
         }
             
@@ -55,9 +55,6 @@ class LinhaNoticia extends Component {
         e.preventDefault()
        // deleteByIndex(this.props.id)
     }
-
-   
-
     onClickEdit=(noticias, categorias)=>{
         
         
@@ -67,21 +64,22 @@ class LinhaNoticia extends Component {
             titulo: noticias.titulo,
             headline: noticias.headline,
             descricao: noticias.descricao,
-            url: noticias.url,
+            imagem: noticias.imagem,
             link_Externo: noticias.link_Externo,
-            id_Cat_Videos: noticias.id_Cat_Videos,
+            id_Cat_Videos: noticias.id_Cat_Noticias,
             // nome_Cat: categorias.nome
             
         }
+        console.log(teste.titulo)
        
-        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', teste)
+        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Noticias/Atualizar', teste)
         .then(res=> console.log(this.state))
         .catch(error=>alert(error))    
         
         
         
    
-    console.log(teste)
+    // console.log(teste)
   
     }
 
@@ -139,7 +137,7 @@ class LinhaNoticia extends Component {
 
                     <label>Cat {this.props.nome} </label>
                     {/* </tr> */} */}
-            <AddVideos value="Editar"  onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
+            <AddNoticias value="Editar"  onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
             
                 </Modal>
 

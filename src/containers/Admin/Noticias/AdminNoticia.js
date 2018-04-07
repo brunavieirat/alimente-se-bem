@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import getFromAPI, { postFromAPI, putFromAPI, deleteFromAPI } from '../../../services/APIServices'
+import ListaNoticias from './ListaNoticias'
 
 import AddNoticias from './AddNoticias'
 import axios from 'axios'
@@ -70,17 +71,20 @@ onClickCad=(noticia)=>{
     render(){
         const { noticias, categorias } = this.state
         return(
-
+<Fragment>
              <AddNoticias
              onClickCad={this.onClickCad}
-             categorias={categorias} />
+             categorias={categorias}
+             value="Cadastrar" />
 
-            //  <ListaNoticias
-            // noticias={noticias} 
-            // categorias={categorias}
-            // deleteByIndex={this.deleteByIndex}
+             <ListaNoticias
+            noticias={noticias} 
+            categorias={categorias}
+            deleteByIndex={this.deleteByIndex}
             
-            // />
+            />
+
+            </Fragment>
         )
 
     }

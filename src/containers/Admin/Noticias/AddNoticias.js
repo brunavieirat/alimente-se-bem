@@ -109,10 +109,10 @@ onSubmit = (e) =>{
                         storageRef={firebase.storage().ref('images')}
                         onUploadError={this.handleUploadError}
                         onUploadSuccess={this.handleUploadSuccess}
+                        required="required"
                        
-                      
-                    />
-                    
+                               />
+                               
                     
 
                         <label> Título </label>
@@ -142,7 +142,7 @@ onSubmit = (e) =>{
                         </select>
 
                     </div>
-                    <button className="btn-add">Cadastrar </button>
+                    <button className="btn-add">{this.props.value} </button>
 
                 </form>
             </div>

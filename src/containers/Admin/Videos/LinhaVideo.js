@@ -59,28 +59,29 @@ class LinhaVideo extends Component {
    
 
     onClickEdit=(videos, categorias)=>{
-        
-        
-        const teste ={
-            id: this.props.video.id,
+        const {videost} = this.props
+        console.log(videost)
+
+    //     const teste ={
+    //         id: this.props.video.id,
             
-            titulo: videos.titulo,
-            descricao: videos.descricao,
-            url: videos.url,
-            link_Externo: videos.link_Externo,
-            id_Cat_Videos: videos.id_Cat_Videos,
-            // nome_Cat: categorias.nome
+    //         titulo: videos.titulo,
+    //         descricao: videos.descricao,
+    //         url: videos.url,
+    //         link_Externo: videos.link_Externo,
+    //         id_Cat_Videos: videos.id_Cat_Videos,
+    //         // nome_Cat: categorias.nome
             
-        }
+    //     }
        
-        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', teste)
-        .then(res=> console.log(this.state))
-        .catch(error=>alert(error))    
+    //     axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', teste)
+    //     .then(res=> console.log(this.state))
+    //     .catch(error=>alert(error))    
         
         
         
    
-    console.log(teste)
+    // console.log(teste)
   
     }
 
@@ -124,21 +125,15 @@ class LinhaVideo extends Component {
                     onCancel={this.handleCancel}
                     
                 >
-                    {/* <tr>
-                    <td> */}
-                        <label> ID {this.props.id} </label>
-                    {/* </td>
-                    <td> */}
-                        <label> Desc {this.props.descricao} </label>
-                    {/* {/* </td> */}
+                    
+            <AddVideos value="Editar"
+             titulo={this.props.titulo} 
+             descricao={this.props.descricao} 
+             url={this.props.url}
+             link_Externo={this.props.link_Externo} 
+             id_Cat_Videos={this.props.id_Cat_Videos}
 
-                    <label> URL {this.props.url} </label>
-
-                    <label> Link {this.props.link_Externo} </label>
-
-                    <label>Cat {this.props.nome} </label>
-                    {/* </tr> */} */}
-            <AddVideos value="Editar"  onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
+             onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
             
                 </Modal>
 

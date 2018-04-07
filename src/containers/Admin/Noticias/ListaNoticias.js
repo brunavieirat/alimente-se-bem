@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
-import LinhaNoticia from './LinhaVideo'
+import LinhaNoticia from './LinhaNoticia'
 
 
 class ListaNoticia extends Component {
@@ -9,7 +9,7 @@ class ListaNoticia extends Component {
      
             render(){
 
-                const {noticias, categorias, deleteByIndex, onEdit} = this.props
+                const {noticias, categorias, deleteByIndex} = this.props
 
             return (
                 <div className="card StudentList">
@@ -35,7 +35,7 @@ class ListaNoticia extends Component {
             //  imagem:'',
             //  link_Externo: '',
             //  id_Cat_Noticias:''
-            <LinhaVideo
+            <LinhaNoticia
             
             key={noticia.id}
             id={noticia.id}
@@ -45,8 +45,7 @@ class ListaNoticia extends Component {
             url={noticia.url}
             link_Externo={noticia.link_Externo}
             id_Cat_Videos={noticia.id_Cat_Videos}
-            deleteByIndex={deleteByIndex}
-            onEdit={onEdit}
+            deleteByIndex={deleteByIndex}         
             noticia={noticia}
             categorias={categorias}
             

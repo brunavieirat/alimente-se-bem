@@ -9,7 +9,7 @@ class ListaVideo extends Component {
      
             render(){
 
-                const {videos, categorias, deleteByIndex, onEdit} = this.props
+                const {videos, categorias, deleteByIndex} = this.props
 
             return (
                 <div className="card StudentList">
@@ -40,9 +40,9 @@ class ListaVideo extends Component {
             link_Externo={video.link_Externo}
             id_Cat_Videos={video.id_Cat_Videos}
             deleteByIndex={deleteByIndex}
-            onEdit={onEdit}
             video={video}
             categorias={categorias}
+            
             
             />
         

@@ -50,7 +50,7 @@ componentDidMount(){
 deleteByIndex = id =>{
      
    
-    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Videos/Excluir'+id)
+    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Videos/'+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
 }
@@ -58,10 +58,10 @@ deleteByIndex = id =>{
 
 onClickCad=(video)=>{    
 
-    postFromAPI('Videos/Cadastrar', video)
-    .then(res=> alert('Vídeo Cadastrado com Sucesso!'))
-    .catch(error=> alert(error))
-    //console.log(video)
+    // postFromAPI('Videos/Cadastrar', video)
+    // .then(res=> alert('Vídeo Cadastrado com Sucesso!'))
+    // .catch(error=> alert(error))
+    console.log(video)
     
 }
 
@@ -73,7 +73,8 @@ onClickCad=(video)=>{
             <Fragment>
 
             <AddVideos onClickCad={this.onClickCad}
-            categorias={categorias} />
+            categorias={categorias}
+            value="Cadastrar" />
 
             <ListaVideos
             videos={videos} 
