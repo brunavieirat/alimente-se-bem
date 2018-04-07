@@ -5,7 +5,7 @@ import './ListTopics.css'
 
 
 const listTopics = (props) => {
-	// console.log(props.forumData)
+	console.log(props.forumData)
 
 	if(props.forumData){
 		return (

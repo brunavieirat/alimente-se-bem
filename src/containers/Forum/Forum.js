@@ -12,14 +12,36 @@ class Forum extends Component {
 		},
 		forumData: [],
 		forumTags: [],
+		loading: true
 	}
 	nutricionistasNames = []
 	
 
 	componentWillMount(){
+		// this.getListTopics()
+	}
+
+	componentDidMount(){
+		console.log ( ' component did Mount ')
 		this.getListTopics()
 	}
 	
+	async getListTopics(){
+		
+		try{
+			const response = await getFromAPI('Forum')
+			this.setState({
+				forumData: response.data,
+				loading: false
+			})
+			// response.data.map( data => this.treatData( data ))
+			console.log (response)
+			
+		}catch( error ) {
+			console.log(error)
+		}
+	}
+
 
 	async treatData(data){
 		try{
@@ -28,7 +50,8 @@ class Forum extends Component {
 			data.data_Criacao = new Date(data.data_Criacao)
 			data.tags = data.tags.split(',')
 			this.setState({
-				forumData: data
+				forumData: data,
+				loading: false
 			})
 		}catch (error) {
 			console.log ( error )
@@ -36,28 +59,20 @@ class Forum extends Component {
 	}
 	
 
-	async getListTopics(){
-		
-		try{
-			const response = await getFromAPI('Forum')
-			response.data.map( data => this.treatData( data ))
-			console.log (response)
-			
-		}catch( error ) {
-			console.log(error)
-		}
-	}
-
+	
 	render(){
+		let renderList = (this.state.loading) ? 
+			<div>Carregando...</div> : 
+			<ListTopics forumData={this.state.forumData} >
+				<ForumTags tags={this.state.forumData.tags} />
+			</ListTopics>
 		return(
 			<Fragment>
 				
 				<section className="forum-section">
 					<PageTitle style={this.state.pageTitleColor} title="FORUM"/>
 					<div className="forum-topico">
-						<ListTopics forumData={this.state.forumData} >
-							<ForumTags tags={this.state.forumData.tags} />
-						</ListTopics>
+						{renderList}
 					</div>
 				</section>
 			</Fragment>
