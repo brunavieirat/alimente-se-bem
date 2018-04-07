@@ -27,6 +27,9 @@ class Forum extends Component {
 			data.nutricionista = name.data.nome
 			data.data_Criacao = new Date(data.data_Criacao)
 			data.tags = data.tags.split(',')
+			this.setState({
+				forumData: data
+			})
 		}catch (error) {
 			console.log ( error )
 		}
@@ -39,9 +42,7 @@ class Forum extends Component {
 			const response = await getFromAPI('Forum')
 			response.data.map( data => this.treatData( data ))
 			console.log (response)
-			this.setState({
-				forumData: response.data
-			})
+			
 		}catch( error ) {
 			console.log(error)
 		}

@@ -2,7 +2,9 @@ import React from 'react'
 import './ForumTags.css'
 
 const forumTags = (props) => {
-	console.log(props)
+	// console.log(props)
+
+	
 	return(
 
 		<div></div>

@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './containers/Home'
 import Videos from './containers/Videos'
 import Forum from './containers/Forum/Forum'
-import ForumTopics from './containers/Forum/ForumTopics'
+// import ForumTopics from './containers/Forum/ForumTopics'
 import ForumDetails from './containers/Forum/ForumDetails'
 import News from './containers/News'
 import Agenda from './containers/Agenda'
@@ -29,10 +29,6 @@ if(localStorage.getItem('userData')){
 	userName = userData.name
 }
 
-
-
-
-
 firebase.initializeApp(config)
 
 class App extends Component {
@@ -53,7 +49,7 @@ class App extends Component {
 					<Route exact path="/" component={Home} />
 					<Route path="/videos" component={Videos}  />
 					<Route exact path="/forum" component={Forum}  />
-					<Route path="/forum/topicos" component={ForumTopics} /> 
+					{/* <Route path="/forum/topicos" component={ForumTopics} />  */}
 					<Route path="/forum/topicos/detalhe" component={ForumDetails} /> 
 					<Route path="/noticias" component={News} />
 					<Route path="/agenda" component={Agenda} />
