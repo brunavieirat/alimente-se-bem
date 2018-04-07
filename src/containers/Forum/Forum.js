@@ -1,10 +1,9 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../../components/PageTitle/PageTitle'
-import './Forum.css'
 import getFromAPI from '../../services/APIServices'
-import ListTopics from './ListTopics'
+import ListTopics from '../../components/Forum/ListTopics'
 import ForumTags from '../../components/Forum/ForumTags'
-
+import './Forum.css'
 
 class Forum extends Component {
 	state = {
@@ -14,26 +13,38 @@ class Forum extends Component {
 		forumData: [],
 		forumTags: [],
 	}
+	nutricionistasNames = []
 	
 
 	componentWillMount(){
 		this.getListTopics()
 	}
+	
 
-	getNutricionistaName(id){
-		return getFromAPI('./Nutricionistas/' + id)
-			.then(response => response.nome)	
-			// return nutricionistaData
+	async treatData(data){
+		try{
+			let name =  await getFromAPI('./Nutricionistas/' + data.id_Nutricionista)
+			data.nutricionista = name.data.nome
+			data.data_Criacao = new Date(data.data_Criacao)
+			data.tags = data.tags.split(',')
+		}catch (error) {
+			console.log ( error )
+		}
 	}
+	
 
-	getListTopics(){
-		getFromAPI('Forum').then(response => {
+	async getListTopics(){
+		
+		try{
+			const response = await getFromAPI('Forum')
+			response.data.map( data => this.treatData( data ))
+			console.log (response)
 			this.setState({
 				forumData: response.data
 			})
-		}).catch(
-			error => console.log(error)
-		)
+		}catch( error ) {
+			console.log(error)
+		}
 	}
 
 	render(){
@@ -44,7 +55,7 @@ class Forum extends Component {
 					<PageTitle style={this.state.pageTitleColor} title="FORUM"/>
 					<div className="forum-topico">
 						<ListTopics forumData={this.state.forumData} >
-							<ForumTags />
+							<ForumTags tags={this.state.forumData.tags} />
 						</ListTopics>
 					</div>
 				</section>

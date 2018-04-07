@@ -1,12 +1,17 @@
 import React from 'react'
-import './Forum.css'
+import './ForumTags.css'
 
-const forumTags = (props) => (
-	<div className="forum-tags inline">
-		<label className="forum-tag"> frutas </label>
-		<label className="forum-tag"> nutrição </label>
-		<label className="forum-tag"> tag </label>
-	</div>
-)
+const forumTags = (props) => {
+	console.log(props)
+	return(
 
+		<div></div>
+		// props.tags.map( tags =>
+		// 	<div key={tags} className="forum-tags inline">
+		// 		<label className="forum-tag"> {tags} </label>
+		// 	</div>
+		// )
+
+	)
+}
 export default forumTags 
