@@ -51,6 +51,7 @@ class Login extends Component {
 	login( userData ){
 		localStorage.setItem('logged', true)
 		localStorage.setItem ('userData',  JSON.stringify(userData))
+		sessionStorage.setItem('userData', JSON.stringify(userData))
 		window.location.href='/home'
 	}
 
@@ -79,11 +80,7 @@ class Login extends Component {
 		}
 
 		if (postData) {
-			PostData('signup', postData).then((result) => {
-				let responseJson = result
-				sessionStorage.setItem('userData', JSON.stringify(responseJson))
-				this.setState({redirect: true})
-			})
+			this.login( postData )
 		} else {
 			alert( ' Quando não entra no postData precisa tratar o erro.' )
 		}
