@@ -113,7 +113,7 @@ class Login extends Component {
 						inputPassword={el => this.inputPassword = el}
 						inputEmail={el => this.inputEmail = el} 
 					/>
-					<div className="row body">
+					<div className="row body login-center">
 						<div className="medium-12 columns">
 							<div className="medium-12 columns">
 

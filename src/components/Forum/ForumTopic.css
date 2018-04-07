@@ -105,3 +105,6 @@
 .forum-post{
     display: flex;
 }
+
+.registro {display: flex; align-items: center}
+.registro > label {padding-right: 25px}
