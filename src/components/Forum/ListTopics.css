@@ -1,0 +1,36 @@
+.forum-topico__post-lista{
+    width: 200px;
+    float: right;
+    text-align: right;
+}
+
+.list{
+
+    display: inline-block;
+}
+
+.inline{
+    display: inline;
+}
+
+.right{
+    float: right !important;
+    text-align: right !important;
+    
+}
+.right-two{
+    float: left;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 2px;
+}
+
+.left{
+    width: 70% !important;
+    display: inline-block;
+}
+
+.design-border{
+    border-bottom: 3px double #72398E;
+    padding: 15px 0;
+}
