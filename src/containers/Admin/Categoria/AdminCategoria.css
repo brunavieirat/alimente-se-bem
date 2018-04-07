@@ -16,7 +16,7 @@ body{
 .App {
   display: flex;
    background: #EEE;
-  display: flex;
+  
   flex-direction: column;
   justify-content: center;
   color: #282828;

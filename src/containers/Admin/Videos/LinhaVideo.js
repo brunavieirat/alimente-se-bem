@@ -11,17 +11,30 @@ class LinhaVideo extends Component {
     state = {
         visible: false,
         video: {
-            titulo: '',
-            descricao: '',
-            url: '',
-            link_Externo: '',
-            id_Cat_Videos: '',
-            nome_Cat: ''
+            id: this.props.id,
+            titulo: this.props.titulo,
+            descricao: this.props.descricao,
+            url: this.props.url,
+            link_Externo: this.props.link_Externo,
+            id_Cat_Videos: this.props.id_Cat_Videos
+            //nome_Cat: ''
         }
             
     }
         
-    
+    componentDidMount(){
+
+        // this.setState({
+        //     video:{
+        //     titulo:this.props.titulo,
+        //     descricao:this.props.descricao, 
+        //     url:this.props.url,
+        //     link_Externo:this.props.link_Externo,
+        //     id_Cat_Videos:this.props.id_Cat_Videos
+        //     }
+        // })
+        // console.log(this.state)
+    }
 
     showModal = () => {
         this.state.visible = true;
@@ -58,25 +71,12 @@ class LinhaVideo extends Component {
 
    
 
-    onClickEdit=(videos, categorias)=>{
-        const {videost} = this.props
-        console.log(videost)
-
-    //     const teste ={
-    //         id: this.props.video.id,
-            
-    //         titulo: videos.titulo,
-    //         descricao: videos.descricao,
-    //         url: videos.url,
-    //         link_Externo: videos.link_Externo,
-    //         id_Cat_Videos: videos.id_Cat_Videos,
-    //         // nome_Cat: categorias.nome
-            
-    //     }
+    onClickEdit=(video)=>{
        
-    //     axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', teste)
-    //     .then(res=> console.log(this.state))
-    //     .catch(error=>alert(error))    
+      
+        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', video)
+        .then(res=> alert('Vídeo Editado com Sucesso!'))
+        .catch(error=>alert(error))    
         
         
         
@@ -86,6 +86,7 @@ class LinhaVideo extends Component {
     }
 
     render() {
+        const {titulo, descricao, url, link_Externo, id_Cat_Videos } = this.props;
 
         return (
 
@@ -97,23 +98,29 @@ class LinhaVideo extends Component {
                         <label> {this.props.id} </label>
                     </td>
                     <td>
-                        <label> {this.props.descricao} </label>
+                        <label> {this.props.titulo} </label>
                     </td>
+                    {/* <td>
+                        <label> {this.props.descricao} </label>
+                    </td> */}
                     <td>
                         <label> {this.props.url} </label>
                     </td>
-                    <td>
+                    {/* <td>
                         <label> {this.props.link_Externo} </label>
-                    </td>
-                    <td>
+                    </td> */}
+                    {/* <td>
                         <label> {this.props.categorias.nome} </label>
+                    </td> */}
+                    
+                    <td>
+                        <button className="btn-edit" onClick={this.showModal} > Editar</button>
                     </td>
+
                     <td>
                         <button className="btn-remove" onClick={this.onClick}>×</button>
                     </td>
-                    <td>
-                        <button className="btn-remove" onClick={this.showModal} > Editar</button>
-                    </td>
+                    
                 </tr>
 
                 <Modal
@@ -127,7 +134,8 @@ class LinhaVideo extends Component {
                 >
                     
             <AddVideos value="Editar"
-             titulo={this.props.titulo} 
+            id={this.props.id}
+             titulo={titulo} 
              descricao={this.props.descricao} 
              url={this.props.url}
              link_Externo={this.props.link_Externo} 

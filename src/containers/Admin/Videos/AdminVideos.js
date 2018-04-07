@@ -39,7 +39,7 @@ componentDidMount(){
                     categorias: res.data,
                     
         })
-        console.log(this.state)
+//        console.log(this.state)
         
     })
     
@@ -59,7 +59,10 @@ deleteByIndex = id =>{
 onClickCad=(video)=>{    
 
     postFromAPI('Videos/Cadastrar', video)
-    .then(res=> alert('Vídeo Cadastrado com Sucesso!'))
+    .then(res=> {
+        alert('Vídeo Cadastrado com Sucesso!')
+        this.refresh()
+    })
     .catch(error=> alert(error))
   //  console.log(video)
     

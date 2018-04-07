@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 
 import LinhaVideo from './LinhaVideo'
+import './AdminVideos.css'
 
 
 class ListaVideo extends Component {
@@ -18,10 +19,10 @@ class ListaVideo extends Component {
                     <tr>
                       <th>Código</th>
                       <th> Título </th>
-                      <th> Descrição </th>
+                      {/* <th> Descrição </th> */}
                       <th> URL </th>
-                      <th> Link </th>
-                      <th> Categoria </th>
+                      {/* <th> Link </th> */}
+                      
                       </tr>
                   </thead>
                   <tbody>

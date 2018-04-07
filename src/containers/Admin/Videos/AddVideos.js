@@ -8,14 +8,32 @@ import './AddVideos.css'
 class AddVideos extends Component {
 
     state = {
-        video: {
-            titulo: '',
-            descricao: '',
-            url: '',
-            link_Externo: '',
-            id_Cat_Videos: '',
-            nome_Cat: ''
-        }
+        video:{}
+        // video: {
+        //     titulo: '',
+        //     descricao: '',
+        //     url: '',
+        //     link_Externo: '',
+        //     id_Cat_Videos: '',
+        //     nome_Cat: ''
+        // }
+    }
+
+    componentDidMount(){
+
+        const {id, titulo, descricao, url, link_Externo, id_Cat_Videos } = this.props;
+
+        this.setState({
+            video:{
+                id: id,
+                titulo: titulo,
+                descricao:descricao,
+                url: url,
+                link_Externo: link_Externo,
+                id_Cat_Videos: id_Cat_Videos
+            }
+        })
+       // console.log(this.state)
     }
 
                 
@@ -33,9 +51,12 @@ class AddVideos extends Component {
     }
 
 onSubmit = (e) =>{
+    const {titulo, descricao, url, link_Externo, id_Cat_Videos } = this.props;
+  //  const {video} = this.props.video
  e.preventDefault()
  this.props.onClickCad(this.state.video)
- //console.log("video" +this.state.video)
+ 
+ 
  }
 
 

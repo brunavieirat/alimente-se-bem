@@ -34,12 +34,8 @@ class Admin extends React.Component {
 
         <div className="admin">
           <div className="admin-body">
-            <SideMenu />
-            <div className="container">
-              {/* <Agenda /> */}
-
-
-            </div>
+            
+            
           </div>
         </div>
 
