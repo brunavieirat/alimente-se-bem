@@ -1,25 +1,16 @@
-import React from 'react'
-import './ListaEventos.css'
+import React, { Component } from 'react'
 
 
-const ListaEventos =(props) =>{
+import LinhaEvento from './LinhaEvento'
 
-    
-    const renderRows = () =>{
-        const categorias = props.categorias || []
-        
-        return categorias.map(categoria => (
-        
-            <tr key={categoria.id}>
-            <td> {categoria.id} </td>
-            <td> {categoria.nome} </td>
-            <td>
-          <button className="btn-remove" onClick={this.onClick}>×</button>
-        </td>
-        </tr>
-        ))
-        
-            }
+
+
+class ListaEventos extends Component {
+         
+     
+            render(){
+
+                const {eventos, categorias, deleteByIndex} = this.props
 
             return (
                 <div className="card StudentList">
@@ -27,17 +18,44 @@ const ListaEventos =(props) =>{
                   <thead>
                     <tr>
                       <th>Código</th>
-                      <th> Nome </th>
+                      <th> Título </th>
+                      {/* <th> Descrição </th> */}
+                      <th> Data do Evento </th>
+                      {/* <th> Link </th> */}
+                      
                       </tr>
                   </thead>
                   <tbody>
+                        
         
-                      {renderRows()}
+        
+        {eventos.map((evento) => (
+            
+            <LinhaEvento
+            
+            key={evento.id}
+            id={evento.id}
+            titulo={evento.titulo}
+            descricao={evento.descricao}
+            url_Imagem={evento.url_Imagem}
+            tag={evento.tag}
+            valor={evento.valor}
+            data_Evento={evento.data_Evento}
+            deleteByIndex={deleteByIndex}
+            evento={evento}
+           // categorias={categorias}
+                        
+            />
+        
+        ))
+        
+            }
+
                       </tbody>
                       </table>
                       </div>
             )
-    
+        }
 
 
 }

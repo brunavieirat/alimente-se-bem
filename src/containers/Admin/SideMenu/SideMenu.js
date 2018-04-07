@@ -9,59 +9,64 @@ import { faNewspaper } from '@fortawesome/fontawesome-free-solid'
 import { faFileExcel } from '@fortawesome/fontawesome-free-solid'
 import { faCommentAltSmile } from '@fortawesome/fontawesome-free-solid'
 
-import "./SideMenu.css"
+import './SideMenu.css'
 
 class SideMenu extends React.Component {
   state = {
-    itemsMenu: [
+  	itemsMenu: [
+  		{
+  			image: faFileVideo,
+  			name: 'Vídeos',
+  			url: '/admin/videos'
+  		},
+  		{
+  			image: faCalendarAlt,
+  			name: 'Agenda',
+  			url: '/admin/agenda'
+  		},
+  		{
+  			image: faNewspaper,
+  			name: 'Notícias',
+  			url: '/admin/noticias'
+  		},
+  		{
+  			image: faFileExcel,
+  			name: 'Fórum',
+  			url:'/admin/forum'
+  		},
+  		{
+  			image: faFileExcel,
+  			name: 'Relatórios IOT',
+  			url:'/admin'
+      }, 	
       {
-        image: faFileVideo,
-        name: 'Vídeos',
-        url: '/admin/videos'
-      },
-      {
-        image: faCalendarAlt,
-        name: 'Agenda',
-        url: '/admin/agenda'
-      },
-      {
-        image: faNewspaper,
-        name: 'Notícias',
-        url: '/admin'
-      },
-      {
-        image: faFileExcel,
-        name: 'Fórum',
-        url:'/admin'
-      },
-      {
-        image: faFileExcel,
-        name: 'Relatórios',
-        url:'/admin'
-      }
-    ]
+  			image: faFileExcel,
+  			name: 'Relatório Nutricionistas',
+  			url:'/admin'
+  		}
+  	]
   };
 
   render() {
-    const { itemsMenu } = this.state;
+  	const { itemsMenu } = this.state
 
     return (
-      <div className="menu-left">
-        <div className="logo-admin">Alimente-se Bem</div>
-        {itemsMenu.map((item, index) => (
-          <div className="side-menu" key={index} onClick={this.onCLickOption}>
-            <Link className="side-menu-link" key={index}  to={item.url}>                            
+  		<div className="menu-left">
+  			<div className="logo-admin">Alimente-se Bem</div>
+  			{itemsMenu.map((item, index) => (
+  				<div className="side-menu" key={index} onClick={this.onCLickOption}>
+  					<Link className="side-menu-link" key={index}  to={item.url}>                            
               
-              <FontAwesomeIcon className="ic-option" icon={item.image}  />
+  						<FontAwesomeIcon className="ic-option" icon={item.image}  />
 
-              <span className="name-option"> {item.name} </span>
-            </Link>
+  						<span className="name-option"> {item.name} </span>
+  					</Link>
             
-          </div>
-        ))}
-      </div>
-    );
+  				</div>
+  			))}
+  		</div>
+  	)
   }
 }
 
-export default SideMenu;
+export default SideMenu

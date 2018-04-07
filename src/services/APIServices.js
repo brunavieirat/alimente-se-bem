@@ -9,10 +9,16 @@ const postFromAPI = (url, props) => (
 	axios.post('http://renatafelix-001-site1.gtempurl.com/api/'+url, props)
 )
 
-const deleteFromAPI = (url) => (
-	axios.post('http://renatafelix-001-site1.gtempurl.com/api/'+url)
+const deleteFromAPI = (id) => (
+	axios.delete('http://renatafelix-001-site1.gtempurl.com/api/'+id)
 )
+
+const putFromAPI = (url, props) => (
+	axios.put('http://renatafelix-001-site1.gtempurl.com/api/'+url, props)
+)
+
 
 export { deleteFromAPI}
 export { postFromAPI }
+export { putFromAPI }
 export default getFromAPI

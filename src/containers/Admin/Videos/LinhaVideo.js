@@ -2,20 +2,21 @@ import React, { Component, Fragment } from 'react'
 
 import { Modal } from 'antd'
 import 'antd/lib/modal/style/css'
-import AddEventos from './AddEventos'
+import AddVideos from './AddVideos'
+
 // import getFromAPI, { postFromAPI, deleteFromAPI} from '../../../services/APIServices'
 import axios from 'axios'
 
-class LinhaEvento extends Component {
+class LinhaVideo extends Component {
     state = {
         visible: false,
         video: {
             id: this.props.id,
+            titulo: this.props.titulo,
             descricao: this.props.descricao,
-            url_Imagem: this.props.url_Imagem,
-            data_Evento: this.props.data_Evento,
-            tag: this.props.tag,
-            valor: this.props.valor
+            url: this.props.url,
+            link_Externo: this.props.link_Externo,
+            id_Cat_Videos: this.props.id_Cat_Videos
             //nome_Cat: ''
         }
             
@@ -70,10 +71,10 @@ class LinhaEvento extends Component {
 
    
 
-    onClickEdit=(evento)=>{
+    onClickEdit=(video)=>{
        
       
-        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Agenda/Atualizar', evento)
+        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Videos/Atualizar', video)
         .then(res=> alert('Vídeo Editado com Sucesso!'))
         .catch(error=>alert(error))    
         
@@ -85,8 +86,7 @@ class LinhaEvento extends Component {
     }
 
     render() {
-      
-        const {titulo, id, descricao, url_Imagem, data_Evento, tag, valor } = this.props;
+        const {titulo, descricao, url, link_Externo, id_Cat_Videos } = this.props;
 
         return (
 
@@ -104,7 +104,7 @@ class LinhaEvento extends Component {
                         <label> {this.props.descricao} </label>
                     </td> */}
                     <td>
-                        <label> {this.props.data_Evento} </label>
+                        <label> {this.props.url} </label>
                     </td>
                     {/* <td>
                         <label> {this.props.link_Externo} </label>
@@ -133,14 +133,13 @@ class LinhaEvento extends Component {
                     
                 >
                     
-            <AddEventos value="Editar"
+            <AddVideos value="Editar"
             id={this.props.id}
              titulo={titulo} 
              descricao={this.props.descricao} 
-             url_Imagem={this.props.url_Imagem}
-             data_Evento={this.props.data_Evento} 
-             tag={this.props.tag}
-             valor={this.props.valor}
+             url={this.props.url}
+             link_Externo={this.props.link_Externo} 
+             id_Cat_Videos={this.props.id_Cat_Videos}
 
              onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
             
@@ -152,4 +151,4 @@ class LinhaEvento extends Component {
 
 
 }
-export default LinhaEvento
+export default LinhaVideo

@@ -6,15 +6,18 @@ import './AdminCategoria.css'
 
 import axios from 'axios'
 
+
 class AdminCategoria extends React.Component{
     state={
         nome: '',
           categorias: []
       }
+
+      
    
     
     refresh(){
-        getFromAPI('Categorias_Videos?sort=-createdAt')
+        getFromAPI(this.props.urlGet)
         .then(res => {
             this.setState({
                 ...this.state,
@@ -25,26 +28,34 @@ class AdminCategoria extends React.Component{
     })
 }
 
-componentDidMount(){
+componentWillMount(){
     this.refresh()
 
 }
 
 deleteByIndex = id =>{
      
-    const { categorias } = this.state;
-    axios.delete('http://renatafelix-001-site1.gtempurl.com/api/Categorias_Videos/'+id)
+    deleteFromAPI(this.props.urlDelete+id)
     .then(resp => this.refresh())
     .catch(error => alert(error))
 }
 
 
+
      onClickCad=(categoria)=>{
-     postFromAPI('/Categorias_Videos/Cadastrar', categoria)
-     .then(res=> this.refresh())
+     postFromAPI( this.props.urlPost, categoria)
+     .then(res=> {
+
+        alert('Categoria cadastrada com sucesso!')
+         this.refresh()
+                
+        })
      .catch(error=>alert(error))
-    
+     
      }
+
+     
+      
 
    render(){
 
@@ -56,11 +67,16 @@ deleteByIndex = id =>{
 <div className="container">
     
         <AddCategoria 
-        onClickCad={this.onClickCad}  />
+        onClickCad={this.onClickCad}
+         value="Cadastrar" 
+         onClickEdit={this.state.categorias}/>
       {/* <ListCategory categorias={this.state.categorias}/> */}
     <ListaCategoria 
     categorias={categorias} 
-    deleteByIndex={this.deleteByIndex} />
+    deleteByIndex={this.deleteByIndex}
+    urlPut={this.props.urlPut}
+    
+    />
 
     {/*<button onclick={this.removeItem()}> Excluir </button>*/}
         </div>
