@@ -58,10 +58,10 @@ deleteByIndex = id =>{
 
 onClickCad=(video)=>{    
 
-    // postFromAPI('Videos/Cadastrar', video)
-    // .then(res=> alert('Vídeo Cadastrado com Sucesso!'))
-    // .catch(error=> alert(error))
-    console.log(video)
+    postFromAPI('Videos/Cadastrar', video)
+    .then(res=> alert('Vídeo Cadastrado com Sucesso!'))
+    .catch(error=> alert(error))
+  //  console.log(video)
     
 }
 
