@@ -6,8 +6,7 @@ import {PostData} from '../PostData'
 import {Redirect} from 'react-router-dom'
 import './Login.css'
 import  getFromAPI  from '../APIServices'
-// import axios from 'axios'
-// import './Welcome.css'
+import { isArray } from 'util'
 
 class Login extends Component {
 	constructor(props) {
@@ -22,27 +21,8 @@ class Login extends Component {
 		this.prepareToLogin = this.prepareToLogin.bind (this)
 	}
 
-	componentWillMount(){
-		this.prepareToLogin()
-	}
-
-
-	prepareToLogin (){
-		getFromAPI('Nutricionistas')
-			.then( response =>  {
-				this.setState({nutricionistas: response.data})		
-			})
-			.catch(function (error) {
-				console.log(error)
-			})
-	}
-
 
 	tryLogin = () => {
-
-		// return true
-		// this.login()
-		// console.log(this.inputEmail.value, this.inputPassword.value)
 		if( this.validation(this.inputEmail.value, this.inputPassword.value)){
 			this.checkLogin(this.inputEmail.value, this.inputPassword.value)
 		}
@@ -57,25 +37,21 @@ class Login extends Component {
 		return (status === 200)
 	}
 
-	checkLogin(email, password){
-		let loginUsersData = this.state.nutricionistas
-		let loginUsersEmailNif = loginUsersData.map(
-			usersData => ( console.log(usersData, password)
-				// usersData.map(
-				// 	users => {
-				// 		if(user.)
-				// 	}
-				// )
-			)
-			
-		)
-		console.log(loginUsersData)
-		console.log(loginUsersEmailNif)
-		// console.log(loginUsersEmailNif)
+	async checkLogin(email, password){
+		let url = 'Nutricionistas/Login?email=' + email + '&nif=' + password
+		try { 
+			const response = await getFromAPI(url)
+			console.log (response )
+			if(response.status === 200 && (isArray(response.data) && response.data.length !== 0 ))
+				this.login( response.data )
+		}catch (error){
+			console.log(error)
+		}
 	}
 
-	login(){
+	login( userData ){
 		localStorage.setItem('logged', true)
+		localStorage.setItem ('userData',  JSON.stringify(userData))
 		window.location.href='/home'
 	}
 
