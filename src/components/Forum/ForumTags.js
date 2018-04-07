@@ -7,12 +7,11 @@ const forumTags = (props) => {
 	
 	return(
 
-		<div></div>
-		// props.tags.map( tags =>
-		// 	<div key={tags} className="forum-tags inline">
-		// 		<label className="forum-tag"> {tags} </label>
-		// 	</div>
-		// )
+		<div className="forum-tags inline">
+			<label className="forum-tag"> frutas </label>
+			<label className="forum-tag"> nutrição </label>
+			<label className="forum-tag"> tag </label>
+		</div>
 
 	)
 }

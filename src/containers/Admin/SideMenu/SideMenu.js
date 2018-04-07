@@ -38,29 +38,23 @@ class SideMenu extends React.Component {
   			image: faFileExcel,
   			name: 'Relatórios IOT',
   			url:'/admin'
-  		}, 	
-  		{
+      }, 	
+      {
   			image: faFileExcel,
-			name: 'Relatório Nutricionistas',
-			onCLickOption: this.goToURL,
-
-  			url:'#'
+  			name: 'Relatório Nutricionistas',
+  			url:''
   		}
   	]
   };
 
-	gotToURL = () => {
-  	window.location.href='http://renatafelix-001-site1.gtempurl.com/api/Nutricionistas/Relatorio'
-  }
-
   render() {
   	const { itemsMenu } = this.state
 
-  	return (
+    return (
   		<div className="menu-left">
   			<div className="logo-admin">Alimente-se Bem</div>
   			{itemsMenu.map((item, index) => (
-  				<div className="side-menu" key={index} onClick={item.onCLickOption}>
+  				<div className="side-menu" key={index} onClick={this.onCLickOption}>
   					<Link className="side-menu-link" key={index}  to={item.url}>                            
               
   						<FontAwesomeIcon className="ic-option" icon={item.image}  />
