@@ -18,7 +18,6 @@ class Login extends Component {
 		}
 		this.signup = this.signup.bind(this)
 		this.tryLogin = this.tryLogin.bind(this)
-		this.prepareToLogin = this.prepareToLogin.bind (this)
 	}
 
 
