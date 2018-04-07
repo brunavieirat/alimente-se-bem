@@ -99,12 +99,15 @@ class LinhaCategoria extends Component {
                     <td>
                         <label> {this.props.nome} </label>
                     </td>
+
+                    <td>
+                        <button className="btn-edit" onClick={this.showModal} > Editar</button>
+                    </td>
+
                     <td>
                         <button className="btn-remove" onClick={this.onClick}>×</button>
                     </td>
-                    <td>
-                        <button className="btn-remove" onClick={this.showModal} > Editar</button>
-                    </td>
+                    
                 </tr>
 
                 <Modal

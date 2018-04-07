@@ -11,16 +11,30 @@ class AddNoticias extends Component {
 
     state = {
         noticia: {            
-            titulo: '',
-            headline: '',
-            descricao: '',
-            imagem:'',
-            link_Externo: '',
-            id_Cat_Noticias:''
+            
         }
         
 
     }
+
+    componentDidMount(){
+
+        const {id, titulo, headline, descricao, imagem, link_Externo, id_Cat_Noticias } = this.props;
+
+        this.setState({
+            noticia:{
+                id: id,
+                titulo: titulo,
+                headline: headline,
+                descricao:descricao,
+                imagem: imagem,
+                link_Externo: link_Externo,
+                id_Cat_Noticias: id_Cat_Noticias
+            }
+        })
+       // console.log(this.state)
+    }
+
 
     listaCategoria(){
 
@@ -86,15 +100,18 @@ onSubmit = (e) =>{
     render() {
 
          const {onChange} = this
-        const { imagem } = this.state.noticia
+         const { imagem } = this.state.noticia
+
+       const {titulo, descricao, headline, link_Externo, id_Cat_Noticias } = this.props;
+       
 
         return (
 
-            <div className="card row -justify-center -align-center CategoryForm">
+            <div className="card row -justify-center -align-center StudentForm">
             
                 <form className="row" onSubmit={this.onSubmit}>
                     <div className="form-group">
-                    <h1> Notícia </ h1>
+                    {/* <h1> Notícia </ h1> */}
 
                             <label>Imagem:</label>
 
@@ -110,31 +127,31 @@ onSubmit = (e) =>{
                         onUploadError={this.handleUploadError}
                         onUploadSuccess={this.handleUploadSuccess}
                         required="required"
-                       
+                        
                                />
                                
                     
 
                         <label> Título </label>
-                        <input type="text" name="titulo" required="required" onChange={onChange} />
+                        <input type="text" name="titulo" required="required" defaultValue= {titulo} onChange={onChange} />
 
                         <label> HeadLine </label>
-                        <textarea name="headline" required="required" onChange={onChange} />
+                        <textarea name="headline" required="required" defaultValue={headline} onChange={onChange} />
 
                         <label> Descrição </label>
-                        <textarea name="descricao" required="required" onChange={onChange} />
+                        <textarea name="descricao" required="required" defaultValue={descricao} onChange={onChange} />
 
                         
                         
                         <label> Link Externo </label>
-                        <input type="text" name="link_Externo"  onChange={onChange} />
+                        <input type="text" name="link_Externo" defaultValue={link_Externo} onChange={onChange} />
 
                         {/* <label> Id Categoria  </label>
                         <input type="text" name="id_Cat_Noticias" required="required" onChange={onChange} /> */}
                         
                         <label> Selecione a categoria </label>
 
-                        <select name="id_Cat_Noticias"  onChange={onChange} required="required"> 
+                        <select name="id_Cat_Noticias"  onChange={onChange} defaultValue={id_Cat_Noticias}required="required"> 
                         <option> Selecione uma categoria </option>
 
                         {this.listaCategoria()}

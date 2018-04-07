@@ -6,7 +6,7 @@ import './Admin.css'
 import AdminCategoria from './Categoria/AdminCategoria'
 import Videos from './Videos/Videos'
 
-import Agenda from './Agenda/AdminAgenda'
+import Agenda from './Agenda/Agenda'
 
 import Noticias from './Noticias/Noticias'
 

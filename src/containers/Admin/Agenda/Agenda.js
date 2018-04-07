@@ -6,22 +6,19 @@ import 'antd/lib/tabs/style/css'
 
 import AdminAgenda from './AdminAgenda'
 
+import SideMenu from '../SideMenu/SideMenu'
+
 const TabPane = Tabs.TabPane;
-const AdminAgenda = () =>{
+const Agenda = () =>{
 
     return (
 
         <div className="App">
-    
+        <SideMenu />
           <div className="container">
-            <Tabs defaultActiveKey="2">
-              <TabPane tab={<span><Icon type="apple" />Videos</span>} key="1">
+           
                 <AdminAgenda />
-        </TabPane>
-              <TabPane tab={<span><Icon type="android" />Categorias</span>} key="2">
-                Tag Agenda
-              </TabPane>
-            </Tabs>
+        
           </div>
         </div>
       )
@@ -30,4 +27,4 @@ const AdminAgenda = () =>{
 
 }
 
-export default AdminAgenda
+export default Agenda

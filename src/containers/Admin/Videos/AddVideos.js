@@ -90,7 +90,7 @@ listaCategoria(){
         return (
             
 
-            <div className="card row -justify-center -align-center CategoryForm">
+            <div className="card row -justify-center -align-center StudentForm">
                 <form className="row" onSubmit={this.onSubmit}>
                     <div className="form-group">
 

@@ -11,13 +11,13 @@ class AddEventos extends Component {
 
     state = {
         evento: {            
-            url_Imagem:'',
-            image:'',
-            titulo: '',
-            descricao: '',
-            data_Evento: '',
-            valor: '',
-            tag:''
+            // url_Imagem:'',
+            // image:'',
+            // titulo: '',
+            // descricao: '',
+            // data_Evento: '',
+            // valor: '',
+            // tag:''
             
         },
         
@@ -25,6 +25,23 @@ class AddEventos extends Component {
 
     }
 
+    componentDidMount(){
+
+        const {id, titulo, valor, url_Imagem, image, descricao, data_Evento, tag } = this.props;
+
+        this.setState({
+            evento:{
+                id: id,
+                titulo: titulo,
+                descricao:descricao,
+                url_Imagem: url_Imagem,
+                descricao: descricao,
+                data_Evento: data_Evento,
+                tag: tag,
+                valor: valor
+            }
+        })
+    }
 
     componentWillMount(){
         
@@ -36,8 +53,7 @@ class AddEventos extends Component {
                         unidades: res.data,
                         
             })
-            const teste=res.data
-            console.log(this.state)
+           
         })
                 
 
@@ -76,7 +92,7 @@ class AddEventos extends Component {
 onSubmit = (e) =>{
  e.preventDefault()
  this.props.onClickCad(this.state.evento)
- console.log(this.state.evento)
+ //console.log(this.state.evento)
 }
 
  handleUploadSuccess = (filename, { snapshot }, b) => {
@@ -107,8 +123,9 @@ onSubmit = (e) =>{
 
          const { onChange} = this
         const { url_Imagem } = this.state.evento
-        const {id, nome}=this.state.unidades
+        const {id_uni, nome}=this.state.unidades
 
+        const {id, titulo, image, valor, descricao, data_Evento, tag } = this.props;
         return (
             
 
@@ -138,20 +155,20 @@ onSubmit = (e) =>{
                     
 
                         <label> Título </label>
-                        <input type="text" name="titulo" required="required" onChange={onChange} />
+                        <input type="text" name="titulo" required="required" defaultValue={titulo} onChange={onChange} />
 
                         <label> Descrição </label>
-                        <textarea name="descricao" required="required" onChange={onChange} />
+                        <textarea name="descricao" required="required" defaultValue={descricao} onChange={onChange} />
 
                         <label> Data do Evento</label>
-                        <input type="date" name="data_Evento" required="required"  pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2154-02-18" onChange={onChange} />
+                        <input type="date" name="data_Evento" required="required" defaultValue={data_Evento} pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2154-02-18" onChange={onChange} />
 
                         <label> Valor </label>
-                        <input type="text" name="valor" required="required" pattern="[0-9]+$" onChange={onChange} />
+                        <input type="text" name="valor" required="required" defaultValue={valor} pattern="[0-9]+$" onChange={onChange} />
 
                         
                         <label> Tag </label>
-                        <input type="text" name="tag"  onChange={onChange} />
+                        <input type="text" name="tag" defaultValue={tag} onChange={onChange} />
 
                         
 
@@ -159,7 +176,7 @@ onSubmit = (e) =>{
 
                         <label> Selecione a Unidade </label>
                         {/* <input type="text" name="id_unidade" required="required" onChange={onChangeVideo} /> */}
-                        <select name="id_unidade"  onChange={onChange} required="required"> 
+                        <select name="id_unidade"  onChange={onChange} defaultValue={id_uni} required="required"> 
                         <option> Selecione uma Unidade </option>
 
                         {this.listaUnidades()}

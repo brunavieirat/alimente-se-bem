@@ -11,12 +11,13 @@ class LinhaNoticia extends Component {
     state = {
         visible: false,
         noticia: {
-            titulo: '',
-            descricao: '',
-            imagem: '',
-            link_Externo: '',
-            id_Cat_Noticias: '',
-            nome_Cat: ''
+            id: this.props.id,
+            titulo: this.props.titulo,
+            descricao: this.props.descricao,
+            imagem: this.props.imagem,
+            link_Externo: this.props.link_Externo,
+            id_Cat_Noticias: this.props.id_Cat_Noticias,
+            
         }
             
     }
@@ -55,25 +56,11 @@ class LinhaNoticia extends Component {
         e.preventDefault()
        // deleteByIndex(this.props.id)
     }
-    onClickEdit=(noticias, categorias)=>{
+    onClickEdit=(noticias)=>{
         
-        
-        const teste ={
-            id: this.props.noticia.id,
-            
-            titulo: noticias.titulo,
-            headline: noticias.headline,
-            descricao: noticias.descricao,
-            imagem: noticias.imagem,
-            link_Externo: noticias.link_Externo,
-            id_Cat_Videos: noticias.id_Cat_Noticias,
-            // nome_Cat: categorias.nome
-            
-        }
-        console.log(teste.titulo)
-       
-        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Noticias/Atualizar', teste)
-        .then(res=> console.log(this.state))
+               
+        axios.put('http://renatafelix-001-site1.gtempurl.com/api/Noticias/Atualizar', noticias)
+        .then(res=> alert('Vídeo Editado com Sucesso!'))
         .catch(error=>alert(error))    
         
         
@@ -84,7 +71,7 @@ class LinhaNoticia extends Component {
     }
 
     render() {
-
+         
         return (
 
             <Fragment>
@@ -103,15 +90,14 @@ class LinhaNoticia extends Component {
                     <td>
                         <label> {this.props.link_Externo} </label>
                     </td>
+                   
                     <td>
-                        <label> {this.props.categorias.nome} </label>
+                        <button className="btn-edit" onClick={this.showModal} > Editar</button>
                     </td>
                     <td>
                         <button className="btn-remove" onClick={this.onClick}>×</button>
                     </td>
-                    <td>
-                        <button className="btn-remove" onClick={this.showModal} > Editar</button>
-                    </td>
+                    
                 </tr>
 
                 <Modal
@@ -123,21 +109,17 @@ class LinhaNoticia extends Component {
                     onCancel={this.handleCancel}
                     
                 >
-                    {/* <tr>
-                    <td> */}
-                        <label> ID {this.props.id} </label>
-                    {/* </td>
-                    <td> */}
-                        <label> Desc {this.props.descricao} </label>
-                    {/* {/* </td> */}
-
-                    <label> URL {this.props.url} </label>
-
-                    <label> Link {this.props.link_Externo} </label>
-
-                    <label>Cat {this.props.nome} </label>
-                    {/* </tr> */} */}
-            <AddNoticias value="Editar"  onClickCad={this.onClickEdit} categorias={this.props.categorias}/> 
+                    
+            <AddNoticias value="Editar" 
+             id= {this.props.id}
+             titulo= {this.props.titulo}
+             descricao= {this.props.descricao}
+             imagem= {this.props.imagem}
+             link_Externo= {this.props.link_Externo}
+             id_Cat_Noticias= {this.props.id_Cat_Noticias}
+            
+            onClickCad={this.onClickEdit} 
+            categorias={this.props.categorias}/> 
             
                 </Modal>
 

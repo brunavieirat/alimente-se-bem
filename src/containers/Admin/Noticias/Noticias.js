@@ -8,6 +8,8 @@ import AdminNoticia from './AdminNoticia'
 import Categorias from '../Categoria/AdminCategoria'
 
 
+import SideMenu from '../SideMenu/SideMenu'
+
 
 const TabPane = Tabs.TabPane;
 const AdminNoticias = () =>{
@@ -19,7 +21,7 @@ const AdminNoticias = () =>{
 
 
     <div className="App">
-    {/* <SideMenu /> */}
+    <SideMenu />
 
       <div className="container">
         <Tabs defaultActiveKey="2">
@@ -27,10 +29,10 @@ const AdminNoticias = () =>{
             {/* <AddVideos /> */}
             <AdminNoticia />
     </TabPane>
-          <TabPane tab={<span><Icon type="android" />Categorias</span>} key="2">
+          <TabPane tab={<span>Categorias</span>} key="2">
           <Categorias
             urlGet='Noticias?sort=-createdAt' 
-            urlDelete='/Categorias_Noticias/Excluir'
+            urlDelete='Categorias_Noticias/'
             urlPost='/Categorias_Noticias/'
             urlPut='Categorias_Noticias/Atualizar'/>
           </TabPane>

@@ -17,7 +17,6 @@ body{
   display: flex;
    background: #EEE;
   
-  flex-direction: column;
   justify-content: center;
   color: #282828;
 

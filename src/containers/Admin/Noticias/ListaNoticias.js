@@ -21,7 +21,7 @@ class ListaNoticia extends Component {
                       <th> Descrição </th>
                       {/* <th> URL </th> */}
                       <th> Link </th>
-                      <th> Categoria </th>
+                      
                       </tr>
                   </thead>
                   <tbody>

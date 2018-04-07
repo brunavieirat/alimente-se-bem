@@ -7,6 +7,7 @@ import axios from 'axios'
 
 
 
+
 class AdminNoticia extends Component{
     state = {
         noticias: [],
@@ -52,8 +53,11 @@ componentDidMount(){
 deleteByIndex = id =>{
      
    
-    deleteFromAPI('/Noticias/Excluir/'+id)
-    .then(resp => this.refresh())
+    deleteFromAPI('/Noticias/'+id)
+    .then(resp => {
+        alert('Notícia Excluída!')
+        this.refresh()
+    })
     .catch(error => alert(error))
 }
 
@@ -63,7 +67,12 @@ onClickCad=(noticia)=>{
 
     //console.log(noticia)
     postFromAPI('Noticias/Cadastrar', noticia)
-    .then(res=> alert('Notícia cadastrada com Sucesso!'))
+    .then(res=> {
+        alert('Notícia cadastrada com Sucesso!')
+        this.refresh()
+    }
+    )
+
     .catch(error=> alert(error))
       
 }
