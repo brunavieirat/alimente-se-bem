@@ -46,6 +46,7 @@ class App extends Component {
 				<Navbar userName={userName} logout={this.logout}/>
 				{/* <SideMenu /> */}
 				<Switch>
+					<Route exact path="/home" component={Home} />
 					<Route exact path="/" component={Home} />
 					<Route path="/videos" component={Videos}  />
 					<Route exact path="/forum" component={Forum}  />
