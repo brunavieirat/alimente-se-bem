@@ -1,3 +1,6 @@
+// Fica aqui a function que deve enviar para o backend o cadastro do usuário
+
+
 import axios from 'axios'
 
 export function PostData(type, userData) {

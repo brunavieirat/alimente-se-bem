@@ -21,16 +21,33 @@ const config = {
 	storageBucket: 'alimente-se-bem-dc7c4.appspot.com',
 }
 
-  
+let userData
+let userName
+
+if(localStorage.getItem('userData')){
+	userData = JSON.parse(localStorage.getItem('userData'))
+	userName = userData.name
+}
+
+
+
 
 
 firebase.initializeApp(config)
 
 class App extends Component {
+	logout = () => {
+		localStorage.removeItem('logged')
+		localStorage.removeItem('userData')
+		sessionStorage.removeItem('userData')
+		window.location.href='/'
+		
+	}
+
 	render() {
 		return (
 			<Fragment>
-				<Navbar />
+				<Navbar userName={userName} logout={this.logout}/>
 				{/* <SideMenu /> */}
 				<Switch>
 					<Route exact path="/" component={Home} />
