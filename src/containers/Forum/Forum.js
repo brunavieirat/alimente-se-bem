@@ -47,12 +47,8 @@ class Forum extends Component {
 		try{
 			let name =  await getFromAPI('./Nutricionistas/' + data.id_Nutricionista)
 			data.nutricionista = name.data.nome
-			data.data_Criacao = new Date(data.data_Criacao)
 			data.tags = data.tags.split(',')
-			this.setState({
-				forumData: data,
-				loading: false
-			})
+
 		}catch (error) {
 			console.log ( error )
 		}

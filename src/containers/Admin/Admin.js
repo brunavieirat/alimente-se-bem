@@ -4,7 +4,8 @@ import Agenda from './Agenda/AdminAgenda'
 import MyEditor from './Noticias/Noticias'
 import { Route, Switch } from 'react-router-dom'
 import axios from 'axios'
-import SideMenu from './SideMenu/SideMenu'
+
+import SideMenu from '../Admin/SideMenu/SideMenu'
 import './Admin.css'
 import AdminCategoria from './Categoria/AdminCategoria'
 import Noticias from './Noticias/Noticias'
@@ -18,7 +19,7 @@ class Admin extends Component {
 		return (
 			<Fragment>
 				<Switch>
-					<Route exact path="/admin/videos"
+					<Route exact path="/admin/"
 						component={Videos} />
 					<Route path="/admin/agenda"
 						component={Agenda} />
@@ -30,24 +31,14 @@ class Admin extends Component {
 
 				<div className="admin">
 					<div className="admin-body"> 
-						{/* <SideMenu />
-						<div className="container">
-							<Videos  />  */}
-							{/* <Agenda /> */}
-  
-							<MyEditor /> 
-						</div>
-					</div>
-				{/* </div> */}
-				{/* <Route path="/admin/videos"
-					component={Videos} /> */}
+				</div>
 
 				<div className="admin">
 					<div className="admin-body">
             
             
 					</div>
-				</div>
+		</div>		</div>
 
 
 			</Fragment>

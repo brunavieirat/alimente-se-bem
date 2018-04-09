@@ -49,25 +49,24 @@ render() {
 
 	return (
             
-
 		<section className="forum-topico">
-			<form onSubmit={this.onSubmit}>
+			<form className="row" onSubmit={this.onSubmit}>
+				<div className="form-group">
+					<label> Título </label>
 
-				<label> Título </label>
+					<input type="text" name="titulo" onChange={onChange} />
+					<label> Descrição </label>
 
-				<input type="text" name="titulo" onChange={onChange} />
-				<label> Descrição </label>
+					<textarea name="descricao" onChange={onChange} className="forum-topico__respUserTextarea">
 
-				<textarea name="descricao" onChange={onChange} className="forum-topico__respUserTextarea">
+					</textarea>
 
-				</textarea>
+					<label> Tags </label>
 
-				<label> Tags </label>
+					<input name="tags" type="text" onChange={onChange}/>
 
-				<input name="tags" type="text" onChange={onChange}/>
-
-				<button className="btn-add"> Publicar </button>
-
+					<button className="btn-add"> Publicar </button>
+				</div>
 			</form>
 
 
