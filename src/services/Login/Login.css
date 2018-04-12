@@ -3,3 +3,12 @@
     margin: 24px 0 12px 0;
 }
 
+.login-container-button{
+    display: flex;
+    justify-content: right;
+}
+
+.login-center{
+    display: flex;
+    justify-content: center;
+}

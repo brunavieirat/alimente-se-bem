@@ -1,19 +1,25 @@
+// Fica aqui a function que deve enviar para o backend o cadastro do usuário
+
+
+import axios from 'axios'
+
 export function PostData(type, userData) {
 	// let BaseURL = 'https://apipaypal.9lessons.info/apipaypal/'
-	let BaseURL = 'http://localhost:3000/'
+	// let BaseURL = 'http://localhost:3000/'
+
+	let BaseURL =  'http://renatafelix-001-site1.gtempurl.com/api/Usuario/Cadastrar'
     
 	return new Promise((resolve, reject) =>{
-		fetch(BaseURL+type, {
-			method: 'POST',
-			body: JSON.stringify(userData)
+		console.log(userData.name)
+		axios.post(BaseURL, {
+			nome: userData.name,
+			email: userData.email
+		}).then((res) => {
+			resolve(res)
 		})
-			.then((response) => response.json())
-			.then((res) => {
-				resolve(res)
-			})
 			.catch((error) => {
 				reject(error)
 			})
-    
+		
 	})
 }

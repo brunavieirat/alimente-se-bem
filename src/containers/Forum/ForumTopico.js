@@ -1,9 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import ListaTopicos from './ListaTopico'
-<<<<<<< HEAD
-=======
 // import AddTopico from './AddTopico'
->>>>>>> screen-layout
 
 import './ForumTopico.css'
 import axios from 'axios'

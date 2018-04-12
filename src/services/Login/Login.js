@@ -2,39 +2,56 @@ import React, {Component, Fragment} from 'react'
 import FacebookLogin from 'react-facebook-login'
 import GoogleLogin from 'react-google-login'
 import RegularLogin from '../../components/RegularLogin/RegularLogin'
-import {PostData} from '../PostData'
 import {Redirect} from 'react-router-dom'
 import './Login.css'
-import axios from 'axios'
-// import './Welcome.css'
+import  getFromAPI  from '../APIServices'
+import { isArray } from 'util'
 
 class Login extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			loginError: false,
-			redirect: false
+			redirect: false,
+			nutricionistas: null
 		}
 		this.signup = this.signup.bind(this)
 		this.tryLogin = this.tryLogin.bind(this)
 	}
 
+
 	tryLogin = () => {
-		// console.log(this.inputEmail.value, this.inputPassword.value)
-		axios.post('https://reqres.in/api/users', {
-			email: this.inputEmail.value,
-			password: this.inputPassword.value,
-		})
-			// Aqui tem que ver qual vai ser a resposta do back, pra poder colocar a lógica de verificação
-			.then(function (response) {
-				if(response){
-					localStorage.setItem('logged', true)
-					window.location.href='/home'
-				}
-			})
-			.catch(function (error) {
-				console.log(error)
-			})
+		if( this.validation(this.inputEmail.value, this.inputPassword.value)){
+			this.checkLogin(this.inputEmail.value, this.inputPassword.value)
+		}
+			
+	}
+
+	validation( email, password  ){
+		return (email && password) ? true : alert('Por favor, preencha o email e a senha.')
+	}	
+
+	checkReponse( status ){
+		return (status === 200)
+	}
+
+	async checkLogin(email, password){
+		let url = 'Nutricionistas/Login?email=' + email + '&nif=' + password
+		try { 
+			const response = await getFromAPI(url)
+			console.log (response )
+			if(response.status === 200 && (isArray(response.data) && response.data.length !== 0 ))
+				this.login( response.data )
+		}catch (error){
+			console.log(error)
+		}
+	}
+
+	login( userData ){
+		localStorage.setItem('logged', true)
+		localStorage.setItem ('userData',  JSON.stringify(userData))
+		sessionStorage.setItem('userData', JSON.stringify(userData))
+		window.location.href='/home'
 	}
 
 	signup(res, type) {
@@ -62,11 +79,7 @@ class Login extends Component {
 		}
 
 		if (postData) {
-			PostData('signup', postData).then((result) => {
-				let responseJson = result
-				sessionStorage.setItem('userData', JSON.stringify(responseJson))
-				this.setState({redirect: true})
-			})
+			this.login( postData )
 		} else {
 			alert( ' Quando não entra no postData precisa tratar o erro.' )
 		}
@@ -100,7 +113,7 @@ class Login extends Component {
 						inputPassword={el => this.inputPassword = el}
 						inputEmail={el => this.inputEmail = el} 
 					/>
-					<div className="row body">
+					<div className="row body login-center">
 						<div className="medium-12 columns">
 							<div className="medium-12 columns">
 

@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react'
-import ForumTable from '../../components/ForumTable/ForumTable'
 import PageTitle from '../../components/PageTitle/PageTitle'
 
 class ForumTopic extends Component {
@@ -19,7 +18,6 @@ class ForumTopic extends Component {
 			<Fragment>
 				<section className="forum-section">
 					<PageTitle style={this.state.pageTitleColor} title="Forum" />
-					<ForumTable />
 				</section>
 			</Fragment>
 			

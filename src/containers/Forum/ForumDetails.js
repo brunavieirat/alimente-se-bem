@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../../components/PageTitle/PageTitle'
-import CardButton from '../../components/CardButton/CardButton'
+import ForumTopico from '../../components/Forum/ForumTopic'
+import getFromAPI from '../../services/APIServices'
+import anothername from '../../services/UrlHandler'
 import './Forum.css'
 // import axios from 'axios'git 
 
@@ -11,45 +13,51 @@ class Forum extends Component {
 			pageTitleColor: {
 				background: '#ADC837',
 			},
-			data: []
-			
+			topicDetails: [],
+			topicComents: [],
 		}
 	}
+	componentWillMount(){
+		let topicId = anothername('id')
+		this.getTopicDetails ( topicId)
+		// console.log ( topicId)
+	}
+
+	
+
+	async getTopicDetails(id){
+		const topicDetails = await getFromAPI('Forum/' + id)
+		this.treatData(topicDetails.data)
+	}
+
+	async treatData(data){
+		try{
+			let name =  await getFromAPI('./Nutricionistas/' + data.id_Nutricionista)
+			data.nutricionista = name.data.nome
+			data.tags = data.tags.split(',')
+
+			this.setState({
+				topicDetails: data,
+				topicComments: data.comentario
+			})
+			console.log(this.state.topicComments)
+		}catch (error) {
+			console.log ( error )
+		}
+	}
+
 	render(){
-
-		// const ax = axios.create({
-		// 	baseURL: 'http://localhost:3000'
-		//   })
-
-		// fetch('http://localhost:3000/assets/fakejsons/eventos.json').then(function(response) { 
-		// 	// Convert to JSON
-		// 	return response.json()
-		// }).then(function(j) {
-		// 	// Yay, `j` is a JavaScript object
-		// 	console.log(j)
-		// })
-
-
-
-		// fetch('http://localhost:3000/assets/fakejsons/forum.json')
-		// .then( response => response.json() 
-		// .then(json => {
-		// 	console.log(json)
-		// }))
-		
-		// ax.get('/assets/fakejsons/forum.json')
-		// .then(
-		// 	response => (data) = response
-		// ).catch(
-		// 	e => console.log('Esse eh o erro ' +  e)
-		// )
-		// console.log(data)
-
 		return(
 			<Fragment>
 				<section className="forum-section">
-					<PageTitle style={this.state.pageTitleColor} title="Forum" />
-					<CardButton title="Categoria X" />
+					<PageTitle style={this.state.pageTitleColor} title="Forum - " />
+					<ForumTopico 
+						title={this.state.topicDetails.titulo}
+						nutricionista={this.state.topicDetails.nutricionista}
+						data_Criacao={this.state.topicDetails.data_Criacao}
+						descricao={this.state.topicDetails.descricao} 
+						comments={this.state.topicComments}
+					/>
 				</section>
 			</Fragment>
 		)
