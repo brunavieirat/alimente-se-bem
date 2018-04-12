@@ -36,14 +36,9 @@ class SideMenu extends React.Component {
   		},
   		{
   			image: faFileExcel,
-  			name: 'Relatórios IOT',
-  			url:'/admin'
-      }, 	
-      {
-  			image: faFileExcel,
-  			name: 'Relatório Nutricionistas',
+  			name: 'Relatórios',
   			url:''
-  		}
+      }
   	]
   };
 

@@ -4,3 +4,9 @@
     color: #FC5356;
     background-color: white;
 }
+.btn-edit {
+    font-size: 16px;
+    border: none;
+    color: rgb(167, 202, 63);
+    background-color: white;
+}

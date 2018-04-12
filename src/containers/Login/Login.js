@@ -4,7 +4,7 @@ import GoogleLogin from 'react-google-login'
 import RegularLogin from '../../components/RegularLogin/RegularLogin'
 import {Redirect} from 'react-router-dom'
 import './Login.css'
-import  getFromAPI  from '../APIServices'
+import  getFromAPI  from '../../services/APIServices'
 import { isArray } from 'util'
 
 class Login extends Component {

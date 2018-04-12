@@ -10,7 +10,7 @@ import './Admin.css'
 import AdminCategoria from './Categoria/AdminCategoria'
 import Noticias from './Noticias/Noticias'
 import Forum from '../Forum/Forum'
-
+import Footer from '../../components/Footer/Footer'
 
 class Admin extends Component {
 
@@ -30,16 +30,17 @@ class Admin extends Component {
 				</Switch>
 
 				<div className="admin">
-					<div className="admin-body"> 
-				</div>
-
-				<div className="admin">
 					<div className="admin-body">
-            
-            
 					</div>
-		</div>		</div>
 
+					<div className="admin">
+						<div className="admin-body">
+
+
+						</div>
+					</div>		</div>
+
+				<Footer />
 
 			</Fragment>
 		)

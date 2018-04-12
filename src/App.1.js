@@ -31,7 +31,7 @@ class App extends Component {
 		return (
 			<Fragment>
 
-				{/*<Route path="/login"  component={Login}/>*/}
+				<Route path="/login"  component={Login}/>
 				{/* <Routes /> */}
 
 				<Navbar />
