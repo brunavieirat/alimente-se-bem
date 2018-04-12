@@ -1,67 +1,80 @@
-import React from 'react'
-import './AddTopico.css'
+import React, { Component } from 'react'
+import axios from 'axios'
 
-class AddTopico extends React.Component {
-	state = {
-		categoria: {
-			nome: ''
-		}
-	}
 
-	onSubmit = (e) => {
-		e.preventDefault()
-		this
-			.props
-			.onClickCad(this.state.categoria)
-	}
 
-	onChangeCat = (e) => {
-		this.setState({
-			categoria: {
-				...this.state.categoria,
-				[
-				e
-					.target
-					.getAttribute('name')
-				]: e.target.value
-			}
-		})
+class AddTopico extends Component {
 
-	}
+    state = {
+        topico: {
+            titulo: '',
+            descricao: '',
+            id_Nutricionista: 3,
+            id_Cat_Forum: 1,
+            data_Criacao: '2018-04-05',
+            tags: ''
+        }
+    }
 
-	renderInput() {
-		// return ( // console.log('entrou') <input type="text" /> < ForumTopico /> //
-		// console.log('passou pelo input') )
-	}
+                
+    onChange = (e) => {
+        this.setState({
+            topico: {
+                ...this.state.topico,
+                [e.target.getAttribute('name')]: e.target.value,
+               
+                
+            }           
+            
+        })
+      
+    }
 
-	handleKeyPress = (e) => {
-		if (e.key === 'Enter') {
-			{
-				this.renderInput()
-			}
+onSubmit = (e) =>{
+ e.preventDefault()
+ //this.props.onClickCad(this.state.video)
 
-		}
-	}
+ axios.post('http://renatafelix-001-site1.gtempurl.com/api/Forum', this.state.topico)
+ .then(res=>console.log('oook'))
+ .catch(error=>console.log(error))
+ console.log(this.state)
+ }
 
-	render() {
 
-		return (
 
-			<section className="forum-topico">
-				<label>
-					Título
-				</label>
-				<input type="text"/>
-				<label>
-					Descrição
-				</label>
-				<textarea className="forum-topico__respUserTextarea"></textarea>
-				<label>
-					Tags
-				</label>
-				<input id="enter" type="text" onKeyPress={this.handleKeyPress}/>
-			</section>
-		)
-	}
+    render() {
+
+         const { onChange} = this
+         const {titulo, descricao } = this.state.topico
+
+        return (
+            
+            <section className="forum-topico">
+            <form className="row" onSubmit={this.onSubmit}>
+            <div className="form-group">
+        <label> Título </label>
+
+        <input type="text" name="titulo" onChange={onChange} />
+        <label> Descrição </label>
+
+        <textarea name="descricao" onChange={onChange} className="forum-topico__respUserTextarea">
+
+</textarea>
+
+<label> Tags </label>
+
+<input name="tags" type="text" onChange={onChange}/>
+
+<button className="btn-add"> Publicar </button>
+</div>
+   </form>
+
+
+    </section>
+            
+        )
+
+    }
 }
+
 export default AddTopico

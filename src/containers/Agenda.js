@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react'
 import PageTitle from '../components/PageTitle/PageTitle'
-import getFromAPI from '../services/APIServices';
+// import getFromAPI from '../services/APIServices';
 // import AgendaCalendar from '../components/Agenda/Calendar/Calendar'
 import Calendario from '../components/Agenda/Calendar/Calendar'
 import Evento from '../components/Agenda/CardEvent/CardEvent'
@@ -16,17 +16,62 @@ export default class Agenda extends Component {
 			pageTitleColor: {
 				background: '#E74D57',
 			},
-			events: []
+			events: [],
+			unidades: [],
+			
 		}
 	}
 
-	componentWillMount() {
-		getFromAPI('/Agenda').then(res => {
-			this.setState({
-				events: res.data
-			})
-		})
+	componentDidMount() {
+		// getFromAPI('/Agenda').then(res => {
+		// 	this.setState({
+		// 		events: res.data
+		// 	})
+		// })
+		const data = new Date()
+		const mes = data.getMonth()+1
+		const ano = data.getFullYear()			
 
+		axios.get('http://renatafelix-001-site1.gtempurl.com/api/Agenda/Mes?ano='+ ano + '&mes=' + mes)
+		.then(res=>{
+			this.setState({
+			events: res.data,
+			
+			})
+			// console.log(this.state.events)
+		})
+    .catch(error=> alert(error))
+		
+		// {moment(event.data_Evento).format('DD')}
+	}
+
+
+	onSelect=(date) => {
+
+		
+		const mes = moment(date._d).format('MM')
+		const ano = moment(date._d).format('YYYY')	
+		const dia = moment(date._d).format('DD')	
+		
+		axios.get('http://renatafelix-001-site1.gtempurl.com/api/Agenda/Data?ano='+ ano+ '&mes=' + mes + '&dia=' + dia )
+		.then(res=>{
+			this.setState({
+			events: res.data,
+			
+			})
+			// console.log(this.state.events)
+		})
+    .catch(error=> alert(error))
+		
+		// {moment(event.data_Evento).format('DD')}
+
+		
+		// this.setState({
+			
+		// 	selectData: moment(date._d).format('YYYY-MM-DD')
+		// 	})
+		
+		
 	}
 
 	renderEvents() {
@@ -36,10 +81,13 @@ export default class Agenda extends Component {
 				<Evento
 					key={event.id}
 					title={event.titulo}
+					urlImagem={event.url_Imagem}
 					dateday={moment(event.data_Evento).format('DD')}
 					datemonth={moment(event.data_Evento).format('MMM')}
-					place={event.unidades_Sesi.nome}
+					descricao={event.descricao}
+					// place={unidades.nome}
 				/>
+				
 			);
 		})
 	}
@@ -49,7 +97,7 @@ export default class Agenda extends Component {
 		return (
 			<Fragment>
 				<PageTitle style={this.state.pageTitleColor} title="Agenda" />
-				<Calendario onSelectDate={(date) => console.log(date)} />
+				<Calendario onSelect={this.onSelect} />
 				{/* <input type="button" 
 					onClick={() =>{
 												
@@ -85,6 +133,8 @@ export default class Agenda extends Component {
 					 }
 					  value="Excluir"/> */}
 				{this.renderEvents()}
+
+				
 
 			</Fragment>
 		)

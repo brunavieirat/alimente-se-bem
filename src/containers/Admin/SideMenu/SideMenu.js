@@ -17,22 +17,22 @@ class SideMenu extends React.Component {
       {
         image: faFileVideo,
         name: 'Vídeos',
-        url: '/admin'
+        url: '/admin/videos'
       },
       {
         image: faCalendarAlt,
         name: 'Agenda',
-        url: '/admin'
+        url: '/admin/agenda'
       },
       {
         image: faNewspaper,
         name: 'Notícias',
-        url: '/admin'
+        url: '/admin/noticias'
       },
       {
         image: faFileExcel,
         name: 'Fórum',
-        url:'/admin'
+        url:'/admin/forum'
       },
       {
         image: faFileExcel,

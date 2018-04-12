@@ -42,6 +42,7 @@
 .navbar-logo {
     margin-left: -30% !important;
     float: left;
+    width: 250px;
     /* position: fixed; */
 }
 
@@ -126,6 +127,7 @@
 
     .navbar-logo {
         margin-left: -65% !important;
+        width: 130px;
     }
 
     .logo{
@@ -201,6 +203,7 @@
     
       .navbar-logo {
         margin-left: -65% !important;
+        width: 250px;
     }
       
     .navbar > ul > li > a {

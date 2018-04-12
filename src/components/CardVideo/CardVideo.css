@@ -6,6 +6,8 @@ width: 97%;
 font-weight: bold;
 margin: 5px;
 padding: 8px 8px 35px 8px;
+box-shadow: 5px 0px 10px rgb(243, 241, 241);;
+-webkit-box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
 
 
 }
@@ -105,14 +107,14 @@ height: 70px;
 
     .cardVideo{    
             
-            width: 32.89%;
+            width: 32.8%;
             height: 30%; 
-            background-color: white;
+            background-color: #9370DB;
             color: black;
              /* border: 2px solid gray; */
             margin: 3px;
             padding: 0;    
-            box-shadow: 0 3px 5px 0 black;
+           
         }
 
         

@@ -3,7 +3,9 @@ import './Category.css'
 
 
 const Category = (props) => (
-	<div className="divCategoria">{props.name}	</div>
+	<div className="divCategoria">
+	{props.name}	
+	</div>
 )
 
 export default Category

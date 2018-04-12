@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Menu = ({menuItem}) => {
 	const menu = menuItem.map(item => (
-		<Link className="navbar-pages__link" key={item.url}  to={item.url} > {item.name} </Link>
+		<Link className="navbar-pages__link" 
+		key={item.url} 
+		to={item.url} >
+		 {item.name} 
+		 </Link>
 	))
 	return (
 		<li >

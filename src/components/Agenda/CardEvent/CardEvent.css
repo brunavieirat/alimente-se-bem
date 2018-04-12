@@ -7,10 +7,14 @@
 .cardEvent{
     margin: 20px !important;    
     float: left;
-    width: 16%;
-    /* height: 250px; */
-    
-   
+    width: 13%;
+       
+}
+
+.cardEvent-img{
+    /* width: 16%; */
+    height: 180px;
+
 }
 
 .ant-card{

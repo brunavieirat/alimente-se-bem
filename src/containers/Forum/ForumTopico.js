@@ -1,10 +1,34 @@
 import React, { Component, Fragment } from 'react'
 import ListaTopicos from './ListaTopico'
+<<<<<<< HEAD
+=======
+// import AddTopico from './AddTopico'
+>>>>>>> screen-layout
 
 import './ForumTopico.css'
+import axios from 'axios'
 
 
 class ForumTopico extends Component {
+
+    state={
+        topicos: []
+    }
+
+    componentDidMount(){
+        axios.get('http://renatafelix-001-site1.gtempurl.com/api/Forum?sort=-createdAt')
+        .then(res => {
+
+          //  console.log(res.data)
+            this.setState({
+                ...this.state,
+                topicos: res.data,
+                              
+        })
+        console.log(this.state)
+    })
+  
+}
 
 
 	render() {

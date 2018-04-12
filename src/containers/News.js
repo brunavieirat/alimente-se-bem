@@ -6,9 +6,6 @@ import PageTitle from '../components/PageTitle/PageTitle'
 
 import getFromAPI from '../services/APIServices';
 
-import moment from 'moment'
-
-import axios from 'axios'
 
 import Noticias from '../components/News/News'
 
@@ -72,6 +69,8 @@ export default class News extends Component {
                     headline={noticia.headline}
 
                     description={noticia.descricao}
+
+                    image={noticia.imagem}
 
                 />
 

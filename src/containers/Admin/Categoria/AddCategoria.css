@@ -1,6 +1,7 @@
 .form-group > *{
   display: block;
   text-align: left;
+  width: 100%;
 }
 .form-group label{
   text-transform: uppercase;
@@ -12,9 +13,9 @@
 
 }
 
-.form-group input{
+/* .form-group input{
     width: 300px;
-}
+} */
 .form-group > input, .btn-add {
   padding: 5px 3px;
   color: #606060;
@@ -32,7 +33,7 @@
   height: 35px;
   border-color: rgb(167, 202, 63);
   text-align: center;
-  margin: 12px  10px 10px 10px;
+  margin: 32px  10px 10px 30px;
   float: right;
   font-weight: bold;
 }
